@@ -26,6 +26,30 @@ if {![link]} {
 }
 
 read_sdc $SDC_FILE
+if {[info exists ::env(DC_CLK_PERIOD)] && $::env(DC_CLK_PERIOD) ne ""} {
+    set clk_period $::env(DC_CLK_PERIOD)
+    set clk_transition 0.05
+    if {[info exists ::env(DC_CLK_TRANSITION)] && $::env(DC_CLK_TRANSITION) ne ""} {
+        set clk_transition $::env(DC_CLK_TRANSITION)
+    }
+
+    if {[catch {set existing_clocks [get_clocks nvdla_core_clk]} err]} {
+        set existing_clocks [list]
+    }
+    if {![catch {sizeof_collection $existing_clocks} clock_count] && $clock_count > 0} {
+        remove_clock $existing_clocks
+    }
+
+    create_clock -name nvdla_core_clk \
+        -period $clk_period \
+        -waveform [list 0 [expr {$clk_period / 2.0}]] \
+        [get_ports nvdla_core_clk]
+    set_clock_transition -max -rise $clk_transition [get_clocks nvdla_core_clk]
+    set_clock_transition -max -fall $clk_transition [get_clocks nvdla_core_clk]
+    set_clock_transition -min -rise $clk_transition [get_clocks nvdla_core_clk]
+    set_clock_transition -min -fall $clk_transition [get_clocks nvdla_core_clk]
+    puts "Info: Overrode nvdla_core_clk period to ${clk_period} ns."
+}
 set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 
 redirect -file $REPORT_DIR/${MODULE}.check_design.precompile.rpt { check_design }

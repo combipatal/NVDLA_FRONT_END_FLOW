@@ -12,6 +12,7 @@ export MAX_LIB=${MAX_LIB:-$TARGET_LIB}
 export SYNTHETIC_LIB=${SYNTHETIC_LIB:-dw_foundation.sldb}
 
 export DC_NUM_CORES=${DC_NUM_CORES:-4}
+export DC_CLK_TRANSITION=${DC_CLK_TRANSITION:-0.05}
 export DC_REPORT_CONGESTION=${DC_REPORT_CONGESTION:-0}
 
 # Topographical DC setup. Disable with DC_TOPO_MODE=0 for logic-only runs.
