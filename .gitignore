@@ -19,6 +19,17 @@ build/work/
 build/
 reports/
 
+# Numbered flow generated outputs
+*/2_output/*
+*/3_log/*
+*/4_report/*
+!*/2_output/.gitkeep
+!*/3_log/.gitkeep
+!*/4_report/.gitkeep
+!*/2_output/**/.gitkeep
+!*/3_log/**/.gitkeep
+!*/4_report/**/.gitkeep
+
 # Editor and OS noise
 .vscode/
 .idea/

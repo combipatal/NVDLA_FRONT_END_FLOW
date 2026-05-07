@@ -11,10 +11,11 @@
 -y rtl/nvdla/vmod/rams/model
 -y rtl/nvdla/vmod/rams/synth
 -y rtl/nvdla/vmod/nvdla/top
+-y rtl/nvdla/vmod/nvdla/car
 -y rtl/nvdla/vmod/nvdla/cmac
 -y rtl/nvdla/vmod/nvdla/cacc
 -y rtl/nvdla/vmod/nvdla/retiming
 -y rtl/nvdla/vmod/nvdla/csb_master
 -y rtl/nvdla/vmod/nvdla/glb
 -y rtl/nvdla/vmod/nvdla/nocif
-rtl/nvdla/vmod/nvdla/top/NV_NVDLA_partition_a.v
+rtl/nvdla/vmod/nvdla/top/NV_NVDLA_partition_m.v

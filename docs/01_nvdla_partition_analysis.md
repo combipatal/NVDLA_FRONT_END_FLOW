@@ -31,6 +31,8 @@ The launcher copies RTL and include files into a build sandbox, then creates a V
 
 This project keeps the same define policy but points directly at `rtl/nvdla/vmod` instead of copying RTL into a sandbox.
 
+The first `partition_m` DC elaborate run showed that `vmod/nvdla/car` is required for reset/synchronizer cells, and that DesignWare components such as `DW02_tree` and `DW_minmax` require `dw_foundation.sldb` in the DC link/synthetic library setup.
+
 ## Partition M
 
 - Top: `NV_NVDLA_partition_m`

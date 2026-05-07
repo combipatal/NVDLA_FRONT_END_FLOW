@@ -14,3 +14,10 @@ Initial execution order:
 8. Reuse the same flow for `partition_a`.
 9. Sanitize public artifacts before portfolio use.
 
+Flow layout:
+- `1_vcs/{1_input,2_output,3_log,4_report,scripts}`
+- `2_synthesis/{1_input,2_output,3_log,4_report,scripts}`
+- `3_sta/{1_input,2_output,3_log,4_report,scripts}`
+- `4_dft/{1_input,2_output,3_log,4_report,scripts}`
+- `5_formality/{1_input,2_output,3_log,4_report,scripts}`
+- `6_sweep/{1_input,2_output,3_log,4_report,scripts}`

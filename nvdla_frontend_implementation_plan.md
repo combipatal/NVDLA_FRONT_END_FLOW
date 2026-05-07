@@ -133,58 +133,53 @@ portfolio report
 nvdla-front-end-flow/
   README.md
 
+  1_vcs/
+    1_input/
+    2_output/
+    3_log/
+    4_report/
+    scripts/
+
+  2_synthesis/
+    1_input/
+      env.sh
+      constraints/
+      filelists/
+    2_output/
+    3_log/
+    4_report/
+    scripts/
+
+  3_sta/
+    1_input/
+    2_output/
+    3_log/
+    4_report/
+    scripts/
+
+  4_dft/
+    1_input/
+    2_output/
+    3_log/
+    4_report/
+    scripts/
+
+  5_formality/
+    1_input/
+    2_output/
+    3_log/
+    4_report/
+    scripts/
+
+  6_sweep/
+    1_input/
+    2_output/
+    3_log/
+    4_report/
+    scripts/
+
   rtl/
     nvdla/                         # NVDLA clone or submodule
-
-  configs/
-    env.sh                         # tool/library path
-    library_setup.tcl              # target/link/min/max lib setup
-    common_vars.tcl                # module/build/report vars
-    sweep_config.csv               # period list
-
-  filelists/
-    NV_NVDLA_partition_m.f
-    NV_NVDLA_partition_a.f
-
-  constraints/
-    NV_NVDLA_partition_m.sdc
-    NV_NVDLA_partition_a.sdc
-    cmac_cacc_top.sdc              # optional integration
-
-  scripts/
-    run_dc.tcl
-    run_pt.tcl
-    run_fm.tcl
-    run_dc_dft.tcl                 # optional DC/DFT Compiler DRC + scan insertion
-    run_tmax.tcl                   # optional TetraMAX ATPG
-    run_sweep.sh
-    parse_reports.py
-
-  wrappers/
-    cmac_cacc_top.v                # optional integration wrapper
-
-  build/
-    partition_m/
-    partition_a/
-    cmac_cacc_top/
-
-  reports/
-    partition_m/
-      dc/
-      pt/
-      fm/
-      sweep/
-      dft/
-      atpg/
-    partition_a/
-      dc/
-      pt/
-      fm/
-      sweep/
-      dft/
-      atpg/
-    cmac_cacc_top/
-      sta/
 
   docs/
     00_project_scope.md

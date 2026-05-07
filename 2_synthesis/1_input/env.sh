@@ -9,5 +9,6 @@ export TARGET_LIB=${TARGET_LIB:-/DATA/home/edu135/aes128_core/6_STA/1_input/SAED
 export LINK_LIB=${LINK_LIB:-"* $TARGET_LIB"}
 export MIN_LIB=${MIN_LIB:-/DATA/home/edu135/aes128_core/6_STA/1_input/SAED32_EDK/sc/ff1p16v125c/saed32rvt_ff1p16v125c.db}
 export MAX_LIB=${MAX_LIB:-$TARGET_LIB}
+export SYNTHETIC_LIB=${SYNTHETIC_LIB:-dw_foundation.sldb}
 
 export DC_NUM_CORES=${DC_NUM_CORES:-4}

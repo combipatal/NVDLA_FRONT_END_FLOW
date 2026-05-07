@@ -6,7 +6,7 @@ set DB_DIR $::env(DB_DIR)
 file mkdir $REPORT_DIR
 file mkdir $DB_DIR
 
-source configs/library_setup.tcl
+source 2_synthesis/scripts/library_setup.tcl
 
 set_host_options -max_cores $::env(DC_NUM_CORES)
 
