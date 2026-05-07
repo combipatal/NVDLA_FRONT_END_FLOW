@@ -67,19 +67,32 @@ ensure_port scan_enable in
 ensure_port scan_in in
 ensure_port scan_out out
 
-set_scan_configuration -style multiplexed_flip_flop -chain_count $chain_count
+set_scan_configuration -test_mode all -style multiplexed_flip_flop
+set_scan_configuration -test_mode all -chain_count $chain_count
+set_scan_configuration -test_mode all -internal_clocks none
+set_dft_configuration -connect_clock_gating enable
 
 set_dft_signal -view existing_dft -type ScanClock -port nvdla_core_clk -timing {45 55}
 set_dft_signal -view existing_dft -type Reset -port direct_reset_ -active_state 0
 set_dft_signal -view existing_dft -type Reset -port dla_reset_rstn -active_state 0
 set_dft_signal -view existing_dft -type TestMode -port test_mode -active_state 1
-set_dft_signal -view existing_dft -type Constant -port tmc2slcg_disable_clock_gating -active_state 1
+set_dft_signal -view existing_dft -type TestMode -port tmc2slcg_disable_clock_gating -active_state 1
 
 set_dft_signal -view spec -type ScanEnable -port [get_ports scan_enable] -active_state 1
 set_dft_signal -view spec -type ScanDataIn -port [get_ports scan_in]
 set_dft_signal -view spec -type ScanDataOut -port [get_ports scan_out]
 
-set_case_analysis 1 [get_ports tmc2slcg_disable_clock_gating]
+set nvdla_clock_gates [get_cells -hier -quiet *p_clkgate*]
+if {[sizeof_collection $nvdla_clock_gates] > 0} {
+    set_dft_clock_gating_pin $nvdla_clock_gates \
+        -pin_name TE \
+        -control_signal ScanEnable \
+        -active_state 1
+    set_scan_element false $nvdla_clock_gates
+    puts "Info: Marked [sizeof_collection $nvdla_clock_gates] NVDLA clock-gating cells for scan_enable hookup."
+} else {
+    puts "Warning: No NVDLA clock-gating cells matched '*p_clkgate*'."
+}
 
 create_test_protocol
 
@@ -87,6 +100,7 @@ safe_report $REPORT_DIR/${MODULE}.check_design.pre_dft.rpt { check_design }
 safe_report $REPORT_DIR/${MODULE}.check_timing.pre_dft.rpt { check_timing }
 safe_report $REPORT_DIR/${MODULE}.dft_signal.rpt { report_dft_signal }
 safe_report $REPORT_DIR/${MODULE}.dft_configuration.rpt { report_dft_configuration }
+safe_report $REPORT_DIR/${MODULE}.dft_clock_gating_pin.rpt { report_dft_clock_gating_pin }
 safe_report $REPORT_DIR/${MODULE}.preview_dft.rpt { preview_dft }
 safe_report $REPORT_DIR/${MODULE}.dft_drc.pre_dft.rpt { dft_drc }
 

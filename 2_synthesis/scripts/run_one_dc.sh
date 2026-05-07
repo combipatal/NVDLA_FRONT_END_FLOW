@@ -13,7 +13,7 @@ if [[ -n "${DC_CLK_PERIOD:-}" && -z "${DC_RUN_NAME:-}" ]]; then
 fi
 
 export MODULE=$module
-export FILELIST="2_synthesis/1_input/filelists/${module}.f"
+export FILELIST=${DC_FILELIST:-2_synthesis/1_input/filelists/${module}.f}
 export SDC_FILE="2_synthesis/1_input/constraints/${module}.sdc"
 export DC_RUN_NAME=$run_name
 export REPORT_DIR="2_synthesis/4_report/${run_name}"
