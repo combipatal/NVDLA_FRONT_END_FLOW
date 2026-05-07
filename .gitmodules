@@ -1,0 +1,3 @@
+[submodule "rtl/nvdla"]
+	path = rtl/nvdla
+	url = https://github.com/nvdla/hw.git

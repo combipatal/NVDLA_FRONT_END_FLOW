@@ -1,0 +1,26 @@
+# Local agent/session state
+.omx/
+
+# Synopsys and simulation scratch data
+alib-52/
+work/
+build/work/
+*.log
+*.svf
+*.ddc
+*.vg
+*.gv
+*.mr
+*.pvl
+*.syn
+*.rpt
+
+# Generated implementation outputs
+build/
+reports/
+
+# Editor and OS noise
+.vscode/
+.idea/
+*~
+.DS_Store
