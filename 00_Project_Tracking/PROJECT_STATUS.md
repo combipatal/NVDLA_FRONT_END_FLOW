@@ -29,11 +29,15 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
 - DFT-specific synthesis using `VLIB_BYPASS_POWER_CG` removes the DFT D9 clock-port-not-active issue in pre-check.
 - `dla_reset_rstn` is held inactive as `Constant 1` during scan because the same reset port also feeds the reset synchronizer data path.
 - Full DFT insertion from `partition_m_4p0ns_dftcg_const_reset_dft` completes with 32 scan chains and post-DFT DRC total violations `0`.
+- Scan-netlist STA setup is clean; async hold/removal is backend-deferred.
+- Formality R2N is currently failing because the RTL reference setup has unresolved/unmatched black-box guidance issues. The scripts now include DesignWare models and correct DDC read ordering, but R2N still needs DC/Formality guidance improvement.
+- Formality N2N passes from pre-scan DDC to post-DFT scan DDC in functional mode.
+- TetraMAX stuck-at ATPG completes with DRC clean and test coverage `99.91%`.
 
 ## Open Items
 
-- Run STA on scan netlist after full DFT insertion.
-- Add Formality flow for RTL-to-netlist comparison.
-- Categorize or fix post-DFT max transition/capacitance violations.
+- Improve Formality R2N setup, likely with better reference black-box modeling plus DC `guide_hier_map`/verification-top guidance.
+- Backend must fix or re-characterize max transition/capacitance violations.
 - Define a separate reset-test strategy if `dla_reset_rstn` assertion coverage is required.
+- Decide whether current TetraMAX `ND` faults need more ATPG effort, constraints, or classification.
 - Reuse the flow for additional partitions after `partition_m` stabilizes.

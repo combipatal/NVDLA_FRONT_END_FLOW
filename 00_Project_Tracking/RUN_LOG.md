@@ -236,3 +236,128 @@
   - Max transition/cap cleanup remains backend-deferred.
 - Next action:
   - Run STA on the scan netlist and add Formality flow.
+
+## 2026-05-08 - PrimeTime STA, post-DFT scan netlist
+
+- Command: `env PT_RUN_NAME=partition_m_4p0ns_dftcg_const_reset_scan_sta NETLIST=4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/net/NV_NVDLA_partition_m.scan.vg SDC_FILE=4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/net/NV_NVDLA_partition_m.scan.sdc SDF_FILE=4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/net/NV_NVDLA_partition_m.scan.sdf 3_sta/scripts/run_one_pt.sh NV_NVDLA_partition_m partition_m_4p0ns_dftcg_const_reset_dft`
+- Stage: STA
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/net/NV_NVDLA_partition_m.scan.vg`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/net/NV_NVDLA_partition_m.scan.sdc`
+- Output artifacts:
+  - Reports under `3_sta/4_report/partition_m_4p0ns_dftcg_const_reset_scan_sta`
+  - Session under `3_sta/2_output/partition_m_4p0ns_dftcg_const_reset_scan_sta`
+- Key reports:
+  - `3_sta/4_report/partition_m_4p0ns_dftcg_const_reset_scan_sta/NV_NVDLA_partition_m.pt.qor.rpt`
+  - `3_sta/4_report/partition_m_4p0ns_dftcg_const_reset_scan_sta/NV_NVDLA_partition_m.pt.global_timing.rpt`
+  - `3_sta/4_report/partition_m_4p0ns_dftcg_const_reset_scan_sta/NV_NVDLA_partition_m.pt.constraint.rpt`
+- Pass/fail evidence:
+  - Setup path group `nvdla_core_clk` WNS `+0.0360 ns`, TNS `0.0000`, violating paths `0`.
+  - No setup violations found in global timing.
+- Warnings or violations:
+  - Async hold/removal WNS `-0.0345 ns`, TNS `-77.7515`, violating paths `2383`.
+  - Max capacitance count `15258`.
+  - Max transition count `912`.
+- Waiver/defer reason:
+  - Hold/removal and max transition/capacitance cleanup are backend-deferred to CTS/route/fix-hold and physical optimization.
+- Next action:
+  - Run Formality R2N/N2N and ATPG.
+
+## 2026-05-08 - Formality R2N setup and compare, DFT synthesis build
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_r2n 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N
+- Result: `FAIL`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.f`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg/fv/NV_NVDLA_partition_m.svf`
+  - DesignWare models `DW_minmax.v` and `DW02_tree.v`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_r2n`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_r2n/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_r2n/NV_NVDLA_partition_m.fm.match.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_r2n/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - Final R2N verification `FAILED`.
+  - Passing compare points: `1587`.
+  - Failing compare points: `282276`.
+  - Aborted compare points: `0`.
+  - Unverified compare points: `67046`.
+- Warnings or violations:
+  - Initial R2N attempt failed because `DW_minmax` and `DW02_tree` were unresolved in the RTL reference.
+  - Script was fixed by reading DesignWare Verilog models before reading the RTL filelist.
+  - Second R2N setup attempt failed because implementation DDC was read before the reference top was linked; script order was fixed.
+  - Final R2N still fails with large reference-side unmatched/black-box points and missing `guide_hier_map` guidance.
+- Waiver/defer reason:
+  - Not waived for signoff. R2N requires a stronger DC Formality setup, likely enabling hierarchical guidance such as `hdlin_enable_hier_map` and `set_verification_top`, plus resolving reference black-box modeling.
+- Next action:
+  - Use N2N as the post-DFT equivalence check for this milestone and improve R2N setup later.
+
+## 2026-05-08 - Formality N2N, pre-scan DDC to post-DFT scan DDC
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_const_reset_n2n 5_formality/scripts/run_one_fm.sh n2n NV_NVDLA_partition_m`
+- Stage: Formality N2N
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg/db/NV_NVDLA_partition_m.ddc`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/db/NV_NVDLA_partition_m.scan.ddc`
+  - `5_formality/scripts/run_fm_n2n.tcl`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_const_reset_n2n`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_const_reset_n2n/NV_NVDLA_partition_m.n2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_const_reset_n2n/NV_NVDLA_partition_m.fm.match.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_const_reset_n2n/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - Final N2N verification `SUCCEEDED`.
+  - Passing compare points: `68653`.
+  - Failing compare points: `0`.
+  - Matched DFF compare points: `67183`.
+- Warnings or violations:
+  - First N2N setup attempt failed because implementation DDC was read before the reference top was linked; script order was fixed.
+  - Second N2N attempt failed with `20` failing compare points on `cfg_is_fp16*` registers because `test_mode` and `tmc2slcg_disable_clock_gating` were constrained only on the implementation side.
+  - Script was fixed to constrain scan-only ports on implementation and functional test ports on both reference and implementation.
+  - Remaining unmatched implementation ports are expected scan insertion ports: 33 inputs and 31 outputs.
+- Waiver/defer reason:
+  - Scan-only port mismatch is expected for pre-scan-vs-post-scan N2N and does not block functional-mode post-DFT equivalence.
+- Next action:
+  - Run TetraMAX ATPG.
+
+## 2026-05-08 - TetraMAX stuck-at ATPG
+
+- Command: `env ATPG_RUN_NAME=partition_m_4p0ns_dftcg_const_reset_atpg 4_dft/scripts/run_one_tmax.sh NV_NVDLA_partition_m partition_m_4p0ns_dftcg_const_reset_dft`
+- Stage: ATPG
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/net/NV_NVDLA_partition_m.scan.vg`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/test/NV_NVDLA_partition_m.scan.spf`
+  - `/DATA/home/edu135/aes128_core/SAED32_EDK/lib/stdcell_rvt/verilog/saed32nm.v`
+- Output artifacts:
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_atpg/NV_NVDLA_partition_m.stuck.stil`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_atpg/NV_NVDLA_partition_m.stuck.faults`
+- Key reports:
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_const_reset_atpg/NV_NVDLA_partition_m.tmax.summary.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_const_reset_atpg/NV_NVDLA_partition_m.tmax.fault_summary.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_const_reset_atpg/NV_NVDLA_partition_m.tmax.pattern_summary.rpt`
+- Pass/fail evidence:
+  - TetraMAX DRC: no violations occurred during DRC process.
+  - Total faults: `7934572`.
+  - Detected faults: `7869299`.
+  - Possibly detected faults: `1`.
+  - Undetectable faults: `58119`.
+  - ATPG untestable faults: `12`.
+  - Not detected faults: `7141`.
+  - Test coverage: `99.91%`.
+  - Generated basic-scan patterns: `14836`.
+- Warnings or violations:
+  - First ATPG attempt failed because TetraMAX does not accept `.db` as a `read_netlist -library` input and therefore could not resolve `SDFFARX1_RVT`.
+  - Script was fixed to use the SAED32 RVT Verilog stdcell library.
+  - Final ATPG log still prints a prior-rule notice for `N20`; final DRC summary reports no violations.
+- Waiver/defer reason:
+  - Remaining `ND` faults and reset assertion coverage are not closed by this milestone.
+  - Max transition/capacitance cleanup remains backend-deferred.
+- Next action:
+  - Commit scripts and tracking updates.

@@ -3,6 +3,7 @@
 
 # Synopsys and simulation scratch data
 alib-52/
+FM_INFO/
 work/
 build/work/
 *.log
