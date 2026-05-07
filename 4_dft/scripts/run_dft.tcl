@@ -74,7 +74,9 @@ set_dft_configuration -connect_clock_gating enable
 
 set_dft_signal -view existing_dft -type ScanClock -port nvdla_core_clk -timing {45 55}
 set_dft_signal -view existing_dft -type Reset -port direct_reset_ -active_state 0
-set_dft_signal -view existing_dft -type Reset -port dla_reset_rstn -active_state 0
+# dla_reset_rstn also feeds the reset synchronizer data path. Keep it inactive
+# during scan so DFT does not model it as a capture event on that synchronizer.
+set_dft_signal -view existing_dft -type Constant -port dla_reset_rstn -active_state 1
 set_dft_signal -view existing_dft -type TestMode -port test_mode -active_state 1
 set_dft_signal -view existing_dft -type TestMode -port tmc2slcg_disable_clock_gating -active_state 1
 

@@ -10,6 +10,8 @@
 | DFT synthesis | `partition_m_4p0ns_dftcg` | `PASS_WITH_NOTE` | WNS `+0.0031 ns`, TNS `0`, violating paths `0` | DFT-only clock-gating bypass build |
 | DFT pre-check | `partition_m_4p0ns_dftcg_probe` | `PASS_WITH_NOTE` | D9 `0`, sequential violations `0`, 32 chains x about 2100 cells | TEST-332, D8, D10 remain |
 | Full DFT | `partition_m_4p0ns_dftcg_dft` | `PASS_WITH_NOTE` | Post-DFT DRC total `2`, S19 `0`, 32 chains x `2099-2100`, WNS `+0.0031 ns` | C4/C26 reset protocol violations remain |
+| DFT reset-protocol pre-check | `partition_m_4p0ns_dftcg_const_reset_probe` | `PASS_WITH_NOTE` | `dla_reset_rstn` modeled as `Constant 1`, D8/D10 `0`, sequential violations `0` | Pre-DFT TEST-332 remains |
+| Full DFT reset protocol | `partition_m_4p0ns_dftcg_const_reset_dft` | `PASS_WITH_NOTE` | Post-DFT DRC total `0`, 32 chains x `2099-2100`, WNS `0.0000 ns`, TNS `0` | Scan-netlist STA and max transition/cap cleanup remain |
 
 ## Key Decisions
 
@@ -18,9 +20,10 @@
 - Hold/removal cleanup is deferred to backend.
 - Functional netlist remains `partition_m_4p0ns`.
 - DFT scan insertion should use the DFT-specific `VLIB_BYPASS_POWER_CG` synthesis input until a production clock-gate test-enable strategy is implemented.
+- During scan, `dla_reset_rstn` is held inactive as `Constant 1` because it also feeds the reset synchronizer data path; reset assertion testing is not claimed by this scan protocol.
 
 ## Not Signoff-Clean Yet
 
 - Do not claim signoff-clean while max transition/cap violations remain.
-- Do not claim DFT signoff-clean while post-DFT C4/C26 reset protocol violations remain uncategorized or unfixed.
+- Do not claim full flow signoff-clean until scan-netlist STA/Formality are completed and remaining transition/cap violations are categorized or fixed.
 - The DFT clock-gating bypass run is valid as a front-end scan enablement path, but it is not a replacement for the functional low-power clock-gated implementation.

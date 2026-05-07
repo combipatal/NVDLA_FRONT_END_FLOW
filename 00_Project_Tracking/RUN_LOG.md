@@ -173,3 +173,66 @@
   - Max transition/cap cleanup remains backend-deferred.
 - Next action:
   - Decide reset DFT protocol handling for `dla_reset_rstn`, then run scan-netlist STA.
+
+## 2026-05-08 - DFT pre-check, reset constant protocol
+
+- Command: `env DFT_INSERT=0 DFT_RUN_NAME=partition_m_4p0ns_dftcg_const_reset_probe 4_dft/scripts/run_one_dft.sh NV_NVDLA_partition_m partition_m_4p0ns_dftcg`
+- Stage: DFT
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/1_input/constraints/NV_NVDLA_partition_m.sdc`
+  - `4_dft/scripts/run_dft.tcl`
+- Output artifacts:
+  - Reports under `4_dft/4_report/partition_m_4p0ns_dftcg_const_reset_probe`
+- Key reports:
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_const_reset_probe/NV_NVDLA_partition_m.dft_signal.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_const_reset_probe/NV_NVDLA_partition_m.dft_drc.pre_dft.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_const_reset_probe/NV_NVDLA_partition_m.preview_dft.rpt`
+- Pass/fail evidence:
+  - `dla_reset_rstn` is modeled as `Constant 1` during scan protocol.
+  - D8/D10 reset synchronizer violations reduced to `0`.
+  - Sequential cells with violations: `0 out of 67183`.
+- Warnings or violations:
+  - Pre-DFT `TEST-332` unconnected input pin violations: `1138`.
+- Waiver/defer reason:
+  - `TEST-332` is from open partition-boundary inputs in the current partition-level DFT model and is cleared after insertion for this run.
+  - Reset assertion coverage for `dla_reset_rstn` is not claimed by this scan protocol; it is held inactive during scan.
+- Next action:
+  - Run full DFT insertion with the reset constant protocol.
+
+## 2026-05-08 - Full DFT insertion, reset constant protocol
+
+- Command: `env DFT_RUN_NAME=partition_m_4p0ns_dftcg_const_reset_dft 4_dft/scripts/run_one_dft.sh NV_NVDLA_partition_m partition_m_4p0ns_dftcg`
+- Stage: DFT
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/1_input/constraints/NV_NVDLA_partition_m.sdc`
+  - `4_dft/scripts/run_dft.tcl`
+- Output artifacts:
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/db/NV_NVDLA_partition_m.scan.ddc`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/net/NV_NVDLA_partition_m.scan.vg`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/net/NV_NVDLA_partition_m.scan.sdc`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/net/NV_NVDLA_partition_m.scan.sdf`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_const_reset_dft/test/NV_NVDLA_partition_m.scan.spf`
+- Key reports:
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_const_reset_dft/NV_NVDLA_partition_m.dft_drc.pre_dft.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_const_reset_dft/NV_NVDLA_partition_m.dft_drc.post_dft.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_const_reset_dft/NV_NVDLA_partition_m.scan_path.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_const_reset_dft/NV_NVDLA_partition_m.qor.post_dft.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_const_reset_dft/NV_NVDLA_partition_m.constraint.post_dft.rpt`
+- Pass/fail evidence:
+  - Post-DFT DRC total violations: `0`.
+  - Sequential cells with violations: `0 out of 67183`.
+  - Scan path report shows 32 chains, lengths `2099-2100`.
+  - Post-DFT QoR WNS `0.0000 ns`, TNS `0.0000`, violating paths `0`.
+  - Design area `3031603.2076`.
+- Warnings or violations:
+  - Pre-DFT `TEST-332` unconnected input pin violations: `1138`.
+  - Post-DFT max transition/capacitance violations remain in `constraint.post_dft.rpt`.
+- Waiver/defer reason:
+  - `dla_reset_rstn` is intentionally held inactive during scan to avoid reset synchronizer capture protocol violations.
+  - Max transition/cap cleanup remains backend-deferred.
+- Next action:
+  - Run STA on the scan netlist and add Formality flow.
