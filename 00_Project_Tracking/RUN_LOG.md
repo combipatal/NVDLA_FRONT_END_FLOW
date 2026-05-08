@@ -748,3 +748,81 @@
   - Not waived. R2N remains failing and is not signoff-clean.
 - Next action:
   - Keep the VP2 synthesis change because it improves matching/reg-constant guidance, but investigate why `guide_multiplier` is still rejected. The next debug target is a DC/Formality option that preserves or maps the CMAC `DW02_tree` multiplier/carry-save guidance more directly, or a focused Formality setup for `guide_multiplier` acceptance.
+
+## 2026-05-08 - DC topographical synthesis with NVDLA DW fallback aligned to Formality
+
+- Command: `env DC_FILELIST=2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f DC_CLK_PERIOD=4.0 DC_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp3_nvdw DC_HDLIN_VERIFICATION_PRIORITY=1 DC_CMAC_VERIFICATION_PRIORITY=1 DC_VERIFICATION_PRIORITY_LEVEL=high 2_synthesis/scripts/run_one_dc.sh NV_NVDLA_partition_m`
+- Stage: Synthesis debug
+- Result: `FAIL`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f`
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.f`
+  - `2_synthesis/scripts/run_dc.tcl`
+  - `2_synthesis/1_input/constraints/NV_NVDLA_partition_m.sdc`
+- Output artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/net/NV_NVDLA_partition_m.vg`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/net/NV_NVDLA_partition_m.sdc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/net/NV_NVDLA_partition_m.sdf`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/fv/NV_NVDLA_partition_m.svf`
+- Key reports:
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/NV_NVDLA_partition_m.qor.rpt`
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/NV_NVDLA_partition_m.constraint.rpt`
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/NV_NVDLA_partition_m.verification_priority.precompile.rpt`
+  - `2_synthesis/3_log/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/NV_NVDLA_partition_m.dc.log`
+- Pass/fail evidence:
+  - DC exited with code `0` and generated DDC/netlist/SDC/SDF/SVF.
+  - DC read the NVDLA fallback DW tree path through `+define+DESIGNWARE_NOEXIST`; the log elaborated `NV_DW02_tree_*` designs.
+  - Verification priority was applied to design `NV_NVDLA_CMAC_CORE_mac` and `NV_NVDLA_CMAC_CORE_MAC_mul`.
+  - QoR critical path slack is `-0.2117 ns`; therefore this run is not a valid 4.0 ns synthesis signoff candidate.
+  - QoR hold WNS is `0.0000 ns`, TNS `0.0000`, violating paths `0`.
+- Warnings or violations:
+  - Setup timing violation remains at 4.0 ns.
+  - Max transition/capacitance violations remain in `constraint.rpt`.
+  - `check_timing.rpt` still reports unconstrained input/endpoints from the existing constraint model.
+  - `check_design.rpt` contains many `LINT-60` no-internal-load warnings around fallback DW tree and clock-gate pins.
+- Waiver/defer reason:
+  - No timing waiver is taken. This build is retained only as a Formality root-cause/debug build because it aligns DC and Formality to the same NVDLA DW fallback RTL model.
+  - Max transition/capacitance cleanup remains backend-deferred.
+- Next action:
+  - Run Formality R2N on this DDC/SVF to test whether aligning DC and Formality DW tree modeling fixes rejected `guide_multiplier`/`DW02_tree` guidance.
+
+## 2026-05-08 - Formality R2N with NVDLA DW fallback aligned synthesis
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp3_nvdw_r2n IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/fv/NV_NVDLA_partition_m.svf 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N debug
+- Result: `PASS`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.formality_r2n.f`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp3_nvdw/fv/NV_NVDLA_partition_m.svf`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp3_nvdw_r2n`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_vp3_nvdw_r2n/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp3_nvdw_r2n/NV_NVDLA_partition_m.fm.svf_rejected.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp3_nvdw_r2n/NV_NVDLA_partition_m.fm.match.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp3_nvdw_r2n/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - Verification `SUCCEEDED`.
+  - Passing compare points: `68301`.
+  - Failing compare points: `0`.
+  - Aborted compare points: `0`.
+  - Unverified compare points: `0`.
+  - Matched compare points by name: `68301`.
+  - Unmatched reference/implementation compare points: `0(0)`.
+  - Reference black-boxes: `2`.
+  - Guidance summary: total accepted `10872`, rejected `0`.
+  - `hier_map` accepted `42`, rejected `0`.
+  - `reg_constant` accepted `227`, rejected `0`.
+  - `uniquify` accepted `3`, rejected `0`; `ununiquify` accepted `1`, rejected `0`.
+  - The rejected-SVF report contains no rejected operations for `reg_constant`, `multiplier`, `uniquify`, or `ununiquify`.
+- Warnings or violations:
+  - Formality still sees `2` reference black-box placeholders, consistent with the prior NVDLA fallback setup, but no compare point remains unmatched and verification passes.
+  - This pass is tied to the VP3 debug synthesis build, whose DC timing failed at 4.0 ns.
+- Waiver/defer reason:
+  - No waiver needed for R2N equivalence on this debug build.
+  - Do not treat this as full flow signoff because the paired VP3 synthesis build has setup WNS `-0.2117 ns`.
+- Next action:
+  - Preserve the DC/Formality model-alignment fix: DC must use the same `DESIGNWARE_NOEXIST`/NVDLA DW fallback reference family as Formality for this R2N path.
+  - Re-close synthesis timing with the NVDLA fallback DW model, or explicitly decide whether the timing-clean VP2 build plus N2N/ATPG evidence is sufficient for the current milestone.

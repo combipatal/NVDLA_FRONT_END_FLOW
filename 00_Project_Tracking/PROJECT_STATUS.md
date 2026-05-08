@@ -6,7 +6,7 @@
 - Active design: `NV_NVDLA_partition_m`
 - Active functional synthesis run: `partition_m_4p0ns`
 - Active DFT synthesis run: `partition_m_4p0ns_dftcg`
-- Active Formality R2N debug synthesis run: `partition_m_4p0ns_dftcg_ghm_vp2`
+- Active Formality R2N debug synthesis run: `partition_m_4p0ns_dftcg_ghm_vp3_nvdw`
 - Active DFT insertion run: `partition_m_4p0ns_dftcg_const_reset_dft`
 - Active clock period: `4.0 ns`
 - Repository layout follows numbered stages: `1_vcs`, `2_synthesis`, `3_sta`, `4_dft`, `5_formality`, `6_sweep`.
@@ -31,7 +31,7 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
 - `dla_reset_rstn` is held inactive as `Constant 1` during scan because the same reset port also feeds the reset synchronizer data path.
 - Full DFT insertion from `partition_m_4p0ns_dftcg_const_reset_dft` completes with 32 scan chains and post-DFT DRC total violations `0`.
 - Scan-netlist STA setup is clean; async hold/removal is backend-deferred.
-- Formality R2N is still failing, but the root cause is narrower than before:
+- Formality R2N root cause has been isolated and fixed in a debug build:
   - DC now emits `guide_hier_map` guidance through `hdlin_enable_hier_map` and `set_verification_top`.
   - GHM R2N accepts `32` `hier_map` guidance commands.
   - The default fallback R2N reference filelist uses `SYNTHESIS` and `DESIGNWARE_NOEXIST` to use NVDLA DW fallback RTL and suppress simulation-only sync randomizer code.
@@ -40,21 +40,25 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
   - Re-synthesis with `DC_HDLIN_VERIFICATION_PRIORITY=1` and CMAC high verification priority produced `partition_m_4p0ns_dftcg_ghm_vp2`.
   - The VP2 R2N run fixed the previous unmatched compare points: `0(0)` unmatched reference/implementation compare points.
   - The VP2 R2N run also fixed the rejected `reg_constant` issue: `reg_constant` accepted `27`, rejected `0`.
-  - R2N still fails on matched CMAC carry-save tree DFF compare points, now first reported under `u_NV_NVDLA_cmac/u_core/u_mac_3/pp_out_l0n03_0_d1_reg_*`, so it is not signoff-clean.
-  - The remaining strongest clue is rejected `multiplier` guidance: VP2 reports `multiplier` accepted `0`, rejected `270`, mostly for CMAC `DW02_tree`/carry-save cells such as `u_tree_l4n*`, `u_tree_l3n*`, and `u_tree_sign_l*`.
+  - VP2 still failed on matched CMAC carry-save tree DFF compare points, first reported under `u_NV_NVDLA_cmac/u_core/u_mac_3/pp_out_l0n03_0_d1_reg_*`.
+  - The strongest clue was rejected `multiplier` guidance: VP2 reports `multiplier` accepted `0`, rejected `270`, mostly for CMAC `DW02_tree`/carry-save cells such as `u_tree_l4n*`, `u_tree_l3n*`, and `u_tree_sign_l*`.
+  - The root cause was a DC/Formality reference-model mismatch: VP2 DC synthesized the CMAC arithmetic from Synopsys `DW02_tree`, while the fast Formality R2N reference used `DESIGNWARE_NOEXIST` and therefore instantiated NVDLA fallback `NV_DW02_tree`.
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f` was added to force the same `DESIGNWARE_NOEXIST` fallback model into DC for debug.
+  - VP3 synthesis `partition_m_4p0ns_dftcg_ghm_vp3_nvdw` completed and generated DDC/netlist/SVF, but is timing-failing at 4.0 ns with critical path slack `-0.2117 ns`.
+  - VP3 R2N `partition_m_4p0ns_dftcg_ghm_vp3_nvdw_r2n` passed: `Verification SUCCEEDED`, `68301` passing compare points, `0` failing/aborted/unverified, total SVF guidance accepted `10872`, rejected `0`.
+  - `5_formality/scripts/run_fm_r2n.tcl` now reports rejected `uniquify` and `ununiquify` guidance in addition to `reg_constant` and `multiplier`.
   - A debug run with `FM_FAILING_POINT_LIMIT=200` reached `200` failing points; the first `200` failures are all under `u_NV_NVDLA_cmac/u_core/u_mac_5`.
   - A debug run with `FM_DONT_VERIFY_FILE=5_formality/1_input/dont_verify/NV_NVDLA_partition_m.r2n.cmac_mac5_pp_debug.lst` excluded `1152` MAC5 `pp_out_l0n*` DFF compare points, but the first `200` failures moved to `u_NV_NVDLA_cmac/u_core/u_mac_4`.
   - `analyze_points` on the baseline failing points found `11` unmatched cone inputs, `1` rejected guidance command, and `94` required inputs. The rejected guidance command is `reg_constant`.
   - `5_formality/scripts/run_fm_r2n.tcl` now supports `FM_FAILING_POINT_LIMIT` for failure-depth debug, `FM_DONT_VERIFY_FILE` for scoped `set_dont_verify_points` experiments, and `FM_ANALYZE_POINTS`/`FM_ANALYZE_LIMIT` for optional Formality root-cause analysis reports.
   - Direct Synopsys DWROOT mode is available with `FM_USE_DWROOT=1`, but the first run was deferred after a long verification-model build and `FM-424` DW02 tree warnings.
-- `DW02_tree` is a Synopsys DesignWare module used in the CMAC MAC datapath to compress multiple partial-product vectors into two carry-save outputs. The current R2N failure is interpreted as a reference-modeling mismatch around this carry-save representation, not as a DFT or timing failure.
+- `DW02_tree` is a Synopsys DesignWare module used in the CMAC MAC datapath to compress multiple partial-product vectors into two carry-save outputs. The observed R2N failure was a reference-modeling mismatch around this carry-save representation, not a DFT failure.
 - Formality N2N passes from pre-scan DDC to post-DFT scan DDC in functional mode.
 - TetraMAX stuck-at ATPG completes with DRC clean and test coverage `99.91%`.
 
 ## Open Items
 
-- Finish Formality R2N setup. Current focus is deterministic `DW02_tree`/carry-save modeling while keeping GHM guidance active.
-- Improve DC/Formality guidance around CMAC MAC `DW02_tree`/carry-save multiplier mapping. The rejected `reg_constant` issue has improved to `0` rejected commands in VP2, but `guide_multiplier` is still rejected and blocks R2N.
+- Re-close synthesis timing for the R2N-passing NVDLA fallback DW model, or document a deliberate milestone strategy that uses the timing-clean VP2/DFT/N2N/ATPG path while treating VP3 as R2N root-cause proof only.
 - Decide whether the remaining `first_stage_of_sync` placeholder black-boxes should be modeled explicitly or treated as benign placeholders.
 - Backend must fix or re-characterize max transition/capacitance violations.
 - Define a separate reset-test strategy if `dla_reset_rstn` assertion coverage is required.
