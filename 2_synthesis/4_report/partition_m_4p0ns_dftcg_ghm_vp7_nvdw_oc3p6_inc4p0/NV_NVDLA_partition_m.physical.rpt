@@ -1,0 +1,10 @@
+****************************************
+report_physical_constraints
+Version: W-2024.09-SP5-5
+Date: Fri May  8 19:27:55 2026
+****************************************
+
+ Design NV_NVDLA_partition_m
+ Unit is micron
+
+Skipping report_congestion. Set DC_REPORT_CONGESTION=1 to enable it.

@@ -1,0 +1,85 @@
+In mode: all_dft...
+  Pre-DFT DRC enabled
+
+Information: Starting test design rule checking. (TEST-222)
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_op_0/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_op_1/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_op_2/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_op_3/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_op_4/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_op_5/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_op_6/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_op_7/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_op_8/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_op_9/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_op_10/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_wg_0/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_wg_1/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_wg_2/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_wg_3/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_wg_4/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_wg_5/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_wg_6/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_wg_7/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+Warning: Clock gating cell test pin 'u_NV_NVDLA_cmac/u_core/u_slcg_wg_8/nvdla_core_clk_slcg_0/p_clkgate/TE' is unconnected inside hierarchy. Will be ignored.
+  Loading test protocol
+  ...basic checks...
+  ...basic sequential cell checks...
+  	...checking for scan equivalents...
+  ...checking vector rules...
+  ...checking pre-dft rules...
+
+-----------------------------------------------------------------
+Begin Topology violations...
+
+Warning: Input pin csb2cmac_a_req_pd[62] of cell u_NV_NVDLA_cmac (NV_NVDLA_cmac) is unconnected. It is assumed 'X' for the purpose of test. (TEST-332)
+Information: There are 1126 other pins with the same violation. (TEST-170)
+
+Topology violations completed...
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+Begin Pre-DFT violations...
+
+ Warning: Clock dla_reset_rstn cannot capture data with other clocks off. (D8-1)
+ Warning: Clock input CLK of DFF u_NV_NVDLA_cmac/u_core/u_cfg/op_done_d1_reg not active when clocks are set on. (D9-1)
+Information: There are 67134 other cells with the same violation. (TEST-171)
+ Warning: Clock dla_reset_rstn connects to data input (D) of DFF u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/d0_reg. (D10-1)
+
+Pre-DFT violations completed...
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+  DRC Report
+
+  Total violations: 68264
+
+-----------------------------------------------------------------
+
+1127 TOPOLOGY VIOLATIONS
+  1127 Unconnected input pin violations (TEST-332)
+
+67137 PRE-DFT VIOLATIONS
+     1 Clock not able to capture violation (D8)
+  67135 Clock_port not active when clocks set to on violations (D9)
+     1 Clock feeding data input violation (D10)
+
+
+Warning: Violations occurred during test design rule checking. (TEST-124)
+
+-----------------------------------------------------------------
+  Sequential Cell Report
+
+  67135 out of 67243 sequential cells have violations
+
+-----------------------------------------------------------------
+
+SEQUENTIAL CELLS WITH VIOLATIONS
+      *67135 cells have test design rule violations
+SEQUENTIAL CELLS WITHOUT VIOLATIONS
+      *  20 cells are valid non-scan cells
+      *  72 cells are valid scan cells
+      *  62 cells are non-scan shift-register cells
+
+Information: Test design rule checking completed. (TEST-123)
+1

@@ -1161,3 +1161,38 @@
   - Structural read warnings are recorded; ATPG DRC itself is clean.
 - Next action:
   - Decide whether VP8b coverage delta needs additional ATPG effort, fault classification, or is acceptable for the current frontend milestone.
+
+## 2026-05-08 - Frontend final report and generated report tracking
+
+- Command:
+  - `git ls-files 2_synthesis/4_report 3_sta/4_report 4_dft/4_report 5_formality/4_report`
+  - `git check-ignore -v <representative report files>`
+  - `du -sh 1_vcs/3_log 1_vcs/4_report 2_synthesis/3_log 2_synthesis/4_report 3_sta/3_log 3_sta/4_report 4_dft/3_log 4_dft/4_report 5_formality/3_log 5_formality/4_report`
+  - Created `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`
+  - `git restore --staged 1_vcs/3_log 2_synthesis/3_log 3_sta/3_log 4_dft/3_log 5_formality/3_log`
+- Stage: Frontend closure documentation
+- Result: `RECORDED`
+- Input artifacts:
+  - `00_Project_Tracking/RUN_LOG.md`
+  - `00_Project_Tracking/RESULT_SUMMARY.md`
+  - `00_Project_Tracking/PROJECT_STATUS.md`
+  - Generated reports under numbered stage `4_report` directories
+- Output artifacts:
+  - `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`
+- Key reports:
+  - `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`
+- Pass/fail evidence:
+  - Existing git tracking before this action included only `.gitkeep` files under `*_report` directories.
+  - `.gitignore` excludes generated logs/reports by default through `*.log`, `*.rpt`, `*/3_log/*`, and `*/4_report/*`.
+  - Explicit user request on 2026-05-08 overrides the default generated-artifact policy for scripts and reports.
+  - User later clarified that long logs should be excluded if too large/noisy; generated `3_log` files were removed from staging.
+  - Reports/logs size check found about `1.55 GB` total across stage log/report directories and no single file above `90 MB`.
+- Warnings or violations:
+  - Tracking generated reports will significantly increase repository size.
+  - Generated logs are intentionally left ignored because they are long and contain extensive generated whitespace/noise.
+  - Generated implementation outputs such as DDC, netlist, SDF, SPF, STIL, and fault databases remain ignored unless separately requested.
+  - `git diff --cached --check` on generated logs produced very large trailing-whitespace output; logs were excluded from tracking.
+- Waiver/defer reason:
+  - Generated report tracking is intentional by explicit user request.
+- Next action:
+  - Force-add scripts/reports, commit, and push.

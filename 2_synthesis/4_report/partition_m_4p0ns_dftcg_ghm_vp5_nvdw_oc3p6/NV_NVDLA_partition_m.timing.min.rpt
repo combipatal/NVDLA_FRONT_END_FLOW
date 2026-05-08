@@ -1,0 +1,1821 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 5
+        -input_pins
+        -nets
+        -max_paths 50
+        -transition_time
+        -capacitance
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-5
+Date   : Fri May  8 17:19:55 2026
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p95v125c   Library: saed32rvt_ss0p95v125c
+Wire Load Model Mode: Inactive.
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2_reg
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d3_reg
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2_reg/CLK (DFFARX1_RVT)
+                                                                  0.0500    0.0000     0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2_reg/Q (DFFARX1_RVT)
+                                                                  0.0309    0.1761     0.1761 f
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2 (net)
+                                                1       0.9050              0.0000     0.1761 f
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d3_reg/D (DFFARX2_RVT)
+                                                                  0.0309    0.0000 *   0.1762 f
+  data arrival time                                                                    0.1762
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d3_reg/CLK (DFFARX2_RVT)      0.0000     0.0000 r
+  library hold time                                                        -0.0013    -0.0013
+  data required time                                                                  -0.0013
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0013
+  data arrival time                                                                   -0.1762
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.1775
+
+
+  Startpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/d0_reg
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/d0_reg/CLK (SDFFARX1_RVT)
+                                                                  0.0500    0.0000     0.0000 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/d0_reg/Q (SDFFARX1_RVT)
+                                                                  0.0277    0.1723     0.1723 f
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/d0 (net)
+                                                1       0.4396              0.0000     0.1723 f
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/D (DFFARX1_RVT)
+                                                                  0.0277    0.0000 *   0.1723 f
+  data arrival time                                                                    0.1723
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/CLK (DFFARX1_RVT)
+                                                                            0.0000     0.0000 r
+  library hold time                                                        -0.0056    -0.0056
+  data required time                                                                  -0.0056
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0056
+  data arrival time                                                                   -0.1723
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.1779
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d1_reg
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2_reg
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d1_reg/CLK (SDFFARX1_RVT)
+                                                                  0.0500    0.0000     0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d1_reg/Q (SDFFARX1_RVT)
+                                                                  0.0281    0.1728     0.1728 f
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d1 (net)
+                                                1       0.4925              0.0000     0.1728 f
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2_reg/D (DFFARX1_RVT)
+                                                                  0.0281    0.0000 *   0.1728 f
+  data arrival time                                                                    0.1728
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2_reg/CLK (DFFARX1_RVT)      0.0000     0.0000 r
+  library hold time                                                        -0.0058    -0.0058
+  data required time                                                                  -0.0058
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0058
+  data arrival time                                                                   -0.1728
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.1787
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d1_reg_0_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d2_reg_0_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d1_reg_0_/CLK (SDFFARX1_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d1_reg_0_/Q (SDFFARX1_RVT)
+                                                                  0.0419    0.1883     0.1883 f
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d1_0_ (net)
+                                                2       2.4173              0.0000     0.1883 f
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d2_reg_0_/D (DFFARX1_RVT)
+                                                                  0.0419    0.0000 *   0.1883 f
+  data arrival time                                                                    0.1883
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d2_reg_0_/CLK (DFFARX1_RVT)        0.0000     0.0000 r
+  library hold time                                                        -0.0124    -0.0124
+  data required time                                                                  -0.0124
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0124
+  data arrival time                                                                   -0.1883
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2007
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2_reg
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d3_reg
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2_reg/CLK (DFFARX1_RVT)
+                                                                  0.0500    0.0000     0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2_reg/Q (DFFARX1_RVT)
+                                                                  0.0331    0.1837     0.1837 r
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2 (net)
+                                                1       0.9153              0.0000     0.1837 r
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d3_reg/D (DFFARX2_RVT)
+                                                                  0.0331    0.0000 *   0.1837 r
+  data arrival time                                                                    0.1837
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d3_reg/CLK (DFFARX2_RVT)      0.0000     0.0000 r
+  library hold time                                                        -0.0180    -0.0180
+  data required time                                                                  -0.0180
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0180
+  data arrival time                                                                   -0.1837
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2017
+
+
+  Startpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/d0_reg
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/d0_reg/CLK (SDFFARX1_RVT)
+                                                                  0.0500    0.0000     0.0000 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/d0_reg/Q (SDFFARX1_RVT)
+                                                                  0.0297    0.1804     0.1804 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/d0 (net)
+                                                1       0.4500              0.0000     0.1804 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/D (DFFARX1_RVT)
+                                                                  0.0297    0.0000 *   0.1804 r
+  data arrival time                                                                    0.1804
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/CLK (DFFARX1_RVT)
+                                                                            0.0000     0.0000 r
+  library hold time                                                        -0.0224    -0.0224
+  data required time                                                                  -0.0224
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0224
+  data arrival time                                                                   -0.1804
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2028
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d1_reg
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2_reg
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d1_reg/CLK (SDFFARX1_RVT)
+                                                                  0.0500    0.0000     0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d1_reg/Q (SDFFARX1_RVT)
+                                                                  0.0301    0.1809     0.1809 r
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d1 (net)
+                                                1       0.5028              0.0000     0.1809 r
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2_reg/D (DFFARX1_RVT)
+                                                                  0.0301    0.0000 *   0.1809 r
+  data arrival time                                                                    0.1809
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d2_reg/CLK (DFFARX1_RVT)      0.0000     0.0000 r
+  library hold time                                                        -0.0225    -0.0225
+  data required time                                                                  -0.0225
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0225
+  data arrival time                                                                   -0.1809
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2035
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d1_reg_0_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d2_reg_0_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d1_reg_0_/CLK (SDFFARX1_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d1_reg_0_/Q (SDFFARX1_RVT)
+                                                                  0.0447    0.1963     0.1963 r
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d1_0_ (net)
+                                                2       2.4332              0.0000     0.1963 r
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d2_reg_0_/D (DFFARX1_RVT)
+                                                                  0.0447    0.0000 *   0.1963 r
+  data arrival time                                                                    0.1963
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d2_reg_0_/CLK (DFFARX1_RVT)        0.0000     0.0000 r
+  library hold time                                                        -0.0270    -0.0270
+  data required time                                                                  -0.0270
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0270
+  data arrival time                                                                   -0.1963
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2233
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_cfg/op_en_d1_reg
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_cfg/cfg_reg_en_reg
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_cfg/op_en_d1_reg/CLK (SDFFARX1_RVT)    0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_cfg/op_en_d1_reg/QN (SDFFARX1_RVT)     0.0354    0.1156     0.1156 f
+  u_NV_NVDLA_cmac/u_core/u_cfg/n8 (net)         1       0.4835              0.0000     0.1156 f
+  u_NV_NVDLA_cmac/u_core/u_cfg/U12/A2 (OA21X1_RVT)                0.0354    0.0000 *   0.1156 f
+  u_NV_NVDLA_cmac/u_core/u_cfg/U12/Y (OA21X1_RVT)                 0.0247    0.0622     0.1778 f
+  u_NV_NVDLA_cmac/u_core/u_cfg/cfg_reg_en_w (net)
+                                                1       0.4141              0.0000     0.1778 f
+  u_NV_NVDLA_cmac/u_core/u_cfg/cfg_reg_en_reg/D (SDFFARX1_RVT)    0.0247    0.0000 *   0.1778 f
+  data arrival time                                                                    0.1778
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_cfg/cfg_reg_en_reg/CLK (SDFFARX1_RVT)            0.0000     0.0000 r
+  library hold time                                                        -0.0541    -0.0541
+  data required time                                                                  -0.0541
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0541
+  data arrival time                                                                   -0.1778
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2319
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_mac_2/pp_pvld_d1_reg_0_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_2/pp_pvld_d2_reg_0_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_2/pp_pvld_d1_reg_0_/CLK (SDFFARX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_mac_2/pp_pvld_d1_reg_0_/Q (SDFFARX2_RVT)
+                                                                  0.0579    0.2204     0.2204 f
+  u_NV_NVDLA_cmac/u_core/u_mac_2/pp_pvld_d1_0_ (net)
+                                                2       8.2334              0.0000     0.2204 f
+  u_NV_NVDLA_cmac/u_core/u_mac_2/pp_pvld_d2_reg_0_/D (DFFARX1_RVT)
+                                                                  0.0579    0.0008 *   0.2212 f
+  data arrival time                                                                    0.2212
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_2/pp_pvld_d2_reg_0_/CLK (DFFARX1_RVT)        0.0000     0.0000 r
+  library hold time                                                        -0.0200    -0.0200
+  data required time                                                                  -0.0200
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0200
+  data arrival time                                                                   -0.2212
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2412
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_mac_5/pp_pvld_d1_reg_0_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_5/pp_pvld_d2_reg_0_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_5/pp_pvld_d1_reg_0_/CLK (SDFFARX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_mac_5/pp_pvld_d1_reg_0_/Q (SDFFARX2_RVT)
+                                                                  0.0617    0.2235     0.2235 f
+  u_NV_NVDLA_cmac/u_core/u_mac_5/pp_pvld_d1_0_ (net)
+                                                2       9.2124              0.0000     0.2235 f
+  u_NV_NVDLA_cmac/u_core/u_mac_5/pp_pvld_d2_reg_0_/D (DFFARX1_RVT)
+                                                                  0.0617    0.0009 *   0.2244 f
+  data arrival time                                                                    0.2244
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_5/pp_pvld_d2_reg_0_/CLK (DFFARX1_RVT)        0.0000     0.0000 r
+  library hold time                                                        -0.0219    -0.0219
+  data required time                                                                  -0.0219
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0219
+  data arrival time                                                                   -0.2244
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2463
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_mac_7/u_exp/wt_actv_exp_clr_reg
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_7/u_exp/wt_actv_exp_pvld_reg
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_7/u_exp/wt_actv_exp_clr_reg/CLK (SDFFARX1_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_mac_7/u_exp/wt_actv_exp_clr_reg/QN (SDFFARX1_RVT)
+                                                                  0.0368    0.1172     0.1172 f
+  u_NV_NVDLA_cmac/u_core/u_mac_7/u_exp/n4846 (net)
+                                                1       0.6122              0.0000     0.1172 f
+  u_NV_NVDLA_cmac/u_core/u_mac_7/u_exp/U4418/A2 (AO21X1_RVT)      0.0368    0.0000 *   0.1173 f
+  u_NV_NVDLA_cmac/u_core/u_mac_7/u_exp/U4418/Y (AO21X1_RVT)       0.0215    0.0763     0.1935 f
+  u_NV_NVDLA_cmac/u_core/u_mac_7/u_exp/n4844 (net)
+                                                1       0.7802              0.0000     0.1935 f
+  u_NV_NVDLA_cmac/u_core/u_mac_7/u_exp/wt_actv_exp_pvld_reg/D (SDFFARX1_RVT)
+                                                                  0.0215    0.0000 *   0.1935 f
+  data arrival time                                                                    0.1935
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_7/u_exp/wt_actv_exp_pvld_reg/CLK (SDFFARX1_RVT)
+                                                                            0.0000     0.0000 r
+  library hold time                                                        -0.0530    -0.0530
+  data required time                                                                  -0.0530
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0530
+  data arrival time                                                                   -0.1935
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2465
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_mac_6/pp_pvld_d1_reg_0_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_6/pp_pvld_d2_reg_0_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_6/pp_pvld_d1_reg_0_/CLK (SDFFARX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_mac_6/pp_pvld_d1_reg_0_/Q (SDFFARX2_RVT)
+                                                                  0.0628    0.2243     0.2243 f
+  u_NV_NVDLA_cmac/u_core/u_mac_6/pp_pvld_d1_0_ (net)
+                                                2       9.4784              0.0000     0.2243 f
+  u_NV_NVDLA_cmac/u_core/u_mac_6/pp_pvld_d2_reg_0_/D (DFFARX1_RVT)
+                                                                  0.0628    0.0010 *   0.2253 f
+  data arrival time                                                                    0.2253
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_6/pp_pvld_d2_reg_0_/CLK (DFFARX1_RVT)        0.0000     0.0000 r
+  library hold time                                                        -0.0224    -0.0224
+  data required time                                                                  -0.0224
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0224
+  data arrival time                                                                   -0.2253
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2477
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d3_reg
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d4_reg
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d3_reg/CLK (DFFARX2_RVT)
+                                                                  0.0500    0.0000     0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d3_reg/Q (DFFARX2_RVT)
+                                                                  0.0654    0.2268     0.2268 f
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d3 (net)
+                                                1      10.1531              0.0000     0.2268 f
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d4_reg/D (DFFARX1_RVT)
+                                                                  0.0654    0.0011 *   0.2279 f
+  data arrival time                                                                    0.2279
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_rt_out/out_rt_done_d4_reg/CLK (DFFARX1_RVT)      0.0000     0.0000 r
+  library hold time                                                        -0.0234    -0.0234
+  data required time                                                                  -0.0234
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0234
+  data arrival time                                                                   -0.2279
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2514
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_mac_1/pp_pvld_d1_reg_0_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_1/pp_pvld_d2_reg_0_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_1/pp_pvld_d1_reg_0_/CLK (SDFFARX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_mac_1/pp_pvld_d1_reg_0_/Q (SDFFARX2_RVT)
+                                                                  0.0663    0.2272     0.2272 f
+  u_NV_NVDLA_cmac/u_core/u_mac_1/pp_pvld_d1_0_ (net)
+                                                2      10.3786              0.0000     0.2272 f
+  u_NV_NVDLA_cmac/u_core/u_mac_1/pp_pvld_d2_reg_0_/D (DFFARX1_RVT)
+                                                                  0.0663    0.0012 *   0.2283 f
+  data arrival time                                                                    0.2283
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_1/pp_pvld_d2_reg_0_/CLK (DFFARX1_RVT)        0.0000     0.0000 r
+  library hold time                                                        -0.0237    -0.0237
+  data required time                                                                  -0.0237
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0237
+  data arrival time                                                                   -0.2283
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2521
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d2_reg_0_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_3/mac_out_pvld_reg
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d2_reg_0_/CLK (DFFARX1_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d2_reg_0_/Q (DFFARX1_RVT)
+                                                                  0.0308    0.1760     0.1760 f
+  u_NV_NVDLA_cmac/u_core/u_mac_3/pp_pvld_d2_0_ (net)
+                                                2       0.8861              0.0000     0.1760 f
+  u_NV_NVDLA_cmac/u_core/u_mac_3/U9640/A (NBUFFX2_RVT)            0.0308    0.0000 *   0.1760 f
+  u_NV_NVDLA_cmac/u_core/u_mac_3/U9640/Y (NBUFFX2_RVT)            0.0453    0.0664     0.2424 f
+  u_NV_NVDLA_cmac/u_core/u_mac_3/n2371 (net)
+                                               10       7.3661              0.0000     0.2424 f
+  u_NV_NVDLA_cmac/u_core/u_mac_3/mac_out_pvld_reg/D (DFFARX1_RVT)
+                                                                  0.0453    0.0000 *   0.2425 f
+  data arrival time                                                                    0.2425
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_3/mac_out_pvld_reg/CLK (DFFARX1_RVT)         0.0000     0.0000 r
+  library hold time                                                        -0.0140    -0.0140
+  data required time                                                                  -0.0140
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0140
+  data arrival time                                                                   -0.2425
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2565
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_799_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_799_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_799_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_799_/QN (SDFFX2_RVT)
+                                                                  0.0384    0.1180     0.1180 f
+  u_NV_NVDLA_cmac/u_core/u_active/n33515 (net)
+                                                1       0.4183              0.0000     0.1180 f
+  u_NV_NVDLA_cmac/u_core/u_active/U15518/A3 (OAI22X1_RVT)         0.0384    0.0000 *   0.1180 f
+  u_NV_NVDLA_cmac/u_core/u_active/U15518/Y (OAI22X1_RVT)          0.0191    0.0881     0.2061 r
+  u_NV_NVDLA_cmac/u_core/u_active/n69038 (net)
+                                                1       0.7062              0.0000     0.2061 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_799_/D (SDFFX2_RVT)
+                                                                  0.0191    0.0000 *   0.2061 r
+  data arrival time                                                                    0.2061
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_799_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2061
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2605
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_632_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_632_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_632_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_632_/QN (SDFFX2_RVT)
+                                                                  0.0386    0.1182     0.1182 f
+  u_NV_NVDLA_cmac/u_core/u_active/n43520 (net)
+                                                1       0.4382              0.0000     0.1182 f
+  u_NV_NVDLA_cmac/u_core/u_active/U20278/A3 (OAI22X1_RVT)         0.0386    0.0000 *   0.1182 f
+  u_NV_NVDLA_cmac/u_core/u_active/U20278/Y (OAI22X1_RVT)          0.0189    0.0880     0.2062 r
+  u_NV_NVDLA_cmac/u_core/u_active/n72985 (net)
+                                                1       0.6855              0.0000     0.2062 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_632_/D (SDFFX2_RVT)
+                                                                  0.0189    0.0000 *   0.2062 r
+  data arrival time                                                                    0.2062
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_632_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0544    -0.0544
+  data required time                                                                  -0.0544
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0544
+  data arrival time                                                                   -0.2062
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2606
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_344_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_344_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_344_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_344_/QN (SDFFX2_RVT)
+                                                                  0.0387    0.1183     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/n42284 (net)
+                                                1       0.4538              0.0000     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U19977/A3 (OAI22X1_RVT)         0.0387    0.0000 *   0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U19977/Y (OAI22X1_RVT)          0.0188    0.0879     0.2062 r
+  u_NV_NVDLA_cmac/u_core/u_active/n72697 (net)
+                                                1       0.6663              0.0000     0.2062 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_344_/D (SDFFX2_RVT)
+                                                                  0.0188    0.0000 *   0.2062 r
+  data arrival time                                                                    0.2062
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_344_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0544    -0.0544
+  data required time                                                                  -0.0544
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0544
+  data arrival time                                                                   -0.2062
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2606
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_471_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_471_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_471_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_471_/QN (SDFFX2_RVT)
+                                                                  0.0385    0.1182     0.1182 f
+  u_NV_NVDLA_cmac/u_core/u_active/n30420 (net)
+                                                1       0.4342              0.0000     0.1182 f
+  u_NV_NVDLA_cmac/u_core/u_active/U14008/A3 (OAI22X1_RVT)         0.0385    0.0000 *   0.1182 f
+  u_NV_NVDLA_cmac/u_core/u_active/U14008/Y (OAI22X1_RVT)          0.0190    0.0881     0.2062 r
+  u_NV_NVDLA_cmac/u_core/u_active/n67685 (net)
+                                                1       0.7017              0.0000     0.2062 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_471_/D (SDFFX2_RVT)
+                                                                  0.0190    0.0000 *   0.2062 r
+  data arrival time                                                                    0.2062
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_471_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2062
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2607
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_557_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_557_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_557_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_557_/QN (SDFFX2_RVT)
+                                                                  0.0385    0.1181     0.1181 f
+  u_NV_NVDLA_cmac/u_core/u_active/n35371 (net)
+                                                1       0.4246              0.0000     0.1181 f
+  u_NV_NVDLA_cmac/u_core/u_active/U16414/A3 (OAI22X1_RVT)         0.0385    0.0000 *   0.1181 f
+  u_NV_NVDLA_cmac/u_core/u_active/U16414/Y (OAI22X1_RVT)          0.0192    0.0882     0.2063 r
+  u_NV_NVDLA_cmac/u_core/u_active/n69825 (net)
+                                                1       0.7226              0.0000     0.2063 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_557_/D (SDFFX2_RVT)
+                                                                  0.0192    0.0000 *   0.2063 r
+  data arrival time                                                                    0.2063
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_557_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2063
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2608
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_501_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_501_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_501_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_501_/QN (SDFFX2_RVT)
+                                                                  0.0387    0.1183     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/n30486 (net)
+                                                1       0.4552              0.0000     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U14044/A3 (OAI22X1_RVT)         0.0387    0.0000 *   0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U14044/Y (OAI22X1_RVT)          0.0190    0.0880     0.2064 r
+  u_NV_NVDLA_cmac/u_core/u_active/n67719 (net)
+                                                1       0.6901              0.0000     0.2064 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_501_/D (SDFFX2_RVT)
+                                                                  0.0190    0.0000 *   0.2064 r
+  data arrival time                                                                    0.2064
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_501_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0544    -0.0544
+  data required time                                                                  -0.0544
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0544
+  data arrival time                                                                   -0.2064
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2608
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_781_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_781_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_781_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_781_/QN (SDFFX2_RVT)
+                                                                  0.0387    0.1183     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/n33476 (net)
+                                                1       0.4557              0.0000     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U15497/A3 (OAI22X1_RVT)         0.0387    0.0000 *   0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U15497/Y (OAI22X1_RVT)          0.0190    0.0881     0.2064 r
+  u_NV_NVDLA_cmac/u_core/u_active/n69024 (net)
+                                                1       0.6926              0.0000     0.2064 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_781_/D (SDFFX2_RVT)
+                                                                  0.0190    0.0000 *   0.2064 r
+  data arrival time                                                                    0.2064
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_781_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0544    -0.0544
+  data required time                                                                  -0.0544
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0544
+  data arrival time                                                                   -0.2064
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2609
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_mac_1/pp_pvld_d2_reg_0_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_1/mac_out_pvld_reg
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_1/pp_pvld_d2_reg_0_/CLK (DFFARX1_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_mac_1/pp_pvld_d2_reg_0_/Q (DFFARX1_RVT)
+                                                                  0.0307    0.1759     0.1759 f
+  u_NV_NVDLA_cmac/u_core/u_mac_1/pp_pvld_d2_0_ (net)
+                                                2       0.8729              0.0000     0.1759 f
+  u_NV_NVDLA_cmac/u_core/u_mac_1/U6934/A (NBUFFX2_RVT)            0.0307    0.0000 *   0.1759 f
+  u_NV_NVDLA_cmac/u_core/u_mac_1/U6934/Y (NBUFFX2_RVT)            0.0490    0.0690     0.2449 f
+  u_NV_NVDLA_cmac/u_core/u_mac_1/n6628 (net)
+                                                9       8.2586              0.0000     0.2449 f
+  u_NV_NVDLA_cmac/u_core/u_mac_1/mac_out_pvld_reg/D (DFFARX1_RVT)
+                                                                  0.0490    0.0003 *   0.2451 f
+  data arrival time                                                                    0.2451
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_1/mac_out_pvld_reg/CLK (DFFARX1_RVT)         0.0000     0.0000 r
+  library hold time                                                        -0.0158    -0.0158
+  data required time                                                                  -0.0158
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0158
+  data arrival time                                                                   -0.2451
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2609
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_566_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_566_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_566_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_566_/QN (SDFFX2_RVT)
+                                                                  0.0401    0.1204     0.1204 f
+  u_NV_NVDLA_cmac/u_core/u_active/n30624 (net)
+                                                1       0.7103              0.0000     0.1204 f
+  u_NV_NVDLA_cmac/u_core/u_active/U14105/A3 (OAI22X1_RVT)         0.0401    0.0000 *   0.1204 f
+  u_NV_NVDLA_cmac/u_core/u_active/U14105/Y (OAI22X1_RVT)          0.0170    0.0867     0.2072 r
+  u_NV_NVDLA_cmac/u_core/u_active/n67782 (net)
+                                                1       0.4099              0.0000     0.2072 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_566_/D (SDFFX2_RVT)
+                                                                  0.0170    0.0000 *   0.2072 r
+  data arrival time                                                                    0.2072
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_566_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0538    -0.0538
+  data required time                                                                  -0.0538
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0538
+  data arrival time                                                                   -0.2072
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2609
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_236_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_236_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_236_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_236_/QN (SDFFX2_RVT)
+                                                                  0.0403    0.1207     0.1207 f
+  u_NV_NVDLA_cmac/u_core/u_active/n27521 (net)
+                                                1       0.7380              0.0000     0.1207 f
+  u_NV_NVDLA_cmac/u_core/u_active/U12552/A3 (OAI22X1_RVT)         0.0403    0.0000 *   0.1207 f
+  u_NV_NVDLA_cmac/u_core/u_active/U12552/Y (OAI22X1_RVT)          0.0169    0.0866     0.2073 r
+  u_NV_NVDLA_cmac/u_core/u_active/n66431 (net)
+                                                1       0.3821              0.0000     0.2073 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_236_/D (SDFFX2_RVT)
+                                                                  0.0169    0.0000 *   0.2073 r
+  data arrival time                                                                    0.2073
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_236_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0537    -0.0537
+  data required time                                                                  -0.0537
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0537
+  data arrival time                                                                   -0.2073
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2610
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_268_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_268_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_268_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_268_/QN (SDFFX2_RVT)
+                                                                  0.0387    0.1183     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/n29993 (net)
+                                                1       0.4562              0.0000     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U13820/A3 (OAI22X1_RVT)         0.0387    0.0000 *   0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U13820/Y (OAI22X1_RVT)          0.0191    0.0882     0.2065 r
+  u_NV_NVDLA_cmac/u_core/u_active/n67488 (net)
+                                                1       0.7090              0.0000     0.2065 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_268_/D (SDFFX2_RVT)
+                                                                  0.0191    0.0000 *   0.2065 r
+  data arrival time                                                                    0.2065
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_268_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2065
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2610
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt3_actv_data_reg_979_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt3_actv_data_reg_979_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt3_actv_data_reg_979_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt3_actv_data_reg_979_/QN (SDFFX2_RVT)
+                                                                  0.0387    0.1184     0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/n38696 (net)
+                                                1       0.4639              0.0000     0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/U18077/A3 (OAI22X1_RVT)         0.0387    0.0000 *   0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/U18077/Y (OAI22X1_RVT)          0.0190    0.0881     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/n71276 (net)
+                                                1       0.7008              0.0000     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt3_actv_data_reg_979_/D (SDFFX2_RVT)
+                                                                  0.0190    0.0000 *   0.2066 r
+  data arrival time                                                                    0.2066
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt3_actv_data_reg_979_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2066
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2610
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_342_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_342_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_342_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_342_/QN (SDFFX2_RVT)
+                                                                  0.0387    0.1184     0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/n47136 (net)
+                                                1       0.4625              0.0000     0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/U21291/A3 (OAI22X1_RVT)         0.0387    0.0000 *   0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/U21291/Y (OAI22X1_RVT)          0.0191    0.0882     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/n74053 (net)
+                                                1       0.7032              0.0000     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_342_/D (SDFFX2_RVT)
+                                                                  0.0191    0.0000 *   0.2066 r
+  data arrival time                                                                    0.2066
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_342_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2066
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2610
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_329_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_329_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_329_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_329_/QN (SDFFX2_RVT)
+                                                                  0.0404    0.1208     0.1208 f
+  u_NV_NVDLA_cmac/u_core/u_active/n34893 (net)
+                                                1       0.7519              0.0000     0.1208 f
+  u_NV_NVDLA_cmac/u_core/u_active/U16221/A3 (OAI22X1_RVT)         0.0404    0.0000 *   0.1208 f
+  u_NV_NVDLA_cmac/u_core/u_active/U16221/Y (OAI22X1_RVT)          0.0168    0.0866     0.2074 r
+  u_NV_NVDLA_cmac/u_core/u_active/n69605 (net)
+                                                1       0.3740              0.0000     0.2074 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_329_/D (SDFFX2_RVT)
+                                                                  0.0168    0.0000 *   0.2074 r
+  data arrival time                                                                    0.2074
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_329_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0537    -0.0537
+  data required time                                                                  -0.0537
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0537
+  data arrival time                                                                   -0.2074
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2610
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_797_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_797_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_797_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_797_/QN (SDFFX2_RVT)
+                                                                  0.0386    0.1182     0.1182 f
+  u_NV_NVDLA_cmac/u_core/u_active/n49104 (net)
+                                                1       0.4413              0.0000     0.1182 f
+  u_NV_NVDLA_cmac/u_core/u_active/U21785/A3 (OAI22X1_RVT)         0.0386    0.0000 *   0.1182 f
+  u_NV_NVDLA_cmac/u_core/u_active/U21785/Y (OAI22X1_RVT)          0.0192    0.0883     0.2065 r
+  u_NV_NVDLA_cmac/u_core/u_active/n73598 (net)
+                                                1       0.7302              0.0000     0.2065 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_797_/D (SDFFX2_RVT)
+                                                                  0.0192    0.0000 *   0.2065 r
+  data arrival time                                                                    0.2065
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_797_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2065
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2610
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_564_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_564_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_564_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_564_/QN (SDFFX2_RVT)
+                                                                  0.0402    0.1205     0.1205 f
+  u_NV_NVDLA_cmac/u_core/u_active/n30620 (net)
+                                                1       0.7177              0.0000     0.1205 f
+  u_NV_NVDLA_cmac/u_core/u_active/U14102/A3 (OAI22X1_RVT)         0.0402    0.0000 *   0.1205 f
+  u_NV_NVDLA_cmac/u_core/u_active/U14102/Y (OAI22X1_RVT)          0.0171    0.0868     0.2073 r
+  u_NV_NVDLA_cmac/u_core/u_active/n67784 (net)
+                                                1       0.4113              0.0000     0.2073 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_564_/D (SDFFX2_RVT)
+                                                                  0.0171    0.0000 *   0.2073 r
+  data arrival time                                                                    0.2073
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_564_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0538    -0.0538
+  data required time                                                                  -0.0538
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0538
+  data arrival time                                                                   -0.2073
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2610
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_515_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_515_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_515_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_515_/QN (SDFFX2_RVT)
+                                                                  0.0388    0.1185     0.1185 f
+  u_NV_NVDLA_cmac/u_core/u_active/n35279 (net)
+                                                1       0.4773              0.0000     0.1185 f
+  u_NV_NVDLA_cmac/u_core/u_active/U16363/A3 (OAI22X1_RVT)         0.0388    0.0000 *   0.1185 f
+  u_NV_NVDLA_cmac/u_core/u_active/U16363/Y (OAI22X1_RVT)          0.0189    0.0881     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/n69787 (net)
+                                                1       0.6869              0.0000     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_515_/D (SDFFX2_RVT)
+                                                                  0.0189    0.0000 *   0.2066 r
+  data arrival time                                                                    0.2066
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_515_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0544    -0.0544
+  data required time                                                                  -0.0544
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0544
+  data arrival time                                                                   -0.2066
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2610
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_455_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_455_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_455_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_455_/QN (SDFFX2_RVT)
+                                                                  0.0387    0.1184     0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/n30385 (net)
+                                                1       0.4671              0.0000     0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/U13987/A3 (OAI22X1_RVT)         0.0387    0.0000 *   0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/U13987/Y (OAI22X1_RVT)          0.0190    0.0882     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/n67669 (net)
+                                                1       0.7002              0.0000     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_455_/D (SDFFX2_RVT)
+                                                                  0.0190    0.0000 *   0.2066 r
+  data arrival time                                                                    0.2066
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_455_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2066
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2611
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_340_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_340_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_340_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_340_/QN (SDFFX2_RVT)
+                                                                  0.0387    0.1183     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/n42264 (net)
+                                                1       0.4551              0.0000     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U19971/A3 (OAI22X1_RVT)         0.0387    0.0000 *   0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U19971/Y (OAI22X1_RVT)          0.0192    0.0883     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/n72685 (net)
+                                                1       0.7205              0.0000     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_340_/D (SDFFX2_RVT)
+                                                                  0.0192    0.0000 *   0.2066 r
+  data arrival time                                                                    0.2066
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt1_actv_data_reg_340_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2066
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2611
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt3_actv_data_reg_599_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt3_actv_data_reg_599_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt3_actv_data_reg_599_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt3_actv_data_reg_599_/QN (SDFFX2_RVT)
+                                                                  0.0386    0.1183     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/n37884 (net)
+                                                1       0.4506              0.0000     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U17709/A3 (OAI22X1_RVT)         0.0386    0.0000 *   0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U17709/Y (OAI22X1_RVT)          0.0192    0.0883     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/n70888 (net)
+                                                1       0.7276              0.0000     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt3_actv_data_reg_599_/D (SDFFX2_RVT)
+                                                                  0.0192    0.0000 *   0.2066 r
+  data arrival time                                                                    0.2066
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt3_actv_data_reg_599_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2066
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2611
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_549_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_549_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_549_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_549_/QN (SDFFX2_RVT)
+                                                                  0.0388    0.1185     0.1185 f
+  u_NV_NVDLA_cmac/u_core/u_active/n48034 (net)
+                                                1       0.4715              0.0000     0.1185 f
+  u_NV_NVDLA_cmac/u_core/u_active/U21524/A3 (OAI22X1_RVT)         0.0388    0.0000 *   0.1185 f
+  u_NV_NVDLA_cmac/u_core/u_active/U21524/Y (OAI22X1_RVT)          0.0190    0.0882     0.2067 r
+  u_NV_NVDLA_cmac/u_core/u_active/n73846 (net)
+                                                1       0.7025              0.0000     0.2067 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_549_/D (SDFFX2_RVT)
+                                                                  0.0190    0.0000 *   0.2067 r
+  data arrival time                                                                    0.2067
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_549_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2067
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2611
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_932_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_932_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_932_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_932_/QN (SDFFX2_RVT)
+                                                                  0.0387    0.1184     0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/n33794 (net)
+                                                1       0.4660              0.0000     0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/U15628/A3 (OAI22X1_RVT)         0.0387    0.0000 *   0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/U15628/Y (OAI22X1_RVT)          0.0191    0.0882     0.2067 r
+  u_NV_NVDLA_cmac/u_core/u_active/n69177 (net)
+                                                1       0.7100              0.0000     0.2067 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_932_/D (SDFFX2_RVT)
+                                                                  0.0191    0.0000 *   0.2067 r
+  data arrival time                                                                    0.2067
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_932_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2067
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2611
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_148_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_148_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_148_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_148_/QN (SDFFX2_RVT)
+                                                                  0.0404    0.1208     0.1208 f
+  u_NV_NVDLA_cmac/u_core/u_active/n32135 (net)
+                                                1       0.7582              0.0000     0.1208 f
+  u_NV_NVDLA_cmac/u_core/u_active/U14913/A3 (OAI22X1_RVT)         0.0404    0.0000 *   0.1208 f
+  u_NV_NVDLA_cmac/u_core/u_active/U14913/Y (OAI22X1_RVT)          0.0168    0.0866     0.2074 r
+  u_NV_NVDLA_cmac/u_core/u_active/n68393 (net)
+                                                1       0.3778              0.0000     0.2074 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_148_/D (SDFFX2_RVT)
+                                                                  0.0168    0.0000 *   0.2074 r
+  data arrival time                                                                    0.2074
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_148_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0537    -0.0537
+  data required time                                                                  -0.0537
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0537
+  data arrival time                                                                   -0.2074
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2611
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt2_actv_data_reg_724_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt2_actv_data_reg_724_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt2_actv_data_reg_724_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt2_actv_data_reg_724_/QN (SDFFX2_RVT)
+                                                                  0.0404    0.1208     0.1208 f
+  u_NV_NVDLA_cmac/u_core/u_active/n40573 (net)
+                                                1       0.7595              0.0000     0.1208 f
+  u_NV_NVDLA_cmac/u_core/u_active/U19102/A3 (OAI22X1_RVT)         0.0404    0.0000 *   0.1208 f
+  u_NV_NVDLA_cmac/u_core/u_active/U19102/Y (OAI22X1_RVT)          0.0168    0.0866     0.2075 r
+  u_NV_NVDLA_cmac/u_core/u_active/n72044 (net)
+                                                1       0.3766              0.0000     0.2075 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt2_actv_data_reg_724_/D (SDFFX2_RVT)
+                                                                  0.0168    0.0000 *   0.2075 r
+  data arrival time                                                                    0.2075
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt2_actv_data_reg_724_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0537    -0.0537
+  data required time                                                                  -0.0537
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0537
+  data arrival time                                                                   -0.2075
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2611
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_84_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_84_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_84_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_84_/QN (SDFFX2_RVT)
+                                                                  0.0386    0.1183     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/n34376 (net)
+                                                1       0.4474              0.0000     0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U15993/A3 (OAI22X1_RVT)         0.0386    0.0000 *   0.1183 f
+  u_NV_NVDLA_cmac/u_core/u_active/U15993/Y (OAI22X1_RVT)          0.0193    0.0883     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/n69354 (net)
+                                                1       0.7354              0.0000     0.2066 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_84_/D (SDFFX2_RVT)
+                                                                  0.0193    0.0000 *   0.2066 r
+  data arrival time                                                                    0.2066
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_84_/CLK (SDFFX2_RVT)    0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2066
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2611
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_329_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_329_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_329_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_329_/QN (SDFFX2_RVT)
+                                                                  0.0413    0.1346     0.1346 r
+  u_NV_NVDLA_cmac/u_core/u_active/n34893 (net)
+                                                1       0.7587              0.0000     0.1346 r
+  u_NV_NVDLA_cmac/u_core/u_active/U16221/A3 (OAI22X1_RVT)         0.0413    0.0000 *   0.1346 r
+  u_NV_NVDLA_cmac/u_core/u_active/U16221/Y (OAI22X1_RVT)          0.0180    0.0805     0.2151 f
+  u_NV_NVDLA_cmac/u_core/u_active/n69605 (net)
+                                                1       0.3674              0.0000     0.2151 f
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_329_/D (SDFFX2_RVT)
+                                                                  0.0180    0.0000 *   0.2151 f
+  data arrival time                                                                    0.2151
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_329_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0460    -0.0460
+  data required time                                                                  -0.0460
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0460
+  data arrival time                                                                   -0.2151
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2612
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_348_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_348_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_348_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_348_/QN (SDFFX2_RVT)
+                                                                  0.0389    0.1187     0.1187 f
+  u_NV_NVDLA_cmac/u_core/u_active/n32561 (net)
+                                                1       0.4946              0.0000     0.1187 f
+  u_NV_NVDLA_cmac/u_core/u_active/U15105/A3 (OAI22X1_RVT)         0.0389    0.0000 *   0.1187 f
+  u_NV_NVDLA_cmac/u_core/u_active/U15105/Y (OAI22X1_RVT)          0.0189    0.0881     0.2068 r
+  u_NV_NVDLA_cmac/u_core/u_active/n68593 (net)
+                                                1       0.6776              0.0000     0.2068 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_348_/D (SDFFX2_RVT)
+                                                                  0.0189    0.0000 *   0.2068 r
+  data arrival time                                                                    0.2068
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt5_actv_data_reg_348_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0544    -0.0544
+  data required time                                                                  -0.0544
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0544
+  data arrival time                                                                   -0.2068
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2612
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_433_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_433_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_433_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_433_/QN (SDFFX2_RVT)
+                                                                  0.0403    0.1207     0.1207 f
+  u_NV_NVDLA_cmac/u_core/u_active/n27932 (net)
+                                                1       0.7467              0.0000     0.1207 f
+  u_NV_NVDLA_cmac/u_core/u_active/U12713/A3 (OAI22X1_RVT)         0.0403    0.0000 *   0.1207 f
+  u_NV_NVDLA_cmac/u_core/u_active/U12713/Y (OAI22X1_RVT)          0.0169    0.0867     0.2075 r
+  u_NV_NVDLA_cmac/u_core/u_active/n66634 (net)
+                                                1       0.3947              0.0000     0.2075 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_433_/D (SDFFX2_RVT)
+                                                                  0.0169    0.0000 *   0.2075 r
+  data arrival time                                                                    0.2075
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_433_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0537    -0.0537
+  data required time                                                                  -0.0537
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0537
+  data arrival time                                                                   -0.2075
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2612
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_216_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_216_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_216_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_216_/QN (SDFFX2_RVT)
+                                                                  0.0402    0.1205     0.1205 f
+  u_NV_NVDLA_cmac/u_core/u_active/n46588 (net)
+                                                1       0.7240              0.0000     0.1205 f
+  u_NV_NVDLA_cmac/u_core/u_active/U21143/A3 (OAI22X1_RVT)         0.0402    0.0000 *   0.1206 f
+  u_NV_NVDLA_cmac/u_core/u_active/U21143/Y (OAI22X1_RVT)          0.0171    0.0868     0.2074 r
+  u_NV_NVDLA_cmac/u_core/u_active/n74179 (net)
+                                                1       0.4199              0.0000     0.2074 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_216_/D (SDFFX2_RVT)
+                                                                  0.0171    0.0000 *   0.2074 r
+  data arrival time                                                                    0.2074
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_216_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0538    -0.0538
+  data required time                                                                  -0.0538
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0538
+  data arrival time                                                                   -0.2074
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2612
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_839_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_839_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_839_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_839_/QN (SDFFX2_RVT)
+                                                                  0.0404    0.1209     0.1209 f
+  u_NV_NVDLA_cmac/u_core/u_active/n35967 (net)
+                                                1       0.7622              0.0000     0.1209 f
+  u_NV_NVDLA_cmac/u_core/u_active/U16664/A3 (OAI22X1_RVT)         0.0404    0.0000 *   0.1209 f
+  u_NV_NVDLA_cmac/u_core/u_active/U16664/Y (OAI22X1_RVT)          0.0168    0.0866     0.2075 r
+  u_NV_NVDLA_cmac/u_core/u_active/n70103 (net)
+                                                1       0.3797              0.0000     0.2075 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_839_/D (SDFFX2_RVT)
+                                                                  0.0168    0.0000 *   0.2075 r
+  data arrival time                                                                    0.2075
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_839_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0537    -0.0537
+  data required time                                                                  -0.0537
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0537
+  data arrival time                                                                   -0.2075
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2612
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_236_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_236_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_236_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_236_/QN (SDFFX2_RVT)
+                                                                  0.0412    0.1345     0.1345 r
+  u_NV_NVDLA_cmac/u_core/u_active/n27521 (net)
+                                                1       0.7448              0.0000     0.1345 r
+  u_NV_NVDLA_cmac/u_core/u_active/U12552/A3 (OAI22X1_RVT)         0.0412    0.0000 *   0.1345 r
+  u_NV_NVDLA_cmac/u_core/u_active/U12552/Y (OAI22X1_RVT)          0.0183    0.0806     0.2151 f
+  u_NV_NVDLA_cmac/u_core/u_active/n66431 (net)
+                                                1       0.3755              0.0000     0.2151 f
+  u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_236_/D (SDFFX2_RVT)
+                                                                  0.0183    0.0000 *   0.2151 f
+  data arrival time                                                                    0.2151
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt7_actv_data_reg_236_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0461    -0.0461
+  data required time                                                                  -0.0461
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0461
+  data arrival time                                                                   -0.2151
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2612
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_554_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_554_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_554_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_554_/QN (SDFFX2_RVT)
+                                                                  0.0402    0.1205     0.1205 f
+  u_NV_NVDLA_cmac/u_core/u_active/n48058 (net)
+                                                1       0.7186              0.0000     0.1205 f
+  u_NV_NVDLA_cmac/u_core/u_active/U21531/A3 (OAI22X1_RVT)         0.0402    0.0000 *   0.1205 f
+  u_NV_NVDLA_cmac/u_core/u_active/U21531/Y (OAI22X1_RVT)          0.0172    0.0869     0.2074 r
+  u_NV_NVDLA_cmac/u_core/u_active/n73841 (net)
+                                                1       0.4298              0.0000     0.2074 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_554_/D (SDFFX2_RVT)
+                                                                  0.0172    0.0000 *   0.2074 r
+  data arrival time                                                                    0.2074
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt0_actv_data_reg_554_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0538    -0.0538
+  data required time                                                                  -0.0538
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0538
+  data arrival time                                                                   -0.2074
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2612
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_248_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_248_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_248_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_248_/QN (SDFFX2_RVT)
+                                                                  0.0403    0.1206     0.1206 f
+  u_NV_NVDLA_cmac/u_core/u_active/n34716 (net)
+                                                1       0.7323              0.0000     0.1206 f
+  u_NV_NVDLA_cmac/u_core/u_active/U16118/A3 (OAI22X1_RVT)         0.0403    0.0000 *   0.1206 f
+  u_NV_NVDLA_cmac/u_core/u_active/U16118/Y (OAI22X1_RVT)          0.0171    0.0868     0.2075 r
+  u_NV_NVDLA_cmac/u_core/u_active/n69526 (net)
+                                                1       0.4153              0.0000     0.2075 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_248_/D (SDFFX2_RVT)
+                                                                  0.0171    0.0000 *   0.2075 r
+  data arrival time                                                                    0.2075
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt4_actv_data_reg_248_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0538    -0.0538
+  data required time                                                                  -0.0538
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0538
+  data arrival time                                                                   -0.2075
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2612
+
+
+  Startpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_397_
+              (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_397_
+            (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Path Group: nvdla_core_clk
+  Path Type: min
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_397_/CLK (SDFFX2_RVT)
+                                                                  0.0500    0.0000 #   0.0000 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_397_/QN (SDFFX2_RVT)
+                                                                  0.0387    0.1184     0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/n30263 (net)
+                                                1       0.4649              0.0000     0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/U13928/A3 (OAI22X1_RVT)         0.0387    0.0000 *   0.1184 f
+  u_NV_NVDLA_cmac/u_core/u_active/U13928/Y (OAI22X1_RVT)          0.0192    0.0883     0.2067 r
+  u_NV_NVDLA_cmac/u_core/u_active/n67615 (net)
+                                                1       0.7231              0.0000     0.2067 r
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_397_/D (SDFFX2_RVT)
+                                                                  0.0192    0.0000 *   0.2067 r
+  data arrival time                                                                    0.2067
+
+  clock nvdla_core_clk (rise edge)                                          0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_active/wt6_actv_data_reg_397_/CLK (SDFFX2_RVT)   0.0000     0.0000 r
+  library hold time                                                        -0.0545    -0.0545
+  data required time                                                                  -0.0545
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0545
+  data arrival time                                                                   -0.2067
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.2612
+
+
+1

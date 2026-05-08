@@ -10,6 +10,7 @@
 - Active DFT insertion run: `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft`
 - Active clock period: `4.0 ns`
 - Repository layout follows numbered stages: `1_vcs`, `2_synthesis`, `3_sta`, `4_dft`, `5_formality`, `6_sweep`.
+- Frontend final report: `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`
 
 ## AGENTS.md Operating Rule
 
@@ -20,6 +21,8 @@
 - `00_Project_Tracking/PROJECT_STATUS.md`
 
 Generated tool outputs, logs, reports, and work directories stay ignored by git. Track scripts, constraints, filelists, wrappers, configs, project documentation, curated summaries, and decision records.
+
+Exception recorded on 2026-05-08: generated scripts and reports are tracked in git by explicit user request. Long generated logs and generated implementation outputs such as DDC, netlist, SDF, SPF, STIL, and fault databases remain ignored unless separately requested.
 
 ## Current Technical State
 
@@ -71,6 +74,8 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
 - `DW02_tree` is a Synopsys DesignWare module used in the CMAC MAC datapath to compress multiple partial-product vectors into two carry-save outputs. The observed R2N failure was a reference-modeling mismatch around this carry-save representation, not a DFT failure.
 - Formality N2N passes from pre-scan DDC to post-DFT scan DDC in functional mode for both the earlier const-reset path and the VP8b path.
 - TetraMAX stuck-at ATPG completes with DRC clean. The earlier const-reset path has test coverage `99.91%`; the VP8b path has test coverage `99.81%`.
+- Frontend final report has been created at `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`.
+- Generated reports are now included in git tracking by explicit user request; long generated logs remain ignored.
 
 ## Open Items
 

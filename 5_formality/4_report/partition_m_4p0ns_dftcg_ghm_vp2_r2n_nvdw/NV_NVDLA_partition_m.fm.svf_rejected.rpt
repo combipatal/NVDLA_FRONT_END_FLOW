@@ -1,0 +1,2992 @@
+**************************************************
+Report         : svf_operation
+                 -status rejected 
+                 -command reg_constant 
+
+Reference      : r:/WORK/NV_NVDLA_partition_m
+Implementation : i:/WORK/NV_NVDLA_partition_m
+Version        : W-2024.09-SP5
+Date           : Fri May  8 13:48:33 2026
+**************************************************
+**************************************************
+Report         : svf_operation
+                 -status rejected 
+                 -command multiplier 
+
+Reference      : r:/WORK/NV_NVDLA_partition_m
+Implementation : i:/WORK/NV_NVDLA_partition_m
+Version        : W-2024.09-SP5
+Date           : Fri May  8 13:48:33 2026
+**************************************************
+
+## SVF Operation 2573 (Line: 46156) - multiplier.  Status: rejected
+## Operation Id: 2573
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l4n3 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_0 } 
+
+Info:  guide_multiplier 2573 (Line: 46156)  Could not add cell : u_tree_l4n3 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2574 (Line: 46163) - multiplier.  Status: rejected
+## Operation Id: 2574
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l4n2 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_1 } 
+
+Info:  guide_multiplier 2574 (Line: 46163)  Could not add cell : u_tree_l4n2 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2575 (Line: 46170) - multiplier.  Status: rejected
+## Operation Id: 2575
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l4n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_2 } 
+
+Info:  guide_multiplier 2575 (Line: 46170)  Could not add cell : u_tree_l4n1 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2576 (Line: 46177) - multiplier.  Status: rejected
+## Operation Id: 2576
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l4n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_3 } 
+
+Info:  guide_multiplier 2576 (Line: 46177)  Could not add cell : u_tree_l4n0 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2577 (Line: 46184) - multiplier.  Status: rejected
+## Operation Id: 2577
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l2n3 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_4 } 
+
+Info:  guide_multiplier 2577 (Line: 46184)  Could not add cell : u_tree_sign_l2n3 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2578 (Line: 46191) - multiplier.  Status: rejected
+## Operation Id: 2578
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l2n2 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_5 } 
+
+Info:  guide_multiplier 2578 (Line: 46191)  Could not add cell : u_tree_sign_l2n2 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2579 (Line: 46198) - multiplier.  Status: rejected
+## Operation Id: 2579
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l2n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_6 } 
+
+Info:  guide_multiplier 2579 (Line: 46198)  Could not add cell : u_tree_sign_l2n1 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2580 (Line: 46205) - multiplier.  Status: rejected
+## Operation Id: 2580
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l2n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_7 } 
+
+Info:  guide_multiplier 2580 (Line: 46205)  Could not add cell : u_tree_sign_l2n0 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2581 (Line: 46212) - multiplier.  Status: rejected
+## Operation Id: 2581
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n15 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_8 } 
+
+Info:  guide_multiplier 2581 (Line: 46212)  Could not add cell : u_tree_sign_l1n15 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2582 (Line: 46219) - multiplier.  Status: rejected
+## Operation Id: 2582
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n14 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_9 } 
+
+Info:  guide_multiplier 2582 (Line: 46219)  Could not add cell : u_tree_sign_l1n14 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2583 (Line: 46226) - multiplier.  Status: rejected
+## Operation Id: 2583
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n13 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_10 } 
+
+Info:  guide_multiplier 2583 (Line: 46226)  Could not add cell : u_tree_sign_l1n13 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2584 (Line: 46233) - multiplier.  Status: rejected
+## Operation Id: 2584
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n12 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_11 } 
+
+Info:  guide_multiplier 2584 (Line: 46233)  Could not add cell : u_tree_sign_l1n12 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2585 (Line: 46240) - multiplier.  Status: rejected
+## Operation Id: 2585
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n11 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_12 } 
+
+Info:  guide_multiplier 2585 (Line: 46240)  Could not add cell : u_tree_sign_l1n11 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2586 (Line: 46247) - multiplier.  Status: rejected
+## Operation Id: 2586
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n10 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_13 } 
+
+Info:  guide_multiplier 2586 (Line: 46247)  Could not add cell : u_tree_sign_l1n10 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2587 (Line: 46254) - multiplier.  Status: rejected
+## Operation Id: 2587
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n9 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_14 } 
+
+Info:  guide_multiplier 2587 (Line: 46254)  Could not add cell : u_tree_sign_l1n9 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2588 (Line: 46261) - multiplier.  Status: rejected
+## Operation Id: 2588
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n8 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_15 } 
+
+Info:  guide_multiplier 2588 (Line: 46261)  Could not add cell : u_tree_sign_l1n8 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2589 (Line: 46268) - multiplier.  Status: rejected
+## Operation Id: 2589
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n7 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_16 } 
+
+Info:  guide_multiplier 2589 (Line: 46268)  Could not add cell : u_tree_sign_l1n7 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2590 (Line: 46275) - multiplier.  Status: rejected
+## Operation Id: 2590
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n6 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_17 } 
+
+Info:  guide_multiplier 2590 (Line: 46275)  Could not add cell : u_tree_sign_l1n6 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2591 (Line: 46282) - multiplier.  Status: rejected
+## Operation Id: 2591
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n5 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_18 } 
+
+Info:  guide_multiplier 2591 (Line: 46282)  Could not add cell : u_tree_sign_l1n5 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2592 (Line: 46289) - multiplier.  Status: rejected
+## Operation Id: 2592
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n4 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_19 } 
+
+Info:  guide_multiplier 2592 (Line: 46289)  Could not add cell : u_tree_sign_l1n4 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2593 (Line: 46296) - multiplier.  Status: rejected
+## Operation Id: 2593
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n3 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_20 } 
+
+Info:  guide_multiplier 2593 (Line: 46296)  Could not add cell : u_tree_sign_l1n3 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2594 (Line: 46303) - multiplier.  Status: rejected
+## Operation Id: 2594
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n2 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_21 } 
+
+Info:  guide_multiplier 2594 (Line: 46303)  Could not add cell : u_tree_sign_l1n2 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2595 (Line: 46310) - multiplier.  Status: rejected
+## Operation Id: 2595
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_22 } 
+
+Info:  guide_multiplier 2595 (Line: 46310)  Could not add cell : u_tree_sign_l1n1 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2596 (Line: 46317) - multiplier.  Status: rejected
+## Operation Id: 2596
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_sign_l1n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_23 } 
+
+Info:  guide_multiplier 2596 (Line: 46317)  Could not add cell : u_tree_sign_l1n0 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2597 (Line: 46324) - multiplier.  Status: rejected
+## Operation Id: 2597
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l3n3 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_24 } 
+
+Info:  guide_multiplier 2597 (Line: 46324)  Could not add cell : u_tree_l3n3 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2598 (Line: 46331) - multiplier.  Status: rejected
+## Operation Id: 2598
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l3n2 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_25 } 
+
+Info:  guide_multiplier 2598 (Line: 46331)  Could not add cell : u_tree_l3n2 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2599 (Line: 46338) - multiplier.  Status: rejected
+## Operation Id: 2599
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l3n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_26 } 
+
+Info:  guide_multiplier 2599 (Line: 46338)  Could not add cell : u_tree_l3n1 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2600 (Line: 46345) - multiplier.  Status: rejected
+## Operation Id: 2600
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l3n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_27 } 
+
+Info:  guide_multiplier 2600 (Line: 46345)  Could not add cell : u_tree_l3n0 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2601 (Line: 46352) - multiplier.  Status: rejected
+## Operation Id: 2601
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l2n7 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_28 } 
+
+Info:  guide_multiplier 2601 (Line: 46352)  Could not add cell : u_tree_l2n7 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2602 (Line: 46359) - multiplier.  Status: rejected
+## Operation Id: 2602
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l2n6 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_29 } 
+
+Info:  guide_multiplier 2602 (Line: 46359)  Could not add cell : u_tree_l2n6 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2603 (Line: 46366) - multiplier.  Status: rejected
+## Operation Id: 2603
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l2n5 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_30 } 
+
+Info:  guide_multiplier 2603 (Line: 46366)  Could not add cell : u_tree_l2n5 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2604 (Line: 46373) - multiplier.  Status: rejected
+## Operation Id: 2604
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l2n4 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_31 } 
+
+Info:  guide_multiplier 2604 (Line: 46373)  Could not add cell : u_tree_l2n4 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2605 (Line: 46380) - multiplier.  Status: rejected
+## Operation Id: 2605
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l2n3 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_32 } 
+
+Info:  guide_multiplier 2605 (Line: 46380)  Could not add cell : u_tree_l2n3 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2606 (Line: 46387) - multiplier.  Status: rejected
+## Operation Id: 2606
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l2n2 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_33 } 
+
+Info:  guide_multiplier 2606 (Line: 46387)  Could not add cell : u_tree_l2n2 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2607 (Line: 46394) - multiplier.  Status: rejected
+## Operation Id: 2607
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l2n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_34 } 
+
+Info:  guide_multiplier 2607 (Line: 46394)  Could not add cell : u_tree_l2n1 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2608 (Line: 46401) - multiplier.  Status: rejected
+## Operation Id: 2608
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l2n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_35 } 
+
+Info:  guide_multiplier 2608 (Line: 46401)  Could not add cell : u_tree_l2n0 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2609 (Line: 46408) - multiplier.  Status: rejected
+## Operation Id: 2609
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l1n7 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_36 } 
+
+Info:  guide_multiplier 2609 (Line: 46408)  Could not add cell : u_tree_l1n7 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2610 (Line: 46415) - multiplier.  Status: rejected
+## Operation Id: 2610
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l1n6 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_37 } 
+
+Info:  guide_multiplier 2610 (Line: 46415)  Could not add cell : u_tree_l1n6 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2611 (Line: 46422) - multiplier.  Status: rejected
+## Operation Id: 2611
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l1n5 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_38 } 
+
+Info:  guide_multiplier 2611 (Line: 46422)  Could not add cell : u_tree_l1n5 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2612 (Line: 46429) - multiplier.  Status: rejected
+## Operation Id: 2612
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l1n4 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_39 } 
+
+Info:  guide_multiplier 2612 (Line: 46429)  Could not add cell : u_tree_l1n4 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2613 (Line: 46436) - multiplier.  Status: rejected
+## Operation Id: 2613
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l1n3 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_40 } 
+
+Info:  guide_multiplier 2613 (Line: 46436)  Could not add cell : u_tree_l1n3 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2614 (Line: 46443) - multiplier.  Status: rejected
+## Operation Id: 2614
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l1n2 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_41 } 
+
+Info:  guide_multiplier 2614 (Line: 46443)  Could not add cell : u_tree_l1n2 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2615 (Line: 46450) - multiplier.  Status: rejected
+## Operation Id: 2615
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l1n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_42 } 
+
+Info:  guide_multiplier 2615 (Line: 46450)  Could not add cell : u_tree_l1n1 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2616 (Line: 46457) - multiplier.  Status: rejected
+## Operation Id: 2616
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l1n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_43 } 
+
+Info:  guide_multiplier 2616 (Line: 46457)  Could not add cell : u_tree_l1n0 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2617 (Line: 46464) - multiplier.  Status: rejected
+## Operation Id: 2617
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n15 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_44 } 
+
+Info:  guide_multiplier 2617 (Line: 46464)  Could not add cell : u_tree_l0n15 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2618 (Line: 46471) - multiplier.  Status: rejected
+## Operation Id: 2618
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n14 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_45 } 
+
+Info:  guide_multiplier 2618 (Line: 46471)  Could not add cell : u_tree_l0n14 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2619 (Line: 46478) - multiplier.  Status: rejected
+## Operation Id: 2619
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n13 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_46 } 
+
+Info:  guide_multiplier 2619 (Line: 46478)  Could not add cell : u_tree_l0n13 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2620 (Line: 46485) - multiplier.  Status: rejected
+## Operation Id: 2620
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n12 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_47 } 
+
+Info:  guide_multiplier 2620 (Line: 46485)  Could not add cell : u_tree_l0n12 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2621 (Line: 46492) - multiplier.  Status: rejected
+## Operation Id: 2621
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n11 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_48 } 
+
+Info:  guide_multiplier 2621 (Line: 46492)  Could not add cell : u_tree_l0n11 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2622 (Line: 46499) - multiplier.  Status: rejected
+## Operation Id: 2622
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n10 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_49 } 
+
+Info:  guide_multiplier 2622 (Line: 46499)  Could not add cell : u_tree_l0n10 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2623 (Line: 46506) - multiplier.  Status: rejected
+## Operation Id: 2623
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n09 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_50 } 
+
+Info:  guide_multiplier 2623 (Line: 46506)  Could not add cell : u_tree_l0n09 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2624 (Line: 46513) - multiplier.  Status: rejected
+## Operation Id: 2624
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n08 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_51 } 
+
+Info:  guide_multiplier 2624 (Line: 46513)  Could not add cell : u_tree_l0n08 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2625 (Line: 46520) - multiplier.  Status: rejected
+## Operation Id: 2625
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n07 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_52 } 
+
+Info:  guide_multiplier 2625 (Line: 46520)  Could not add cell : u_tree_l0n07 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2626 (Line: 46527) - multiplier.  Status: rejected
+## Operation Id: 2626
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n06 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_53 } 
+
+Info:  guide_multiplier 2626 (Line: 46527)  Could not add cell : u_tree_l0n06 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2627 (Line: 46534) - multiplier.  Status: rejected
+## Operation Id: 2627
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n05 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_54 } 
+
+Info:  guide_multiplier 2627 (Line: 46534)  Could not add cell : u_tree_l0n05 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2628 (Line: 46541) - multiplier.  Status: rejected
+## Operation Id: 2628
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n04 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_55 } 
+
+Info:  guide_multiplier 2628 (Line: 46541)  Could not add cell : u_tree_l0n04 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2629 (Line: 46548) - multiplier.  Status: rejected
+## Operation Id: 2629
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n03 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_56 } 
+
+Info:  guide_multiplier 2629 (Line: 46548)  Could not add cell : u_tree_l0n03 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2630 (Line: 46555) - multiplier.  Status: rejected
+## Operation Id: 2630
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n02 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_57 } 
+
+Info:  guide_multiplier 2630 (Line: 46555)  Could not add cell : u_tree_l0n02 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2631 (Line: 46562) - multiplier.  Status: rejected
+## Operation Id: 2631
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n01 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_58 } 
+
+Info:  guide_multiplier 2631 (Line: 46562)  Could not add cell : u_tree_l0n01 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 2632 (Line: 46569) - multiplier.  Status: rejected
+## Operation Id: 2632
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_0 } \
+  -instance { u_tree_l0n00 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J2_59 } 
+
+Info:  guide_multiplier 2632 (Line: 46569)  Could not add cell : u_tree_l0n00 in design NV_NVDLA_CMAC_CORE_mac_0 for verification.
+.
+
+## SVF Operation 4726 (Line: 80332) - multiplier.  Status: rejected
+## Operation Id: 4726
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l4n3 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_0 } 
+
+Info:  guide_multiplier 4726 (Line: 80332)  Could not add cell : u_tree_l4n3 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4727 (Line: 80339) - multiplier.  Status: rejected
+## Operation Id: 4727
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l4n2 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_1 } 
+
+Info:  guide_multiplier 4727 (Line: 80339)  Could not add cell : u_tree_l4n2 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4728 (Line: 80346) - multiplier.  Status: rejected
+## Operation Id: 4728
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l4n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_2 } 
+
+Info:  guide_multiplier 4728 (Line: 80346)  Could not add cell : u_tree_l4n1 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4729 (Line: 80353) - multiplier.  Status: rejected
+## Operation Id: 4729
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l4n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_3 } 
+
+Info:  guide_multiplier 4729 (Line: 80353)  Could not add cell : u_tree_l4n0 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4730 (Line: 80360) - multiplier.  Status: rejected
+## Operation Id: 4730
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l2n3 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_4 } 
+
+Info:  guide_multiplier 4730 (Line: 80360)  Could not add cell : u_tree_sign_l2n3 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4731 (Line: 80367) - multiplier.  Status: rejected
+## Operation Id: 4731
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l2n2 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_5 } 
+
+Info:  guide_multiplier 4731 (Line: 80367)  Could not add cell : u_tree_sign_l2n2 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4732 (Line: 80374) - multiplier.  Status: rejected
+## Operation Id: 4732
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l2n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_6 } 
+
+Info:  guide_multiplier 4732 (Line: 80374)  Could not add cell : u_tree_sign_l2n1 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4733 (Line: 80381) - multiplier.  Status: rejected
+## Operation Id: 4733
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l2n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_7 } 
+
+Info:  guide_multiplier 4733 (Line: 80381)  Could not add cell : u_tree_sign_l2n0 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4734 (Line: 80388) - multiplier.  Status: rejected
+## Operation Id: 4734
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n15 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_8 } 
+
+Info:  guide_multiplier 4734 (Line: 80388)  Could not add cell : u_tree_sign_l1n15 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4735 (Line: 80395) - multiplier.  Status: rejected
+## Operation Id: 4735
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n14 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_9 } 
+
+Info:  guide_multiplier 4735 (Line: 80395)  Could not add cell : u_tree_sign_l1n14 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4736 (Line: 80402) - multiplier.  Status: rejected
+## Operation Id: 4736
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n13 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_10 } 
+
+Info:  guide_multiplier 4736 (Line: 80402)  Could not add cell : u_tree_sign_l1n13 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4737 (Line: 80409) - multiplier.  Status: rejected
+## Operation Id: 4737
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n12 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_11 } 
+
+Info:  guide_multiplier 4737 (Line: 80409)  Could not add cell : u_tree_sign_l1n12 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4738 (Line: 80416) - multiplier.  Status: rejected
+## Operation Id: 4738
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n11 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_12 } 
+
+Info:  guide_multiplier 4738 (Line: 80416)  Could not add cell : u_tree_sign_l1n11 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4739 (Line: 80423) - multiplier.  Status: rejected
+## Operation Id: 4739
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n10 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_13 } 
+
+Info:  guide_multiplier 4739 (Line: 80423)  Could not add cell : u_tree_sign_l1n10 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4740 (Line: 80430) - multiplier.  Status: rejected
+## Operation Id: 4740
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n9 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_14 } 
+
+Info:  guide_multiplier 4740 (Line: 80430)  Could not add cell : u_tree_sign_l1n9 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4741 (Line: 80437) - multiplier.  Status: rejected
+## Operation Id: 4741
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n8 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_15 } 
+
+Info:  guide_multiplier 4741 (Line: 80437)  Could not add cell : u_tree_sign_l1n8 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4742 (Line: 80444) - multiplier.  Status: rejected
+## Operation Id: 4742
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n7 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_16 } 
+
+Info:  guide_multiplier 4742 (Line: 80444)  Could not add cell : u_tree_sign_l1n7 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4743 (Line: 80451) - multiplier.  Status: rejected
+## Operation Id: 4743
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n6 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_17 } 
+
+Info:  guide_multiplier 4743 (Line: 80451)  Could not add cell : u_tree_sign_l1n6 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4744 (Line: 80458) - multiplier.  Status: rejected
+## Operation Id: 4744
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n5 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_18 } 
+
+Info:  guide_multiplier 4744 (Line: 80458)  Could not add cell : u_tree_sign_l1n5 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4745 (Line: 80465) - multiplier.  Status: rejected
+## Operation Id: 4745
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n4 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_19 } 
+
+Info:  guide_multiplier 4745 (Line: 80465)  Could not add cell : u_tree_sign_l1n4 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4746 (Line: 80472) - multiplier.  Status: rejected
+## Operation Id: 4746
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n3 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_20 } 
+
+Info:  guide_multiplier 4746 (Line: 80472)  Could not add cell : u_tree_sign_l1n3 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4747 (Line: 80479) - multiplier.  Status: rejected
+## Operation Id: 4747
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n2 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_21 } 
+
+Info:  guide_multiplier 4747 (Line: 80479)  Could not add cell : u_tree_sign_l1n2 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4748 (Line: 80486) - multiplier.  Status: rejected
+## Operation Id: 4748
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_22 } 
+
+Info:  guide_multiplier 4748 (Line: 80486)  Could not add cell : u_tree_sign_l1n1 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4749 (Line: 80493) - multiplier.  Status: rejected
+## Operation Id: 4749
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_sign_l1n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_23 } 
+
+Info:  guide_multiplier 4749 (Line: 80493)  Could not add cell : u_tree_sign_l1n0 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4750 (Line: 80500) - multiplier.  Status: rejected
+## Operation Id: 4750
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l3n3 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_24 } 
+
+Info:  guide_multiplier 4750 (Line: 80500)  Could not add cell : u_tree_l3n3 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4751 (Line: 80507) - multiplier.  Status: rejected
+## Operation Id: 4751
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l3n2 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_25 } 
+
+Info:  guide_multiplier 4751 (Line: 80507)  Could not add cell : u_tree_l3n2 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4752 (Line: 80514) - multiplier.  Status: rejected
+## Operation Id: 4752
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l3n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_26 } 
+
+Info:  guide_multiplier 4752 (Line: 80514)  Could not add cell : u_tree_l3n1 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4753 (Line: 80521) - multiplier.  Status: rejected
+## Operation Id: 4753
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l3n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_27 } 
+
+Info:  guide_multiplier 4753 (Line: 80521)  Could not add cell : u_tree_l3n0 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4754 (Line: 80528) - multiplier.  Status: rejected
+## Operation Id: 4754
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l2n7 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_28 } 
+
+Info:  guide_multiplier 4754 (Line: 80528)  Could not add cell : u_tree_l2n7 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4755 (Line: 80535) - multiplier.  Status: rejected
+## Operation Id: 4755
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l2n6 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_29 } 
+
+Info:  guide_multiplier 4755 (Line: 80535)  Could not add cell : u_tree_l2n6 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4756 (Line: 80542) - multiplier.  Status: rejected
+## Operation Id: 4756
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l2n5 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_30 } 
+
+Info:  guide_multiplier 4756 (Line: 80542)  Could not add cell : u_tree_l2n5 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4757 (Line: 80549) - multiplier.  Status: rejected
+## Operation Id: 4757
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l2n4 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_31 } 
+
+Info:  guide_multiplier 4757 (Line: 80549)  Could not add cell : u_tree_l2n4 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4758 (Line: 80556) - multiplier.  Status: rejected
+## Operation Id: 4758
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l2n3 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_32 } 
+
+Info:  guide_multiplier 4758 (Line: 80556)  Could not add cell : u_tree_l2n3 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4759 (Line: 80563) - multiplier.  Status: rejected
+## Operation Id: 4759
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l2n2 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_33 } 
+
+Info:  guide_multiplier 4759 (Line: 80563)  Could not add cell : u_tree_l2n2 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4760 (Line: 80570) - multiplier.  Status: rejected
+## Operation Id: 4760
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l2n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_34 } 
+
+Info:  guide_multiplier 4760 (Line: 80570)  Could not add cell : u_tree_l2n1 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4761 (Line: 80577) - multiplier.  Status: rejected
+## Operation Id: 4761
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l2n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_35 } 
+
+Info:  guide_multiplier 4761 (Line: 80577)  Could not add cell : u_tree_l2n0 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4762 (Line: 80584) - multiplier.  Status: rejected
+## Operation Id: 4762
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l1n7 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_36 } 
+
+Info:  guide_multiplier 4762 (Line: 80584)  Could not add cell : u_tree_l1n7 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4763 (Line: 80591) - multiplier.  Status: rejected
+## Operation Id: 4763
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l1n6 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_37 } 
+
+Info:  guide_multiplier 4763 (Line: 80591)  Could not add cell : u_tree_l1n6 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4764 (Line: 80598) - multiplier.  Status: rejected
+## Operation Id: 4764
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l1n5 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_38 } 
+
+Info:  guide_multiplier 4764 (Line: 80598)  Could not add cell : u_tree_l1n5 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4765 (Line: 80605) - multiplier.  Status: rejected
+## Operation Id: 4765
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l1n4 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_39 } 
+
+Info:  guide_multiplier 4765 (Line: 80605)  Could not add cell : u_tree_l1n4 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4766 (Line: 80612) - multiplier.  Status: rejected
+## Operation Id: 4766
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l1n3 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_40 } 
+
+Info:  guide_multiplier 4766 (Line: 80612)  Could not add cell : u_tree_l1n3 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4767 (Line: 80619) - multiplier.  Status: rejected
+## Operation Id: 4767
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l1n2 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_41 } 
+
+Info:  guide_multiplier 4767 (Line: 80619)  Could not add cell : u_tree_l1n2 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4768 (Line: 80626) - multiplier.  Status: rejected
+## Operation Id: 4768
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l1n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_42 } 
+
+Info:  guide_multiplier 4768 (Line: 80626)  Could not add cell : u_tree_l1n1 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4769 (Line: 80633) - multiplier.  Status: rejected
+## Operation Id: 4769
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l1n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_43 } 
+
+Info:  guide_multiplier 4769 (Line: 80633)  Could not add cell : u_tree_l1n0 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4770 (Line: 80640) - multiplier.  Status: rejected
+## Operation Id: 4770
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n15 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_44 } 
+
+Info:  guide_multiplier 4770 (Line: 80640)  Could not add cell : u_tree_l0n15 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4771 (Line: 80647) - multiplier.  Status: rejected
+## Operation Id: 4771
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n14 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_45 } 
+
+Info:  guide_multiplier 4771 (Line: 80647)  Could not add cell : u_tree_l0n14 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4772 (Line: 80654) - multiplier.  Status: rejected
+## Operation Id: 4772
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n13 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_46 } 
+
+Info:  guide_multiplier 4772 (Line: 80654)  Could not add cell : u_tree_l0n13 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4773 (Line: 80661) - multiplier.  Status: rejected
+## Operation Id: 4773
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n12 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_47 } 
+
+Info:  guide_multiplier 4773 (Line: 80661)  Could not add cell : u_tree_l0n12 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4774 (Line: 80668) - multiplier.  Status: rejected
+## Operation Id: 4774
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n11 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_48 } 
+
+Info:  guide_multiplier 4774 (Line: 80668)  Could not add cell : u_tree_l0n11 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4775 (Line: 80675) - multiplier.  Status: rejected
+## Operation Id: 4775
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n10 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_49 } 
+
+Info:  guide_multiplier 4775 (Line: 80675)  Could not add cell : u_tree_l0n10 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4776 (Line: 80682) - multiplier.  Status: rejected
+## Operation Id: 4776
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n09 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_50 } 
+
+Info:  guide_multiplier 4776 (Line: 80682)  Could not add cell : u_tree_l0n09 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4777 (Line: 80689) - multiplier.  Status: rejected
+## Operation Id: 4777
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n08 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_51 } 
+
+Info:  guide_multiplier 4777 (Line: 80689)  Could not add cell : u_tree_l0n08 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4778 (Line: 80696) - multiplier.  Status: rejected
+## Operation Id: 4778
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n07 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_52 } 
+
+Info:  guide_multiplier 4778 (Line: 80696)  Could not add cell : u_tree_l0n07 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4779 (Line: 80703) - multiplier.  Status: rejected
+## Operation Id: 4779
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n06 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_53 } 
+
+Info:  guide_multiplier 4779 (Line: 80703)  Could not add cell : u_tree_l0n06 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4780 (Line: 80710) - multiplier.  Status: rejected
+## Operation Id: 4780
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n05 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_54 } 
+
+Info:  guide_multiplier 4780 (Line: 80710)  Could not add cell : u_tree_l0n05 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4781 (Line: 80717) - multiplier.  Status: rejected
+## Operation Id: 4781
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n04 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_55 } 
+
+Info:  guide_multiplier 4781 (Line: 80717)  Could not add cell : u_tree_l0n04 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4782 (Line: 80724) - multiplier.  Status: rejected
+## Operation Id: 4782
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n03 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_56 } 
+
+Info:  guide_multiplier 4782 (Line: 80724)  Could not add cell : u_tree_l0n03 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4783 (Line: 80731) - multiplier.  Status: rejected
+## Operation Id: 4783
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n02 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_57 } 
+
+Info:  guide_multiplier 4783 (Line: 80731)  Could not add cell : u_tree_l0n02 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4784 (Line: 80738) - multiplier.  Status: rejected
+## Operation Id: 4784
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n01 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_58 } 
+
+Info:  guide_multiplier 4784 (Line: 80738)  Could not add cell : u_tree_l0n01 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4785 (Line: 80745) - multiplier.  Status: rejected
+## Operation Id: 4785
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_mac_7 } \
+  -instance { u_tree_l0n00 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J3_59 } 
+
+Info:  guide_multiplier 4785 (Line: 80745)  Could not add cell : u_tree_l0n00 in design NV_NVDLA_CMAC_CORE_mac_7 for verification.
+.
+
+## SVF Operation 4967 (Line: 81801) - multiplier.  Status: rejected
+## Operation Id: 4967
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_MAC_mul_0 } \
+  -instance { u_tree_l1n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_MAC_mul_0_DW02_tree_J11_0 } 
+
+Info:  guide_multiplier 4967 (Line: 81801)  Could not add cell : u_tree_l1n0 in design NV_NVDLA_CMAC_CORE_MAC_mul_0 for verification.
+.
+
+## SVF Operation 4968 (Line: 81808) - multiplier.  Status: rejected
+## Operation Id: 4968
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_MAC_mul_0 } \
+  -instance { u_tree_l0n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_MAC_mul_0_DW02_tree_J11_1 } 
+
+Info:  guide_multiplier 4968 (Line: 81808)  Could not add cell : u_tree_l0n1 in design NV_NVDLA_CMAC_CORE_MAC_mul_0 for verification.
+.
+
+## SVF Operation 4969 (Line: 81815) - multiplier.  Status: rejected
+## Operation Id: 4969
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_MAC_mul_0 } \
+  -instance { u_tree_l0n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_MAC_mul_0_DW02_tree_J11_2 } 
+
+Info:  guide_multiplier 4969 (Line: 81815)  Could not add cell : u_tree_l0n0 in design NV_NVDLA_CMAC_CORE_MAC_mul_0 for verification.
+.
+
+## SVF Operation 4982 (Line: 82023) - multiplier.  Status: rejected
+## Operation Id: 4982
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_MAC_mul_511 } \
+  -instance { u_tree_l1n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_MAC_mul_511_DW02_tree_J11_0_DW02_tree_J11_3 } 
+
+Info:  guide_multiplier 4982 (Line: 82023)  Could not add cell : u_tree_l1n0 in design NV_NVDLA_CMAC_CORE_MAC_mul_511 for verification.
+.
+
+## SVF Operation 4983 (Line: 82030) - multiplier.  Status: rejected
+## Operation Id: 4983
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_MAC_mul_511 } \
+  -instance { u_tree_l0n1 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_MAC_mul_511_DW02_tree_J11_1_DW02_tree_J11_4 } 
+
+Info:  guide_multiplier 4983 (Line: 82030)  Could not add cell : u_tree_l0n1 in design NV_NVDLA_CMAC_CORE_MAC_mul_511 for verification.
+.
+
+## SVF Operation 4984 (Line: 82037) - multiplier.  Status: rejected
+## Operation Id: 4984
+guide_multiplier \
+  -design { NV_NVDLA_CMAC_CORE_MAC_mul_511 } \
+  -instance { u_tree_l0n0 } \
+  -arch { apparch } \
+  -body { NV_NVDLA_CMAC_CORE_MAC_mul_511_DW02_tree_J11_2_DW02_tree_J11_5 } 
+
+Info:  guide_multiplier 4984 (Line: 82037)  Could not add cell : u_tree_l0n0 in design NV_NVDLA_CMAC_CORE_MAC_mul_511 for verification.
+.
+
+## SVF Operation 5168 (Line: 101136) - multiplier.  Status: rejected
+## Operation Id: 5168
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_l4n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J19_0 } 
+
+Info:  guide_multiplier 5168 (Line: 101136)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_l4n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5169 (Line: 101143) - multiplier.  Status: rejected
+## Operation Id: 5169
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_l4n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_1 } 
+
+Info:  guide_multiplier 5169 (Line: 101143)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_l4n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5170 (Line: 101150) - multiplier.  Status: rejected
+## Operation Id: 5170
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_l4n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_1 } 
+
+Info:  guide_multiplier 5170 (Line: 101150)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_l4n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5171 (Line: 101157) - multiplier.  Status: rejected
+## Operation Id: 5171
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_l4n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_J19_0 } 
+
+Info:  guide_multiplier 5171 (Line: 101157)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_l4n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5172 (Line: 101164) - multiplier.  Status: rejected
+## Operation Id: 5172
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_l4n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_J18_1 } 
+
+Info:  guide_multiplier 5172 (Line: 101164)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_l4n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5173 (Line: 101171) - multiplier.  Status: rejected
+## Operation Id: 5173
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_l4n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_J18_1 } 
+
+Info:  guide_multiplier 5173 (Line: 101171)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_l4n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5174 (Line: 101178) - multiplier.  Status: rejected
+## Operation Id: 5174
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_l4n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J18_0 } 
+
+Info:  guide_multiplier 5174 (Line: 101178)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_l4n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5175 (Line: 101185) - multiplier.  Status: rejected
+## Operation Id: 5175
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_l4n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_0 } 
+
+Info:  guide_multiplier 5175 (Line: 101185)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_l4n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5176 (Line: 101192) - multiplier.  Status: rejected
+## Operation Id: 5176
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_l4n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J18_1 } 
+
+Info:  guide_multiplier 5176 (Line: 101192)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_l4n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5177 (Line: 101199) - multiplier.  Status: rejected
+## Operation Id: 5177
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_l4n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J19_0 } 
+
+Info:  guide_multiplier 5177 (Line: 101199)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_l4n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5178 (Line: 101206) - multiplier.  Status: rejected
+## Operation Id: 5178
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_l4n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J18_0 } 
+
+Info:  guide_multiplier 5178 (Line: 101206)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_l4n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5179 (Line: 101213) - multiplier.  Status: rejected
+## Operation Id: 5179
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_l4n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_J20_0 } 
+
+Info:  guide_multiplier 5179 (Line: 101213)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_l4n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5180 (Line: 101220) - multiplier.  Status: rejected
+## Operation Id: 5180
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_l4n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_J20_0 } 
+
+Info:  guide_multiplier 5180 (Line: 101220)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_l4n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5181 (Line: 101227) - multiplier.  Status: rejected
+## Operation Id: 5181
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_l4n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_0 } 
+
+Info:  guide_multiplier 5181 (Line: 101227)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_l4n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5182 (Line: 101234) - multiplier.  Status: rejected
+## Operation Id: 5182
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_l4n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J19_0 } 
+
+Info:  guide_multiplier 5182 (Line: 101234)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_l4n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5183 (Line: 101241) - multiplier.  Status: rejected
+## Operation Id: 5183
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_l4n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J18_0 } 
+
+Info:  guide_multiplier 5183 (Line: 101241)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_l4n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5184 (Line: 101248) - multiplier.  Status: rejected
+## Operation Id: 5184
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n13 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J20_4 } 
+
+Info:  guide_multiplier 5184 (Line: 101248)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n13 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5185 (Line: 101255) - multiplier.  Status: rejected
+## Operation Id: 5185
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n12 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J19_2 } 
+
+Info:  guide_multiplier 5185 (Line: 101255)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n12 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5186 (Line: 101262) - multiplier.  Status: rejected
+## Operation Id: 5186
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n9 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J18_5 } 
+
+Info:  guide_multiplier 5186 (Line: 101262)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n9 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5187 (Line: 101269) - multiplier.  Status: rejected
+## Operation Id: 5187
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n8 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J19_1 } 
+
+Info:  guide_multiplier 5187 (Line: 101269)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n8 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5188 (Line: 101276) - multiplier.  Status: rejected
+## Operation Id: 5188
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n5 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_4 } 
+
+Info:  guide_multiplier 5188 (Line: 101276)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n5 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5189 (Line: 101283) - multiplier.  Status: rejected
+## Operation Id: 5189
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n4 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J18_3 } 
+
+Info:  guide_multiplier 5189 (Line: 101283)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n4 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5190 (Line: 101290) - multiplier.  Status: rejected
+## Operation Id: 5190
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_3 } 
+
+Info:  guide_multiplier 5190 (Line: 101290)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5191 (Line: 101297) - multiplier.  Status: rejected
+## Operation Id: 5191
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_1 } 
+
+Info:  guide_multiplier 5191 (Line: 101297)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l1n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5192 (Line: 101304) - multiplier.  Status: rejected
+## Operation Id: 5192
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n13 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J20_7 } 
+
+Info:  guide_multiplier 5192 (Line: 101304)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n13 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5193 (Line: 101311) - multiplier.  Status: rejected
+## Operation Id: 5193
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n12 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_3 } 
+
+Info:  guide_multiplier 5193 (Line: 101311)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n12 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5194 (Line: 101318) - multiplier.  Status: rejected
+## Operation Id: 5194
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n9 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J18_2 } 
+
+Info:  guide_multiplier 5194 (Line: 101318)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n9 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5195 (Line: 101325) - multiplier.  Status: rejected
+## Operation Id: 5195
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n8 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_2 } 
+
+Info:  guide_multiplier 5195 (Line: 101325)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n8 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5196 (Line: 101332) - multiplier.  Status: rejected
+## Operation Id: 5196
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n5 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J19_3 } 
+
+Info:  guide_multiplier 5196 (Line: 101332)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n5 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5197 (Line: 101339) - multiplier.  Status: rejected
+## Operation Id: 5197
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n4 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J20_4 } 
+
+Info:  guide_multiplier 5197 (Line: 101339)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n4 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5198 (Line: 101346) - multiplier.  Status: rejected
+## Operation Id: 5198
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J20_6 } 
+
+Info:  guide_multiplier 5198 (Line: 101346)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5199 (Line: 101353) - multiplier.  Status: rejected
+## Operation Id: 5199
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J20_3 } 
+
+Info:  guide_multiplier 5199 (Line: 101353)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l1n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5200 (Line: 101360) - multiplier.  Status: rejected
+## Operation Id: 5200
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n13 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_4 } 
+
+Info:  guide_multiplier 5200 (Line: 101360)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n13 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5201 (Line: 101367) - multiplier.  Status: rejected
+## Operation Id: 5201
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n12 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J18_3 } 
+
+Info:  guide_multiplier 5201 (Line: 101367)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n12 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5202 (Line: 101374) - multiplier.  Status: rejected
+## Operation Id: 5202
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n9 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J19_2 } 
+
+Info:  guide_multiplier 5202 (Line: 101374)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n9 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5203 (Line: 101381) - multiplier.  Status: rejected
+## Operation Id: 5203
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n8 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J18_2 } 
+
+Info:  guide_multiplier 5203 (Line: 101381)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n8 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5204 (Line: 101388) - multiplier.  Status: rejected
+## Operation Id: 5204
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n5 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J20_6 } 
+
+Info:  guide_multiplier 5204 (Line: 101388)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n5 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5205 (Line: 101395) - multiplier.  Status: rejected
+## Operation Id: 5205
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n4 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J20_4 } 
+
+Info:  guide_multiplier 5205 (Line: 101395)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n4 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5206 (Line: 101402) - multiplier.  Status: rejected
+## Operation Id: 5206
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_3 } 
+
+Info:  guide_multiplier 5206 (Line: 101402)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5207 (Line: 101409) - multiplier.  Status: rejected
+## Operation Id: 5207
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J20_3 } 
+
+Info:  guide_multiplier 5207 (Line: 101409)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l1n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5208 (Line: 101416) - multiplier.  Status: rejected
+## Operation Id: 5208
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n13 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_8 } 
+
+Info:  guide_multiplier 5208 (Line: 101416)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n13 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5209 (Line: 101423) - multiplier.  Status: rejected
+## Operation Id: 5209
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n12 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_J18_2 } 
+
+Info:  guide_multiplier 5209 (Line: 101423)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n12 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5210 (Line: 101430) - multiplier.  Status: rejected
+## Operation Id: 5210
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n9 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_J19_3 } 
+
+Info:  guide_multiplier 5210 (Line: 101430)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n9 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5211 (Line: 101437) - multiplier.  Status: rejected
+## Operation Id: 5211
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n8 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_5 } 
+
+Info:  guide_multiplier 5211 (Line: 101437)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n8 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5212 (Line: 101444) - multiplier.  Status: rejected
+## Operation Id: 5212
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n5 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_7 } 
+
+Info:  guide_multiplier 5212 (Line: 101444)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n5 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5213 (Line: 101451) - multiplier.  Status: rejected
+## Operation Id: 5213
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n4 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_4 } 
+
+Info:  guide_multiplier 5213 (Line: 101451)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n4 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5214 (Line: 101458) - multiplier.  Status: rejected
+## Operation Id: 5214
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_J19_2 } 
+
+Info:  guide_multiplier 5214 (Line: 101458)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5215 (Line: 101465) - multiplier.  Status: rejected
+## Operation Id: 5215
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_3 } 
+
+Info:  guide_multiplier 5215 (Line: 101465)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l1n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5216 (Line: 101472) - multiplier.  Status: rejected
+## Operation Id: 5216
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n13 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_J20_3 } 
+
+Info:  guide_multiplier 5216 (Line: 101472)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n13 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5217 (Line: 101479) - multiplier.  Status: rejected
+## Operation Id: 5217
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n12 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_J18_3 } 
+
+Info:  guide_multiplier 5217 (Line: 101479)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n12 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5218 (Line: 101486) - multiplier.  Status: rejected
+## Operation Id: 5218
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n9 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_7 } 
+
+Info:  guide_multiplier 5218 (Line: 101486)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n9 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5219 (Line: 101493) - multiplier.  Status: rejected
+## Operation Id: 5219
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n8 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_J18_2 } 
+
+Info:  guide_multiplier 5219 (Line: 101493)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n8 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5220 (Line: 101500) - multiplier.  Status: rejected
+## Operation Id: 5220
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n5 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_J19_2 } 
+
+Info:  guide_multiplier 5220 (Line: 101500)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n5 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5221 (Line: 101507) - multiplier.  Status: rejected
+## Operation Id: 5221
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n4 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_4 } 
+
+Info:  guide_multiplier 5221 (Line: 101507)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n4 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5222 (Line: 101514) - multiplier.  Status: rejected
+## Operation Id: 5222
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_6 } 
+
+Info:  guide_multiplier 5222 (Line: 101514)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5223 (Line: 101521) - multiplier.  Status: rejected
+## Operation Id: 5223
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_3 } 
+
+Info:  guide_multiplier 5223 (Line: 101521)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l1n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5224 (Line: 101528) - multiplier.  Status: rejected
+## Operation Id: 5224
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n13 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_6 } 
+
+Info:  guide_multiplier 5224 (Line: 101528)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n13 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5225 (Line: 101535) - multiplier.  Status: rejected
+## Operation Id: 5225
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n12 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_J18_3 } 
+
+Info:  guide_multiplier 5225 (Line: 101535)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n12 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5226 (Line: 101542) - multiplier.  Status: rejected
+## Operation Id: 5226
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n9 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_J19_2 } 
+
+Info:  guide_multiplier 5226 (Line: 101542)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n9 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5227 (Line: 101549) - multiplier.  Status: rejected
+## Operation Id: 5227
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n8 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_3 } 
+
+Info:  guide_multiplier 5227 (Line: 101549)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n8 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5228 (Line: 101556) - multiplier.  Status: rejected
+## Operation Id: 5228
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n5 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_5 } 
+
+Info:  guide_multiplier 5228 (Line: 101556)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n5 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5229 (Line: 101563) - multiplier.  Status: rejected
+## Operation Id: 5229
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n4 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_J18_2 } 
+
+Info:  guide_multiplier 5229 (Line: 101563)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n4 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5230 (Line: 101570) - multiplier.  Status: rejected
+## Operation Id: 5230
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_J20_4 } 
+
+Info:  guide_multiplier 5230 (Line: 101570)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5231 (Line: 101577) - multiplier.  Status: rejected
+## Operation Id: 5231
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_2 } 
+
+Info:  guide_multiplier 5231 (Line: 101577)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l1n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5232 (Line: 101584) - multiplier.  Status: rejected
+## Operation Id: 5232
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n13 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J18_3 } 
+
+Info:  guide_multiplier 5232 (Line: 101584)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n13 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5233 (Line: 101591) - multiplier.  Status: rejected
+## Operation Id: 5233
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n12 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J19_3 } 
+
+Info:  guide_multiplier 5233 (Line: 101591)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n12 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5234 (Line: 101598) - multiplier.  Status: rejected
+## Operation Id: 5234
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n9 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_5 } 
+
+Info:  guide_multiplier 5234 (Line: 101598)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n9 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5235 (Line: 101605) - multiplier.  Status: rejected
+## Operation Id: 5235
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n8 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J20_2 } 
+
+Info:  guide_multiplier 5235 (Line: 101605)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n8 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5236 (Line: 101612) - multiplier.  Status: rejected
+## Operation Id: 5236
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n5 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J20_4 } 
+
+Info:  guide_multiplier 5236 (Line: 101612)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n5 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5237 (Line: 101619) - multiplier.  Status: rejected
+## Operation Id: 5237
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n4 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_3 } 
+
+Info:  guide_multiplier 5237 (Line: 101619)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n4 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5238 (Line: 101626) - multiplier.  Status: rejected
+## Operation Id: 5238
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J18_2 } 
+
+Info:  guide_multiplier 5238 (Line: 101626)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5239 (Line: 101633) - multiplier.  Status: rejected
+## Operation Id: 5239
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J20_1 } 
+
+Info:  guide_multiplier 5239 (Line: 101633)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l1n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5240 (Line: 101640) - multiplier.  Status: rejected
+## Operation Id: 5240
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n13 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J20_5 } 
+
+Info:  guide_multiplier 5240 (Line: 101640)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n13 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5241 (Line: 101647) - multiplier.  Status: rejected
+## Operation Id: 5241
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n12 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J19_4 } 
+
+Info:  guide_multiplier 5241 (Line: 101647)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n12 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5242 (Line: 101654) - multiplier.  Status: rejected
+## Operation Id: 5242
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n9 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J18_4 } 
+
+Info:  guide_multiplier 5242 (Line: 101654)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n9 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5243 (Line: 101661) - multiplier.  Status: rejected
+## Operation Id: 5243
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n8 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J18_2 } 
+
+Info:  guide_multiplier 5243 (Line: 101661)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n8 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5244 (Line: 101668) - multiplier.  Status: rejected
+## Operation Id: 5244
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n5 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_2 } 
+
+Info:  guide_multiplier 5244 (Line: 101668)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n5 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5245 (Line: 101675) - multiplier.  Status: rejected
+## Operation Id: 5245
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n4 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J20_2 } 
+
+Info:  guide_multiplier 5245 (Line: 101675)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n4 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5246 (Line: 101682) - multiplier.  Status: rejected
+## Operation Id: 5246
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J20_4 } 
+
+Info:  guide_multiplier 5246 (Line: 101682)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5247 (Line: 101689) - multiplier.  Status: rejected
+## Operation Id: 5247
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J20_1 } 
+
+Info:  guide_multiplier 5247 (Line: 101689)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l1n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5248 (Line: 101696) - multiplier.  Status: rejected
+## Operation Id: 5248
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_l3n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J20_2 } 
+
+Info:  guide_multiplier 5248 (Line: 101696)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_l3n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5249 (Line: 101703) - multiplier.  Status: rejected
+## Operation Id: 5249
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_l3n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J18_2 } 
+
+Info:  guide_multiplier 5249 (Line: 101703)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_l3n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5250 (Line: 101710) - multiplier.  Status: rejected
+## Operation Id: 5250
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_l3n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J18_0 } 
+
+Info:  guide_multiplier 5250 (Line: 101710)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_l3n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5251 (Line: 101717) - multiplier.  Status: rejected
+## Operation Id: 5251
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_l3n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J19_1 } 
+
+Info:  guide_multiplier 5251 (Line: 101717)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_l3n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5252 (Line: 101724) - multiplier.  Status: rejected
+## Operation Id: 5252
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_l3n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J19_0 } 
+
+Info:  guide_multiplier 5252 (Line: 101724)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_l3n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5253 (Line: 101731) - multiplier.  Status: rejected
+## Operation Id: 5253
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_l3n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J18_1 } 
+
+Info:  guide_multiplier 5253 (Line: 101731)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_l3n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5254 (Line: 101738) - multiplier.  Status: rejected
+## Operation Id: 5254
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_l3n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_J18_1 } 
+
+Info:  guide_multiplier 5254 (Line: 101738)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_l3n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5255 (Line: 101745) - multiplier.  Status: rejected
+## Operation Id: 5255
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_l3n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_J20_1 } 
+
+Info:  guide_multiplier 5255 (Line: 101745)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_l3n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5256 (Line: 101752) - multiplier.  Status: rejected
+## Operation Id: 5256
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_l3n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_J19_0 } 
+
+Info:  guide_multiplier 5256 (Line: 101752)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_l3n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5257 (Line: 101759) - multiplier.  Status: rejected
+## Operation Id: 5257
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_l3n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_J20_1 } 
+
+Info:  guide_multiplier 5257 (Line: 101759)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_l3n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5258 (Line: 101766) - multiplier.  Status: rejected
+## Operation Id: 5258
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_l3n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_J19_0 } 
+
+Info:  guide_multiplier 5258 (Line: 101766)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_l3n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5259 (Line: 101773) - multiplier.  Status: rejected
+## Operation Id: 5259
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_l3n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_J20_2 } 
+
+Info:  guide_multiplier 5259 (Line: 101773)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_l3n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5260 (Line: 101780) - multiplier.  Status: rejected
+## Operation Id: 5260
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_l3n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J19_2 } 
+
+Info:  guide_multiplier 5260 (Line: 101780)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_l3n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5261 (Line: 101787) - multiplier.  Status: rejected
+## Operation Id: 5261
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_l3n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_2 } 
+
+Info:  guide_multiplier 5261 (Line: 101787)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_l3n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5262 (Line: 101794) - multiplier.  Status: rejected
+## Operation Id: 5262
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_l3n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J19_3 } 
+
+Info:  guide_multiplier 5262 (Line: 101794)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_l3n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5263 (Line: 101801) - multiplier.  Status: rejected
+## Operation Id: 5263
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_l3n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J18_1 } 
+
+Info:  guide_multiplier 5263 (Line: 101801)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_l3n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5264 (Line: 101808) - multiplier.  Status: rejected
+## Operation Id: 5264
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_l4n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J20_1 } 
+
+Info:  guide_multiplier 5264 (Line: 101808)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_l4n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5265 (Line: 101815) - multiplier.  Status: rejected
+## Operation Id: 5265
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_l4n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J20_0 } 
+
+Info:  guide_multiplier 5265 (Line: 101815)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_l4n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5266 (Line: 101822) - multiplier.  Status: rejected
+## Operation Id: 5266
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_l4n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J20_2 } 
+
+Info:  guide_multiplier 5266 (Line: 101822)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_l4n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5267 (Line: 101829) - multiplier.  Status: rejected
+## Operation Id: 5267
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_l4n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J20_0 } 
+
+Info:  guide_multiplier 5267 (Line: 101829)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_l4n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5268 (Line: 101836) - multiplier.  Status: rejected
+## Operation Id: 5268
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_l4n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J20_2 } 
+
+Info:  guide_multiplier 5268 (Line: 101836)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_l4n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5269 (Line: 101843) - multiplier.  Status: rejected
+## Operation Id: 5269
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_l4n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J20_0 } 
+
+Info:  guide_multiplier 5269 (Line: 101843)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_l4n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5270 (Line: 101850) - multiplier.  Status: rejected
+## Operation Id: 5270
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_l4n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_2 } 
+
+Info:  guide_multiplier 5270 (Line: 101850)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_l4n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5271 (Line: 101857) - multiplier.  Status: rejected
+## Operation Id: 5271
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_l4n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_0 } 
+
+Info:  guide_multiplier 5271 (Line: 101857)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_l4n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5272 (Line: 101864) - multiplier.  Status: rejected
+## Operation Id: 5272
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_l4n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_2 } 
+
+Info:  guide_multiplier 5272 (Line: 101864)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_l4n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5273 (Line: 101871) - multiplier.  Status: rejected
+## Operation Id: 5273
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_l4n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_0 } 
+
+Info:  guide_multiplier 5273 (Line: 101871)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_l4n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5274 (Line: 101878) - multiplier.  Status: rejected
+## Operation Id: 5274
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_l4n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_1 } 
+
+Info:  guide_multiplier 5274 (Line: 101878)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_l4n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5275 (Line: 101885) - multiplier.  Status: rejected
+## Operation Id: 5275
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_l4n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_J20_0 } 
+
+Info:  guide_multiplier 5275 (Line: 101885)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_l4n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5276 (Line: 101892) - multiplier.  Status: rejected
+## Operation Id: 5276
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_l4n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J19_1 } 
+
+Info:  guide_multiplier 5276 (Line: 101892)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_l4n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5277 (Line: 101899) - multiplier.  Status: rejected
+## Operation Id: 5277
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_l4n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_0 } 
+
+Info:  guide_multiplier 5277 (Line: 101899)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_l4n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5278 (Line: 101906) - multiplier.  Status: rejected
+## Operation Id: 5278
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_l4n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J19_2 } 
+
+Info:  guide_multiplier 5278 (Line: 101906)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_l4n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5279 (Line: 101913) - multiplier.  Status: rejected
+## Operation Id: 5279
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_l4n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J19_0 } 
+
+Info:  guide_multiplier 5279 (Line: 101913)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_l4n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5280 (Line: 101920) - multiplier.  Status: rejected
+## Operation Id: 5280
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l2n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J19_3 } 
+
+Info:  guide_multiplier 5280 (Line: 101920)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l2n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5281 (Line: 101927) - multiplier.  Status: rejected
+## Operation Id: 5281
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l2n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J18_4 } 
+
+Info:  guide_multiplier 5281 (Line: 101927)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l2n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5282 (Line: 101934) - multiplier.  Status: rejected
+## Operation Id: 5282
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l2n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_J20_3 } 
+
+Info:  guide_multiplier 5282 (Line: 101934)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l2n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5283 (Line: 101941) - multiplier.  Status: rejected
+## Operation Id: 5283
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l2n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_7_DW02_tree_2 } 
+
+Info:  guide_multiplier 5283 (Line: 101941)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_0/u_tree_sign_l2n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5284 (Line: 101948) - multiplier.  Status: rejected
+## Operation Id: 5284
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l2n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_4 } 
+
+Info:  guide_multiplier 5284 (Line: 101948)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l2n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5285 (Line: 101955) - multiplier.  Status: rejected
+## Operation Id: 5285
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l2n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J18_1 } 
+
+Info:  guide_multiplier 5285 (Line: 101955)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l2n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5286 (Line: 101962) - multiplier.  Status: rejected
+## Operation Id: 5286
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l2n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J20_5 } 
+
+Info:  guide_multiplier 5286 (Line: 101962)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l2n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5287 (Line: 101969) - multiplier.  Status: rejected
+## Operation Id: 5287
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l2n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_6_DW02_tree_J19_2 } 
+
+Info:  guide_multiplier 5287 (Line: 101969)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_1/u_tree_sign_l2n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5288 (Line: 101976) - multiplier.  Status: rejected
+## Operation Id: 5288
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l2n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J18_4 } 
+
+Info:  guide_multiplier 5288 (Line: 101976)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l2n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5289 (Line: 101983) - multiplier.  Status: rejected
+## Operation Id: 5289
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l2n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J19_1 } 
+
+Info:  guide_multiplier 5289 (Line: 101983)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l2n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5290 (Line: 101990) - multiplier.  Status: rejected
+## Operation Id: 5290
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l2n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_J20_5 } 
+
+Info:  guide_multiplier 5290 (Line: 101990)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l2n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5291 (Line: 101997) - multiplier.  Status: rejected
+## Operation Id: 5291
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l2n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_5_DW02_tree_2 } 
+
+Info:  guide_multiplier 5291 (Line: 101997)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_2/u_tree_sign_l2n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5292 (Line: 102004) - multiplier.  Status: rejected
+## Operation Id: 5292
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l2n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_J18_3 } 
+
+Info:  guide_multiplier 5292 (Line: 102004)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l2n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5293 (Line: 102011) - multiplier.  Status: rejected
+## Operation Id: 5293
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l2n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_6 } 
+
+Info:  guide_multiplier 5293 (Line: 102011)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l2n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5294 (Line: 102018) - multiplier.  Status: rejected
+## Operation Id: 5294
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l2n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_J20_2 } 
+
+Info:  guide_multiplier 5294 (Line: 102018)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l2n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5295 (Line: 102025) - multiplier.  Status: rejected
+## Operation Id: 5295
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l2n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_4_DW02_tree_J19_1 } 
+
+Info:  guide_multiplier 5295 (Line: 102025)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_3/u_tree_sign_l2n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5296 (Line: 102032) - multiplier.  Status: rejected
+## Operation Id: 5296
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l2n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_J18_4 } 
+
+Info:  guide_multiplier 5296 (Line: 102032)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l2n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5297 (Line: 102039) - multiplier.  Status: rejected
+## Operation Id: 5297
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l2n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_J19_1 } 
+
+Info:  guide_multiplier 5297 (Line: 102039)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l2n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5298 (Line: 102046) - multiplier.  Status: rejected
+## Operation Id: 5298
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l2n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_J20_2 } 
+
+Info:  guide_multiplier 5298 (Line: 102046)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l2n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5299 (Line: 102053) - multiplier.  Status: rejected
+## Operation Id: 5299
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l2n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_3_DW02_tree_5 } 
+
+Info:  guide_multiplier 5299 (Line: 102053)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_4/u_tree_sign_l2n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5300 (Line: 102060) - multiplier.  Status: rejected
+## Operation Id: 5300
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l2n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_J18_4 } 
+
+Info:  guide_multiplier 5300 (Line: 102060)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l2n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5301 (Line: 102067) - multiplier.  Status: rejected
+## Operation Id: 5301
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l2n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_J19_1 } 
+
+Info:  guide_multiplier 5301 (Line: 102067)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l2n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5302 (Line: 102074) - multiplier.  Status: rejected
+## Operation Id: 5302
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l2n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_4 } 
+
+Info:  guide_multiplier 5302 (Line: 102074)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l2n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5303 (Line: 102081) - multiplier.  Status: rejected
+## Operation Id: 5303
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l2n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_2_DW02_tree_J20_3 } 
+
+Info:  guide_multiplier 5303 (Line: 102081)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_5/u_tree_sign_l2n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5304 (Line: 102088) - multiplier.  Status: rejected
+## Operation Id: 5304
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l2n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J19_4 } 
+
+Info:  guide_multiplier 5304 (Line: 102088)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l2n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5305 (Line: 102095) - multiplier.  Status: rejected
+## Operation Id: 5305
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l2n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_4 } 
+
+Info:  guide_multiplier 5305 (Line: 102095)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l2n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5306 (Line: 102102) - multiplier.  Status: rejected
+## Operation Id: 5306
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l2n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J20_3 } 
+
+Info:  guide_multiplier 5306 (Line: 102102)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l2n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5307 (Line: 102109) - multiplier.  Status: rejected
+## Operation Id: 5307
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l2n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_1_DW02_tree_J18_1 } 
+
+Info:  guide_multiplier 5307 (Line: 102109)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_6/u_tree_sign_l2n0 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5308 (Line: 102116) - multiplier.  Status: rejected
+## Operation Id: 5308
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l2n3 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J19_5 } 
+
+Info:  guide_multiplier 5308 (Line: 102116)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l2n3 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5309 (Line: 102123) - multiplier.  Status: rejected
+## Operation Id: 5309
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l2n2 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J18_3 } 
+
+Info:  guide_multiplier 5309 (Line: 102123)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l2n2 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5310 (Line: 102130) - multiplier.  Status: rejected
+## Operation Id: 5310
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l2n1 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_J20_3 } 
+
+Info:  guide_multiplier 5310 (Line: 102130)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l2n1 in design NV_NVDLA_partition_m for verification.
+.
+
+## SVF Operation 5311 (Line: 102137) - multiplier.  Status: rejected
+## Operation Id: 5311
+guide_multiplier \
+  -design { NV_NVDLA_partition_m } \
+  -instance { u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l2n0 } \
+  -arch { pparch } \
+  -body { NV_NVDLA_CMAC_CORE_mac_0_DW02_tree_1 } 
+
+Info:  guide_multiplier 5311 (Line: 102137)  Could not add cell : u_NV_NVDLA_cmac/u_core/u_mac_7/u_tree_sign_l2n0 in design NV_NVDLA_partition_m for verification.
+.
+
+1

@@ -1,0 +1,72 @@
+****************************************
+Report : qor
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-3
+Date   : Fri May  8 22:35:17 2026
+****************************************
+
+  Timing Path Group '**async_default**' (max_delay/setup)
+  ---------------------------------------------
+  Levels of Logic:                            2
+  Critical Path Length:                  0.2723
+  Critical Path Slack:                   3.7329
+  Total Negative Slack:                  0.0000
+  No. of Violating Paths:                     0
+  ---------------------------------------------
+
+  Timing Path Group 'nvdla_core_clk' (max_delay/setup)
+  ---------------------------------------------
+  Levels of Logic:                           58
+  Critical Path Length:                  3.8779
+  Critical Path Slack:                   0.0128
+  Total Negative Slack:                  0.0000
+  No. of Violating Paths:                     0
+  ---------------------------------------------
+
+  Timing Path Group '**async_default**' (min_delay/hold)
+  ---------------------------------------------
+  Levels of Logic:                            2
+  Critical Path Length:                  0.1030
+  Critical Path Slack:                  -0.0315
+  Total Negative Slack:                -71.0322
+  No. of Violating Paths:                  2383
+  ---------------------------------------------
+
+  Timing Path Group 'nvdla_core_clk' (min_delay/hold)
+  ---------------------------------------------
+  Levels of Logic:                            1
+  Critical Path Length:                  0.0602
+  Critical Path Slack:                   0.0633
+  Total Negative Slack:                  0.0000
+  No. of Violating Paths:                     0
+  ---------------------------------------------
+
+  Area
+  ---------------------------------------------
+  Net Interconnect area:           1861407.5000
+  Total cell area:                 3237831.2500
+  Design Area:                     5099239.0000
+  Area Cost:                      -5099239.0000
+  ---------------------------------------------
+
+
+  Cell & Pin Count
+  ---------------------------------------------
+  Pin Count:                            4302723
+  Hierarchical Cell Count:                 8376
+  Hierarchical Port Count:               829122
+  Leaf Cell Count:                      1087529
+  ---------------------------------------------
+
+
+  Design Rule Violations
+  ---------------------------------------------
+  Total No. of Pins in Design:          4302723
+  max_capacitance Count:                  13085
+  max_transition Count:                    1327
+  max_capacitance Cost:              10511.7246
+  max_transition Cost:                   8.1799
+  Total DRC Cost:                    10519.9043
+  ---------------------------------------------
+
+1

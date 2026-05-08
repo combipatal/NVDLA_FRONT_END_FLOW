@@ -1,0 +1,379 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-slack_lesser_than 0.0000
+	-max_paths 10
+	-sort_by slack
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-3
+Date   : Thu May  7 22:37:10 2026
+****************************************
+
+No paths with slack less than 0.0000.
+
+****************************************
+Report : timing
+	-path_type full
+	-delay_type min
+	-slack_lesser_than 0.0000
+	-max_paths 10
+	-sort_by slack
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-3
+Date   : Thu May  7 22:37:10 2026
+****************************************
+
+
+  Startpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+               (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_rt_in/in_rt_dat_pvld_d1_reg
+               (removal check against rising-edge clock nvdla_core_clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/CLK (DFFARX1_RVT)
+                                                        0.0000     0.0000 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/Q (DFFARX1_RVT)
+                                                        0.0686 +   0.0686 r
+  u_partition_m_reset/sync_reset_synced_rstn/UI_test_mode_outmux/U1/Y (MUX21X1_RVT)
+                                                        0.0302 H   0.0988 r
+  u_NV_NVDLA_cmac/u_core/u_rt_in/in_rt_dat_pvld_d1_reg/RSTB (SDFFARX1_RVT)
+                                                        0.0000     0.0988 r
+  data arrival time                                                0.0988
+
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_rt_in/in_rt_dat_pvld_d1_reg/CLK (SDFFARX1_RVT)
+                                                                   0.0000 r
+  clock reconvergence pessimism                         0.0000     0.0000
+  library removal time                                  0.1345     0.1345
+  data required time                                               0.1345
+  ------------------------------------------------------------------------------
+  data required time                                               0.1345
+  data arrival time                                               -0.0988
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                -0.0358
+
+
+  Startpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+               (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_0/cfg_is_int16_d3_reg_0_
+               (removal check against rising-edge clock nvdla_core_clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/CLK (DFFARX1_RVT)
+                                                        0.0000     0.0000 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/Q (DFFARX1_RVT)
+                                                        0.0686 +   0.0686 r
+  u_partition_m_reset/sync_reset_synced_rstn/UI_test_mode_outmux/U1/Y (MUX21X1_RVT)
+                                                        0.0302 H   0.0988 r
+  u_NV_NVDLA_cmac/u_core/u_mac_0/cfg_is_int16_d3_reg_0_/RSTB (SDFFARX1_RVT)
+                                                        0.0000     0.0988 r
+  data arrival time                                                0.0988
+
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_0/cfg_is_int16_d3_reg_0_/CLK (SDFFARX1_RVT)
+                                                                   0.0000 r
+  clock reconvergence pessimism                         0.0000     0.0000
+  library removal time                                  0.1345     0.1345
+  data required time                                               0.1345
+  ------------------------------------------------------------------------------
+  data required time                                               0.1345
+  data arrival time                                               -0.0988
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                -0.0358
+
+
+  Startpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+               (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_2/cfg_is_int16_d3_reg_0_
+               (removal check against rising-edge clock nvdla_core_clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/CLK (DFFARX1_RVT)
+                                                        0.0000     0.0000 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/Q (DFFARX1_RVT)
+                                                        0.0686 +   0.0686 r
+  u_partition_m_reset/sync_reset_synced_rstn/UI_test_mode_outmux/U1/Y (MUX21X1_RVT)
+                                                        0.0302 H   0.0988 r
+  u_NV_NVDLA_cmac/u_core/u_mac_2/cfg_is_int16_d3_reg_0_/RSTB (SDFFARX1_RVT)
+                                                        0.0000     0.0988 r
+  data arrival time                                                0.0988
+
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_2/cfg_is_int16_d3_reg_0_/CLK (SDFFARX1_RVT)
+                                                                   0.0000 r
+  clock reconvergence pessimism                         0.0000     0.0000
+  library removal time                                  0.1345     0.1345
+  data required time                                               0.1345
+  ------------------------------------------------------------------------------
+  data required time                                               0.1345
+  data arrival time                                               -0.0988
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                -0.0358
+
+
+  Startpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+               (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_2/pp_nan_mts_d2_reg_6_
+               (removal check against rising-edge clock nvdla_core_clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/CLK (DFFARX1_RVT)
+                                                        0.0000     0.0000 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/Q (DFFARX1_RVT)
+                                                        0.0686 +   0.0686 r
+  u_partition_m_reset/sync_reset_synced_rstn/UI_test_mode_outmux/U1/Y (MUX21X1_RVT)
+                                                        0.0302 H   0.0988 r
+  u_NV_NVDLA_cmac/u_core/u_mac_2/pp_nan_mts_d2_reg_6_/RSTB (SDFFARX1_RVT)
+                                                        0.0000     0.0988 r
+  data arrival time                                                0.0988
+
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_2/pp_nan_mts_d2_reg_6_/CLK (SDFFARX1_RVT)
+                                                                   0.0000 r
+  clock reconvergence pessimism                         0.0000     0.0000
+  library removal time                                  0.1345     0.1345
+  data required time                                               0.1345
+  ------------------------------------------------------------------------------
+  data required time                                               0.1345
+  data arrival time                                               -0.0988
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                -0.0358
+
+
+  Startpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+               (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_3/cfg_is_int16_d3_reg_0_
+               (removal check against rising-edge clock nvdla_core_clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/CLK (DFFARX1_RVT)
+                                                        0.0000     0.0000 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/Q (DFFARX1_RVT)
+                                                        0.0686 +   0.0686 r
+  u_partition_m_reset/sync_reset_synced_rstn/UI_test_mode_outmux/U1/Y (MUX21X1_RVT)
+                                                        0.0302 H   0.0988 r
+  u_NV_NVDLA_cmac/u_core/u_mac_3/cfg_is_int16_d3_reg_0_/RSTB (SDFFARX1_RVT)
+                                                        0.0000     0.0988 r
+  data arrival time                                                0.0988
+
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_3/cfg_is_int16_d3_reg_0_/CLK (SDFFARX1_RVT)
+                                                                   0.0000 r
+  clock reconvergence pessimism                         0.0000     0.0000
+  library removal time                                  0.1345     0.1345
+  data required time                                               0.1345
+  ------------------------------------------------------------------------------
+  data required time                                               0.1345
+  data arrival time                                               -0.0988
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                -0.0358
+
+
+  Startpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+               (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_3/u_exp/wt_actv_exp_clr_reg
+               (removal check against rising-edge clock nvdla_core_clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/CLK (DFFARX1_RVT)
+                                                        0.0000     0.0000 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/Q (DFFARX1_RVT)
+                                                        0.0686 +   0.0686 r
+  u_partition_m_reset/sync_reset_synced_rstn/UI_test_mode_outmux/U1/Y (MUX21X1_RVT)
+                                                        0.0302 H   0.0988 r
+  u_NV_NVDLA_cmac/u_core/u_mac_3/u_exp/wt_actv_exp_clr_reg/RSTB (SDFFARX1_RVT)
+                                                        0.0000     0.0988 r
+  data arrival time                                                0.0988
+
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_3/u_exp/wt_actv_exp_clr_reg/CLK (SDFFARX1_RVT)
+                                                                   0.0000 r
+  clock reconvergence pessimism                         0.0000     0.0000
+  library removal time                                  0.1345     0.1345
+  data required time                                               0.1345
+  ------------------------------------------------------------------------------
+  data required time                                               0.1345
+  data arrival time                                               -0.0988
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                -0.0358
+
+
+  Startpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+               (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_4/u_exp/wt_actv_exp_clr_reg
+               (removal check against rising-edge clock nvdla_core_clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/CLK (DFFARX1_RVT)
+                                                        0.0000     0.0000 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/Q (DFFARX1_RVT)
+                                                        0.0686 +   0.0686 r
+  u_partition_m_reset/sync_reset_synced_rstn/UI_test_mode_outmux/U1/Y (MUX21X1_RVT)
+                                                        0.0302 H   0.0988 r
+  u_NV_NVDLA_cmac/u_core/u_mac_4/u_exp/wt_actv_exp_clr_reg/RSTB (SDFFARX1_RVT)
+                                                        0.0000     0.0988 r
+  data arrival time                                                0.0988
+
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_4/u_exp/wt_actv_exp_clr_reg/CLK (SDFFARX1_RVT)
+                                                                   0.0000 r
+  clock reconvergence pessimism                         0.0000     0.0000
+  library removal time                                  0.1345     0.1345
+  data required time                                               0.1345
+  ------------------------------------------------------------------------------
+  data required time                                               0.1345
+  data arrival time                                               -0.0988
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                -0.0358
+
+
+  Startpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+               (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_5/cfg_is_int16_d3_reg_0_
+               (removal check against rising-edge clock nvdla_core_clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/CLK (DFFARX1_RVT)
+                                                        0.0000     0.0000 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/Q (DFFARX1_RVT)
+                                                        0.0686 +   0.0686 r
+  u_partition_m_reset/sync_reset_synced_rstn/UI_test_mode_outmux/U1/Y (MUX21X1_RVT)
+                                                        0.0302 H   0.0988 r
+  u_NV_NVDLA_cmac/u_core/u_mac_5/cfg_is_int16_d3_reg_0_/RSTB (SDFFARX1_RVT)
+                                                        0.0000     0.0988 r
+  data arrival time                                                0.0988
+
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_5/cfg_is_int16_d3_reg_0_/CLK (SDFFARX1_RVT)
+                                                                   0.0000 r
+  clock reconvergence pessimism                         0.0000     0.0000
+  library removal time                                  0.1345     0.1345
+  data required time                                               0.1345
+  ------------------------------------------------------------------------------
+  data required time                                               0.1345
+  data arrival time                                               -0.0988
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                -0.0358
+
+
+  Startpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+               (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_5/pp_nan_mts_d2_reg_4_
+               (removal check against rising-edge clock nvdla_core_clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/CLK (DFFARX1_RVT)
+                                                        0.0000     0.0000 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/Q (DFFARX1_RVT)
+                                                        0.0686 +   0.0686 r
+  u_partition_m_reset/sync_reset_synced_rstn/UI_test_mode_outmux/U1/Y (MUX21X1_RVT)
+                                                        0.0302 H   0.0988 r
+  u_NV_NVDLA_cmac/u_core/u_mac_5/pp_nan_mts_d2_reg_4_/RSTB (SDFFARX1_RVT)
+                                                        0.0000     0.0988 r
+  data arrival time                                                0.0988
+
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_5/pp_nan_mts_d2_reg_4_/CLK (SDFFARX1_RVT)
+                                                                   0.0000 r
+  clock reconvergence pessimism                         0.0000     0.0000
+  library removal time                                  0.1345     0.1345
+  data required time                                               0.1345
+  ------------------------------------------------------------------------------
+  data required time                                               0.1345
+  data arrival time                                               -0.0988
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                -0.0358
+
+
+  Startpoint: u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+               (rising edge-triggered flip-flop clocked by nvdla_core_clk)
+  Endpoint: u_NV_NVDLA_cmac/u_core/u_mac_6/cfg_is_int16_d3_reg_0_
+               (removal check against rising-edge clock nvdla_core_clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/CLK (DFFARX1_RVT)
+                                                        0.0000     0.0000 r
+  u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg/Q (DFFARX1_RVT)
+                                                        0.0686 +   0.0686 r
+  u_partition_m_reset/sync_reset_synced_rstn/UI_test_mode_outmux/U1/Y (MUX21X1_RVT)
+                                                        0.0302 H   0.0988 r
+  u_NV_NVDLA_cmac/u_core/u_mac_6/cfg_is_int16_d3_reg_0_/RSTB (SDFFARX1_RVT)
+                                                        0.0000     0.0988 r
+  data arrival time                                                0.0988
+
+  clock nvdla_core_clk (rise edge)                      0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  u_NV_NVDLA_cmac/u_core/u_mac_6/cfg_is_int16_d3_reg_0_/CLK (SDFFARX1_RVT)
+                                                                   0.0000 r
+  clock reconvergence pessimism                         0.0000     0.0000
+  library removal time                                  0.1345     0.1345
+  data required time                                               0.1345
+  ------------------------------------------------------------------------------
+  data required time                                               0.1345
+  data arrival time                                               -0.0988
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                -0.0358
+
+Warning: report_timing has satisfied the max_paths criteria. There are 2407 further endpoints which have paths of interest with slack less than   0.0000 that were not considered when generating this report. (UITE-502)
+
+1

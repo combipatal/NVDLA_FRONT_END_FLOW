@@ -1,0 +1,18 @@
+****************************************
+Report : clock
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-3
+Date   : Fri May  8 01:00:13 2026
+****************************************
+
+Attributes:
+    p - Propagated clock
+    G - Generated  clock
+    I - Inactive   clock
+
+Clock             Period          Waveform            Attrs     Sources
+-----------------------------------------------------------------------
+nvdla_core_clk
+                    4.00          {0 2}                         {nvdla_core_clk}
+
+1

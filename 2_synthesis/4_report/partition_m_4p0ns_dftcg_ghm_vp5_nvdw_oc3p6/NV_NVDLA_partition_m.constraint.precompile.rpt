@@ -1,0 +1,71 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-5
+Date   : Fri May  8 16:31:10 2026
+****************************************
+
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   NV_NVDLA_partition_m       0.0000       912375.6875    -912375.6875
+                                                                    (VIOLATED)
+
+
+   multiport_net
+
+                             Required        Actual
+   Net                          Cost           Cost          Violation
+   -----------------------------------------------------------------
+   u_NV_NVDLA_cmac/u_core/u_rt_in/in_dat_pd[5]
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_rt_in/in_dat_pd[6]
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_op_0/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_op_1/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_op_2/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_op_3/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_op_4/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_op_5/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_op_6/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_op_7/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_op_8/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_op_9/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_op_10/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_wg_0/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_wg_1/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_wg_2/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_wg_3/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_wg_4/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_wg_5/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_wg_6/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_wg_7/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+   u_NV_NVDLA_cmac/u_core/u_slcg_wg_8/nvdla_core_clk_slcg_0/clk_gated
+                              0.0000         1.0000        -1.0000  (VIOLATED)
+
+
+1

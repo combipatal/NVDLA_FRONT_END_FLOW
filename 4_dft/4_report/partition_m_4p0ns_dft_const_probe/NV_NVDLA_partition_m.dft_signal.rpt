@@ -1,0 +1,40 @@
+ 
+****************************************
+Report : DFT signals
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-5
+Date   : Thu May  7 23:11:17 2026
+****************************************
+
+========================================
+TEST MODE: all_dft
+VIEW     : Specification
+========================================
+Port               SignalType          Active    Hookup    Timing    Usage
+----------         ----------          ------    ------    ------    -----
+scan_enable        ScanEnable          1         -         -         -
+scan_in            ScanDataIn          -         -         Delay 0.0 -
+scan_out           ScanDataOut         -         -         -         -
+
+ 
+****************************************
+Report : DFT signals
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-5
+Date   : Thu May  7 23:11:17 2026
+****************************************
+
+========================================
+TEST MODE: all_dft
+VIEW     : Existing DFT
+========================================
+Port               SignalType          Active    Hookup    Timing    Usage
+----------         ----------          ------    ------    ------    -----
+test_mode          TestMode            1         -
+tmc2slcg_disable_clock_gating Constant 1         -
+nvdla_core_clk     ScanMasterClock     1         -         P 100.0 R 45.0 F 55.0
+nvdla_core_clk     MasterClock         1         -         P 100.0 R 45.0 F 55.0
+dla_reset_rstn     Reset               0         -         P 100.0 R 55.0 F 45.0
+direct_reset_      Reset               0         -         P 100.0 R 55.0 F 45.0
+
+1

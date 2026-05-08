@@ -1,0 +1,53 @@
+In mode: Internal_scan...
+  Design has scan chains in this mode
+  Design is scan routed
+  Post-DFT DRC enabled
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+  ...basic checks...
+  ...basic sequential cell checks...
+  ...checking vector rules...
+  ...checking clock rules...
+  ...checking scan chain rules...
+  ...checking scan compression rules...
+  ...checking X-state rules...
+  ...checking tristate rules...
+  ...extracting scan details...
+
+-----------------------------------------------------------------
+Begin Clock violations...
+
+ Warning: Clock dla_reset_rstn cannot capture data with other clocks off. (C4-1)
+ Warning: Clock dla_reset_rstn used as data is different than capture clock nvdla_core_clk for inputs CLK/D of stable DFF (u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/d0_reg). (C26-1)
+
+Clock violations completed...
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+  DRC Report
+
+  Total violations: 2
+
+-----------------------------------------------------------------
+
+2 CLOCK VIOLATIONS
+     1 Clock unable to capture violation (C4)
+     1 Clock as data different from capture clock for stable cell violation (C26)
+
+
+Warning: Violations occurred during test design rule checking. (TEST-124)
+
+-----------------------------------------------------------------
+  Sequential Cell Report
+
+  0 out of 67183 sequential cells have violations
+
+-----------------------------------------------------------------
+
+SEQUENTIAL CELLS WITHOUT VIOLATIONS
+      *67134 cells are valid scan cells
+      *  49 cells are non-scan shift-register cells
+
+Information: Test design rule checking completed. (TEST-123)
+1

@@ -1,0 +1,90 @@
+****************************************
+Report : qor
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-3
+Date   : Thu May  7 22:37:06 2026
+****************************************
+
+  Timing Path Group '**async_default**' (max_delay/setup)
+  ---------------------------------------------
+  Levels of Logic:                            2
+  Critical Path Length:                  0.2594
+  Critical Path Slack:                   3.7420
+  Total Negative Slack:                  0.0000
+  No. of Violating Paths:                     0
+  ---------------------------------------------
+
+  Timing Path Group '**clock_gating_default**' (max_delay/setup)
+  ---------------------------------------------
+  Levels of Logic:                            2
+  Critical Path Length:                  0.2787
+  Critical Path Slack:                   1.7213
+  Total Negative Slack:                  0.0000
+  No. of Violating Paths:                     0
+  ---------------------------------------------
+
+  Timing Path Group 'nvdla_core_clk' (max_delay/setup)
+  ---------------------------------------------
+  Levels of Logic:                           51
+  Critical Path Length:                  3.8588
+  Critical Path Slack:                   0.0304
+  Total Negative Slack:                  0.0000
+  No. of Violating Paths:                     0
+  ---------------------------------------------
+
+  Timing Path Group '**async_default**' (min_delay/hold)
+  ---------------------------------------------
+  Levels of Logic:                            2
+  Critical Path Length:                  0.0988
+  Critical Path Slack:                  -0.0358
+  Total Negative Slack:                -81.5467
+  No. of Violating Paths:                  2417
+  ---------------------------------------------
+
+  Timing Path Group '**clock_gating_default**' (min_delay/hold)
+  ---------------------------------------------
+  Levels of Logic:                            1
+  Critical Path Length:                  0.0542
+  Critical Path Slack:                   0.0542
+  Total Negative Slack:                  0.0000
+  No. of Violating Paths:                     0
+  ---------------------------------------------
+
+  Timing Path Group 'nvdla_core_clk' (min_delay/hold)
+  ---------------------------------------------
+  Levels of Logic:                            1
+  Critical Path Length:                  0.0678
+  Critical Path Slack:                   0.0628
+  Total Negative Slack:                  0.0000
+  No. of Violating Paths:                     0
+  ---------------------------------------------
+
+  Area
+  ---------------------------------------------
+  Net Interconnect area:           1361308.7500
+  Total cell area:                 3008005.7500
+  Design Area:                     4369314.5000
+  Area Cost:                      -4369314.5000
+  ---------------------------------------------
+
+
+  Cell & Pin Count
+  ---------------------------------------------
+  Pin Count:                            3968985
+  Hierarchical Cell Count:                 4716
+  Hierarchical Port Count:               388301
+  Leaf Cell Count:                       962084
+  ---------------------------------------------
+
+
+  Design Rule Violations
+  ---------------------------------------------
+  Total No. of Pins in Design:          3968985
+  max_capacitance Count:                  15285
+  max_transition Count:                     891
+  max_capacitance Cost:              10469.3682
+  max_transition Cost:                   2.3644
+  Total DRC Cost:                    10471.7324
+  ---------------------------------------------
+
+1

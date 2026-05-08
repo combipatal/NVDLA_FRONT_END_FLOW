@@ -1,0 +1,26 @@
+**************************************************
+Report         : analysis_results
+
+Reference      : r:/WORK/NV_NVDLA_partition_m
+Implementation : i:/WORK/NV_NVDLA_partition_m
+Version        : W-2024.09-SP5
+Date           : Fri May  8 20:21:12 2026
+**************************************************
+Found 1 Unmatched Cone Input
+--------------------------------
+Unmatched cone inputs result either from mismatched compare points
+or from differences in the logic within the cones. Only unmatched
+inputs that are suspected of contributing to verification failures
+are included in the report.
+The source of the matching or logical differences may be determined
+using the schematic, cone and source views.
+--------------------------------
+i:/WORK/NV_NVDLA_partition_m/u_NV_NVDLA_cmac/u_core/u_mac_1/mac_out_data_reg_85_/\*dff.00\*
+    Matched with cell r:/WORK/NV_NVDLA_partition_m/u_NV_NVDLA_cmac/u_core/u_mac_1/mac_out_data_reg_85_
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        r:/WORK/NV_NVDLA_partition_m/u_NV_NVDLA_cmac/u_core/u_mac_1/mac_out_data_reg_85_
+
+-----------
+--------------------------------
+****************************************************************************************
+1

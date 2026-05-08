@@ -1,0 +1,20 @@
+DC_HDLIN_VERIFICATION_PRIORITY=1
+DC_CMAC_VERIFICATION_PRIORITY=1
+DC_VERIFICATION_PRIORITY_LEVEL=high
+CMAC priority cell count: 0
+CMAC priority design count: 1
+CMAC priority reference count: 0
+CMAC MUL priority design count: 1
+CMAC MUL priority reference count: 0
+
+CMAC priority cells:
+
+CMAC priority designs:
+NV_NVDLA_CMAC_CORE_mac
+
+CMAC priority references:
+
+CMAC MUL priority designs:
+NV_NVDLA_CMAC_CORE_MAC_mul
+
+CMAC MUL priority references:

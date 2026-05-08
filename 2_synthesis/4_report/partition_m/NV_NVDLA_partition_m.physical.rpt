@@ -1,0 +1,278 @@
+****************************************
+report_physical_constraints
+Version: W-2024.09-SP5-5
+Date: Thu May  7 21:32:53 2026
+****************************************
+
+ Design NV_NVDLA_partition_m
+ Unit is micron
+
+****************************************************************
+Information: TLUPlus based RC computation is enabled. (RCEX-141)
+****************************************************************
+Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
+Information: The RC model used is TLU+. (RCEX-015)
+Information: Library Derived Cap for layer M1 : 0.16 0.14 (RCEX-011)
+Information: Library Derived Res for layer M1 : 2e-06 2e-06 (RCEX-011)
+Information: Library Derived Cap for layer M2 : 0.17 0.15 (RCEX-011)
+Information: Library Derived Res for layer M2 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M3 : 0.11 0.096 (RCEX-011)
+Information: Library Derived Res for layer M3 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M4 : 0.11 0.096 (RCEX-011)
+Information: Library Derived Res for layer M4 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M5 : 0.094 0.079 (RCEX-011)
+Information: Library Derived Res for layer M5 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M6 : 0.094 0.079 (RCEX-011)
+Information: Library Derived Res for layer M6 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M7 : 0.092 0.076 (RCEX-011)
+Information: Library Derived Res for layer M7 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M8 : 0.092 0.076 (RCEX-011)
+Information: Library Derived Res for layer M8 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer M9 : 0.11 0.088 (RCEX-011)
+Information: Library Derived Res for layer M9 : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Cap for layer MRDL : 0.11 0.11 (RCEX-011)
+Information: Library Derived Res for layer MRDL : 1.8e-07 1.8e-07 (RCEX-011)
+Information: Library Derived Horizontal Cap : 0.11 0.096 (RCEX-011)
+Information: Library Derived Horizontal Res : 1.8e-06 1.8e-06 (RCEX-011)
+Information: Library Derived Vertical Cap : 0.11 0.1 (RCEX-011)
+Information: Library Derived Vertical Res : 1.5e-06 1.5e-06 (RCEX-011)
+Information: Using derived R and C coefficients. (RCEX-008)
+Information: Using region-based R and C coefficients. (RCEX-013)
+Information: Library Derived Via Res : 4.6e-07 4.6e-07 (RCEX-011)
+
+Generating congestion map using Zroute global route ...
+Start Global Route ... 
+[Init] Elapsed real time: 0:00:00 
+[Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Init] Total (MB): Used    6  Alloctr    6  Proc 17629 
+Printing options for 'set_route_zrt_common_options'
+
+Printing options for 'set_route_zrt_global_options'
+
+Begin global routing.
+Warning: Cell contains tie connections which are not connected to real PG. (MW-349)
+Turn off antenna since no rule is specified
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = MRDL
+Warning: Cannot find a default contact for layer CO. (ZRT-022)
+Information: Multiple default contact VIA89 found for layer VIA8. (ZRT-021)
+Warning: Pin U7/A of net n56 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U7/Y of net csb2cmac_a_req_prdy has no valid shapes to connect. (ZRT-100)
+Warning: Pin U9/A of net n58 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U9/Y of net cmac_a2csb_resp_pd[2] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U11/A of net n60 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U11/Y of net cmac_a2csb_resp_pd[3] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U17/A of net n66 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U17/Y of net cmac_a2csb_resp_pd[6] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U23/A of net n72 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U23/Y of net cmac_a2csb_resp_pd[9] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U27/A of net n76 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U27/Y of net cmac_a2csb_resp_pd[11] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U29/A of net n78 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U29/Y of net cmac_a2csb_resp_pd[14] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U35/A of net n84 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U35/Y of net cmac_a2csb_resp_pd[19] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U39/A of net n88 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U39/Y of net cmac_a2csb_resp_pd[21] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U41/A of net n90 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U41/Y of net cmac_a2csb_resp_pd[22] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U45/A of net n94 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U45/Y of net cmac_a2csb_resp_pd[24] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U47/A of net n96 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U47/Y of net cmac_a2csb_resp_pd[25] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U51/A of net n100 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U51/Y of net cmac_a2csb_resp_pd[27] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U53/A of net n102 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U53/Y of net cmac_a2csb_resp_pd[28] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U55/A of net n104 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U55/Y of net cmac_a2csb_resp_pd[29] has no valid shapes to connect. (ZRT-100)
+Warning: Pin U59/A of net n108 has no valid shapes to connect. (ZRT-100)
+Warning: Pin U59/Y of net cmac_a2csb_resp_pd[31] has no valid shapes to connect. (ZRT-100)
+Warning: Pin u_NV_NVDLA_cmac/u_core/u_mac_6/u_mul_59/U863/Y of net u_NV_NVDLA_cmac/u_core/u_mac_6/u_mul_59/n348 has no valid shapes to connect. (ZRT-100)
+Warning: Pin u_NV_NVDLA_cmac/u_core/u_mac_1/u_mul_44/U815/Y of net u_NV_NVDLA_cmac/u_core/u_mac_1/u_mul_44/n850 has no valid shapes to connect. (ZRT-100)
+Current Stage stats:
+[End of Read DB] Elapsed real time: 0:00:05 
+[End of Read DB] Elapsed cpu  time: sys=0:00:00 usr=0:00:08 total=0:00:08
+[End of Read DB] Stage (MB): Used  910  Alloctr  938  Proc   53 
+[End of Read DB] Total (MB): Used  917  Alloctr  945  Proc 17683 
+Constructing data structure ...
+Design statistics:
+Design Bounding Box (0.00,0.00,2478.36,2479.58)
+Number of routing layers = 10
+layer M1, dir Hor, min width = 0.05, min space = 0.05 pitch = 0.15
+layer M2, dir Ver, min width = 0.06, min space = 0.06 pitch = 0.15
+layer M3, dir Hor, min width = 0.06, min space = 0.06 pitch = 0.30
+layer M4, dir Ver, min width = 0.06, min space = 0.06 pitch = 0.30
+layer M5, dir Hor, min width = 0.06, min space = 0.06 pitch = 0.61
+layer M6, dir Ver, min width = 0.06, min space = 0.06 pitch = 0.61
+layer M7, dir Hor, min width = 0.06, min space = 0.06 pitch = 1.22
+layer M8, dir Ver, min width = 0.06, min space = 0.06 pitch = 1.22
+layer M9, dir Hor, min width = 0.16, min space = 0.16 pitch = 2.43
+layer MRDL, dir Ver, min width = 2.00, min space = 2.00 pitch = 4.86
+Current Stage stats:
+[End of Build Tech Data] Elapsed real time: 0:00:00 
+[End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Tech Data] Stage (MB): Used  210  Alloctr  209  Proc   59 
+[End of Build Tech Data] Total (MB): Used 1128  Alloctr 1155  Proc 17742 
+Net statistics:
+Total number of nets     = 1295417
+Number of nets to route  = 1268487
+Number of single or zero port nets = 6645
+20285 nets are fully connected,
+ of which 20285 are detail routed and 0 are global routed.
+Current Stage stats:
+[End of Build All Nets] Elapsed real time: 0:00:01 
+[End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:04 total=0:00:04
+[End of Build All Nets] Stage (MB): Used  391  Alloctr  395  Proc  409 
+[End of Build All Nets] Total (MB): Used 1519  Alloctr 1550  Proc 18152 
+Average gCell capacity  2.70	 on layer (1)	 M1
+Average gCell capacity  11.00	 on layer (2)	 M2
+Average gCell capacity  5.50	 on layer (3)	 M3
+Average gCell capacity  5.50	 on layer (4)	 M4
+Average gCell capacity  2.75	 on layer (5)	 M5
+Average gCell capacity  2.75	 on layer (6)	 M6
+Average gCell capacity  1.37	 on layer (7)	 M7
+Average gCell capacity  1.38	 on layer (8)	 M8
+Average gCell capacity  0.69	 on layer (9)	 M9
+Average gCell capacity  0.34	 on layer (10)	 MRDL
+Average number of tracks per gCell 11.00	 on layer (1)	 M1
+Average number of tracks per gCell 11.00	 on layer (2)	 M2
+Average number of tracks per gCell 5.50	 on layer (3)	 M3
+Average number of tracks per gCell 5.50	 on layer (4)	 M4
+Average number of tracks per gCell 2.75	 on layer (5)	 M5
+Average number of tracks per gCell 2.75	 on layer (6)	 M6
+Average number of tracks per gCell 1.38	 on layer (7)	 M7
+Average number of tracks per gCell 1.38	 on layer (8)	 M8
+Average number of tracks per gCell 0.69	 on layer (9)	 M9
+Average number of tracks per gCell 0.34	 on layer (10)	 MRDL
+Number of gCells = 21978060
+Current Stage stats:
+[End of Build Congestion map] Elapsed real time: 0:00:02 
+[End of Build Congestion map] Elapsed cpu  time: sys=0:00:00 usr=0:00:09 total=0:00:10
+[End of Build Congestion map] Stage (MB): Used   21  Alloctr   37  Proc   84 
+[End of Build Congestion map] Total (MB): Used 1540  Alloctr 1588  Proc 18236 
+Total stats:
+[End of Build Data] Elapsed real time: 0:00:04 
+[End of Build Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:14 total=0:00:14
+[End of Build Data] Stage (MB): Used  639  Alloctr  659  Proc  552 
+[End of Build Data] Total (MB): Used 1556  Alloctr 1604  Proc 18236 
+Current Stage stats:
+[End of Blocked Pin Detection] Elapsed real time: 0:00:24 
+[End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:24 total=0:00:24
+[End of Blocked Pin Detection] Stage (MB): Used   16  Alloctr   16  Proc    0 
+[End of Blocked Pin Detection] Total (MB): Used 1556  Alloctr 1604  Proc 18236 
+Information: Using 4 threads for routing. (ZRT-444)
+multi gcell levels ON
+
+Start GR phase 0
+10% of nets complete Elapsed cpu time: 0:00:02 Elapsed real time: 0:00:00
+20% of nets complete Elapsed cpu time: 0:00:06 Elapsed real time: 0:00:01
+30% of nets complete Elapsed cpu time: 0:00:13 Elapsed real time: 0:00:03
+40% of nets complete Elapsed cpu time: 0:00:16 Elapsed real time: 0:00:04
+50% of nets complete Elapsed cpu time: 0:00:22 Elapsed real time: 0:00:05
+60% of nets complete Elapsed cpu time: 0:00:26 Elapsed real time: 0:00:06
+70% of nets complete Elapsed cpu time: 0:00:32 Elapsed real time: 0:00:08
+80% of nets complete Elapsed cpu time: 0:00:36 Elapsed real time: 0:00:09
+90% of nets complete Elapsed cpu time: 0:00:50 Elapsed real time: 0:00:14
+Current Stage stats:
+[End of Initial Routing] Elapsed real time: 0:00:43 
+[End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:01:53 total=0:01:54
+[End of Initial Routing] Stage (MB): Used  665  Alloctr  656  Proc  671 
+[End of Initial Routing] Total (MB): Used 2221  Alloctr 2261  Proc 18908 
+Initial. Routing result:
+Initial. Both Dirs: Overflow = 717748 Max = 8 GRCs = 729504 (16.60%)
+Initial. H routing: Overflow = 659613 Max = 8 (GRCs =   2) GRCs = 670723 (30.52%)
+Initial. V routing: Overflow =  58134 Max = 8 (GRCs =   1) GRCs =  58781 (2.67%)
+Initial. M1         Overflow =   6860 Max = 5 (GRCs =   1) GRCs =   8269 (0.38%)
+Initial. M2         Overflow =   5750 Max = 8 (GRCs =   1) GRCs =   9639 (0.44%)
+Initial. M3         Overflow = 243516 Max = 8 (GRCs =   2) GRCs = 292893 (13.33%)
+Initial. M4         Overflow =  41899 Max = 5 (GRCs =   1) GRCs =  38792 (1.77%)
+Initial. M5         Overflow = 200619 Max = 5 (GRCs =   5) GRCs = 173599 (7.90%)
+Initial. M6         Overflow =   7433 Max = 3 (GRCs =   2) GRCs =   7326 (0.33%)
+Initial. M7         Overflow =  73580 Max = 3 (GRCs =  17) GRCs =  72241 (3.29%)
+Initial. M8         Overflow =   3052 Max = 2 (GRCs =  28) GRCs =   3024 (0.14%)
+Initial. M9         Overflow = 135037 Max = 3 (GRCs = 201) GRCs = 123721 (5.63%)
+Initial. MRDL       Overflow =      0 Max = 0 (GRCs =   0) GRCs =      0 (0.00%)
+
+Initial. Total Wire Length = 49428083.11
+Initial. Layer M1 wire length = 802553.27
+Initial. Layer M2 wire length = 12460627.79
+Initial. Layer M3 wire length = 11926099.74
+Initial. Layer M4 wire length = 9486250.84
+Initial. Layer M5 wire length = 7332321.53
+Initial. Layer M6 wire length = 2114599.87
+Initial. Layer M7 wire length = 3089548.94
+Initial. Layer M8 wire length = 744450.15
+Initial. Layer M9 wire length = 1469145.31
+Initial. Layer MRDL wire length = 2485.67
+Initial. Total Number of Contacts = 7321826
+Initial. Via VIA12SQ_C count = 3810687
+Initial. Via VIA23SQ_C count = 2978973
+Initial. Via VIA34SQ_C count = 226436
+Initial. Via VIA45SQ_C count = 193396
+Initial. Via VIA56SQ_C count = 45571
+Initial. Via VIA67SQ_C count = 43083
+Initial. Via VIA78SQ_C count = 11859
+Initial. Via VIA89_C count = 11806
+Initial. Via VIA9RDL count = 15
+Initial. completed.
+
+Start GR phase 1
+10% of nets complete Elapsed cpu time: 0:01:35 Elapsed real time: 0:01:11
+20% of nets complete Elapsed cpu time: 0:01:47 Elapsed real time: 0:01:13
+30% of nets complete Elapsed cpu time: 0:02:23 Elapsed real time: 0:01:27
+40% of nets complete Elapsed cpu time: 0:02:30 Elapsed real time: 0:01:29
+50% of nets complete Elapsed cpu time: 0:02:33 Elapsed real time: 0:01:30
+60% of nets complete Elapsed cpu time: 0:02:35 Elapsed real time: 0:01:31
+70% of nets complete Elapsed cpu time: 0:02:38 Elapsed real time: 0:01:31
+80% of nets complete Elapsed cpu time: 0:02:41 Elapsed real time: 0:01:32
+90% of nets complete Elapsed cpu time: 0:02:42 Elapsed real time: 0:01:32
+Current Stage stats:
+[End of Phase1 Routing] Elapsed real time: 0:01:35 
+[End of Phase1 Routing] Elapsed cpu  time: sys=0:00:01 usr=0:02:44 total=0:02:45
+[End of Phase1 Routing] Stage (MB): Used   31  Alloctr   36  Proc   79 
+[End of Phase1 Routing] Total (MB): Used 2253  Alloctr 2297  Proc 18987 
+phase1. Routing result:
+phase1. Both Dirs: Overflow = 173542 Max = 8 GRCs = 186352 (4.24%)
+phase1. H routing: Overflow = 162409 Max = 7 (GRCs =    1) GRCs = 173986 (7.92%)
+phase1. V routing: Overflow =  11132 Max = 8 (GRCs =    1) GRCs =  12366 (0.56%)
+phase1. M1         Overflow =  11141 Max = 7 (GRCs =    1) GRCs =  12642 (0.58%)
+phase1. M2         Overflow =   2495 Max = 8 (GRCs =    1) GRCs =   3825 (0.17%)
+phase1. M3         Overflow =  26368 Max = 4 (GRCs =   22) GRCs =  45485 (2.07%)
+phase1. M4         Overflow =   4243 Max = 3 (GRCs =    1) GRCs =   4158 (0.19%)
+phase1. M5         Overflow =  63957 Max = 4 (GRCs =    2) GRCs =  56077 (2.55%)
+phase1. M6         Overflow =   3293 Max = 2 (GRCs =   11) GRCs =   3282 (0.15%)
+phase1. M7         Overflow =  32583 Max = 3 (GRCs =    5) GRCs =  31483 (1.43%)
+phase1. M8         Overflow =   1101 Max = 1 (GRCs = 1101) GRCs =   1101 (0.05%)
+phase1. M9         Overflow =  28360 Max = 2 (GRCs =   61) GRCs =  28299 (1.29%)
+phase1. MRDL       Overflow =      0 Max = 0 (GRCs =    0) GRCs =      0 (0.00%)
+
+phase1. Total Wire Length = 50341629.11
+phase1. Layer M1 wire length = 1151291.44
+phase1. Layer M2 wire length = 12546807.12
+phase1. Layer M3 wire length = 11131210.68
+phase1. Layer M4 wire length = 9525040.39
+phase1. Layer M5 wire length = 7106233.95
+phase1. Layer M6 wire length = 2966109.87
+phase1. Layer M7 wire length = 3315795.29
+phase1. Layer M8 wire length = 973714.71
+phase1. Layer M9 wire length = 1614188.15
+phase1. Layer MRDL wire length = 11237.51
+phase1. Total Number of Contacts = 7548334
+phase1. Via VIA12SQ_C count = 3942501
+phase1. Via VIA23SQ_C count = 2942872
+phase1. Via VIA34SQ_C count = 275121
+phase1. Via VIA45SQ_C count = 221934
+phase1. Via VIA56SQ_C count = 72035
+phase1. Via VIA67SQ_C count = 58736
+phase1. Via VIA78SQ_C count = 18080
+phase1. Via VIA89_C count = 16979
+phase1. Via VIA9RDL count = 76
+phase1. completed.
+
+Start GR phase 2
+10% of nets complete Elapsed cpu time: 0:01:48 Elapsed real time: 0:01:39
+20% of nets complete Elapsed cpu time: 0:01:59 Elapsed real time: 0:01:43
+30% of nets complete Elapsed cpu time: 0:02:11 Elapsed real time: 0:01:47
+40% of nets complete Elapsed cpu time: 0:02:40 Elapsed real time: 0:01:57

@@ -1,0 +1,130 @@
+Warning: Design 'NV_NVDLA_partition_m' contains 31 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+
+Information: Starting test design rule checking. (TEST-222)
+Warning: Violations occurred during test design rule checking. (TEST-124)
+Information: Test design rule checking completed. (TEST-123)
+  Architecting Scan Chains
+
+****************************************
+Preview_dft report
+For    : 'Insert_dft' command
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-5
+Date   : Fri May  8 00:44:51 2026
+****************************************
+
+Number of chains: 32
+Scan methodology: full_scan
+Scan style: multiplexed_flip_flop
+Clock domain: no_mix
+Scan enable: scan_enable (no hookup pin)
+
+
+Scan chain '1' (scan_in --> scan_out) contains 2100 cells
+
+
+Scan chain '2' (test_si2 --> test_so2) contains 2100 cells
+
+
+Scan chain '3' (test_si3 --> test_so3) contains 2100 cells
+
+
+Scan chain '4' (test_si4 --> test_so4) contains 2100 cells
+
+
+Scan chain '5' (test_si5 --> test_so5) contains 2100 cells
+
+
+Scan chain '6' (test_si6 --> test_so6) contains 2100 cells
+
+
+Scan chain '7' (test_si7 --> test_so7) contains 2100 cells
+
+
+Scan chain '8' (test_si8 --> test_so8) contains 2100 cells
+
+
+Scan chain '9' (test_si9 --> test_so9) contains 2100 cells
+
+
+Scan chain '10' (test_si10 --> test_so10) contains 2100 cells
+
+
+Scan chain '11' (test_si11 --> test_so11) contains 2100 cells
+
+
+Scan chain '12' (test_si12 --> test_so12) contains 2100 cells
+
+
+Scan chain '13' (test_si13 --> test_so13) contains 2100 cells
+
+
+Scan chain '14' (test_si14 --> test_so14) contains 2100 cells
+
+
+Scan chain '15' (test_si15 --> test_so15) contains 2100 cells
+
+
+Scan chain '16' (test_si16 --> test_so16) contains 2099 cells
+
+
+Scan chain '17' (test_si17 --> test_so17) contains 2099 cells
+
+
+Scan chain '18' (test_si18 --> test_so18) contains 2099 cells
+
+
+Scan chain '19' (test_si19 --> test_so19) contains 2099 cells
+
+
+Scan chain '20' (test_si20 --> test_so20) contains 2099 cells
+
+
+Scan chain '21' (test_si21 --> test_so21) contains 2099 cells
+
+
+Scan chain '22' (test_si22 --> test_so22) contains 2099 cells
+
+
+Scan chain '23' (test_si23 --> test_so23) contains 2099 cells
+
+
+Scan chain '24' (test_si24 --> test_so24) contains 2099 cells
+
+
+Scan chain '25' (test_si25 --> test_so25) contains 2099 cells
+
+
+Scan chain '26' (test_si26 --> test_so26) contains 2099 cells
+
+
+Scan chain '27' (test_si27 --> test_so27) contains 2099 cells
+
+
+Scan chain '28' (test_si28 --> test_so28) contains 2099 cells
+
+
+Scan chain '29' (test_si29 --> test_so29) contains 2099 cells
+
+
+Scan chain '30' (test_si30 --> test_so30) contains 2099 cells
+
+
+Scan chain '31' (test_si31 --> test_so31) contains 2099 cells
+
+
+Scan chain '32' (test_si32 --> cmac_a2csb_resp_valid) contains 2099 cells
+
+
+
+************ Test Point Plan Report ************
+Total number of test points  : 0
+Number of Autofix test points: 0
+Number of Wrapper test points: 0
+Number of test modes         : 0
+Number of test point enables : 0
+Number of data sources       : 0
+Number of data sinks         : 0
+**************************************************
+
+1

@@ -1,0 +1,41 @@
+**************************************************
+Report         : svf_operation
+                 -status rejected 
+                 -command reg_constant 
+
+Reference      : r:/WORK/NV_NVDLA_partition_m
+Implementation : i:/WORK/NV_NVDLA_partition_m
+Version        : W-2024.09-SP5
+Date           : Fri May  8 21:43:28 2026
+**************************************************
+**************************************************
+Report         : svf_operation
+                 -status rejected 
+                 -command multiplier 
+
+Reference      : r:/WORK/NV_NVDLA_partition_m
+Implementation : i:/WORK/NV_NVDLA_partition_m
+Version        : W-2024.09-SP5
+Date           : Fri May  8 21:43:28 2026
+**************************************************
+**************************************************
+Report         : svf_operation
+                 -status rejected 
+                 -command uniquify 
+
+Reference      : r:/WORK/NV_NVDLA_partition_m
+Implementation : i:/WORK/NV_NVDLA_partition_m
+Version        : W-2024.09-SP5
+Date           : Fri May  8 21:43:28 2026
+**************************************************
+**************************************************
+Report         : svf_operation
+                 -status rejected 
+                 -command ununiquify 
+
+Reference      : r:/WORK/NV_NVDLA_partition_m
+Implementation : i:/WORK/NV_NVDLA_partition_m
+Version        : W-2024.09-SP5
+Date           : Fri May  8 21:43:28 2026
+**************************************************
+1

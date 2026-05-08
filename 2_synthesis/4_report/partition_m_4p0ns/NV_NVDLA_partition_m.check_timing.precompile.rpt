@@ -1,0 +1,71 @@
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Module: DW01_add_width2, Ports: 8, Input: 5, Output: 3, Inout: 0
+Module: DW01_add_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width3, Ports: 11, Input: 7, Output: 4, Inout: 0
+Module: DW01_add_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width4, Ports: 14, Input: 9, Output: 5, Inout: 0
+Module: DW01_add_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width5, Ports: 17, Input: 11, Output: 6, Inout: 0
+Module: DW01_add_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width6, Ports: 20, Input: 13, Output: 7, Inout: 0
+Module: DW01_add_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width7, Ports: 23, Input: 15, Output: 8, Inout: 0
+Module: DW01_add_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width4, Ports: 14, Input: 9, Output: 5, Inout: 0
+Module: DW01_sub_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width5, Ports: 17, Input: 11, Output: 6, Inout: 0
+Module: DW01_sub_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width6, Ports: 20, Input: 13, Output: 7, Inout: 0
+Module: DW01_sub_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width46, Ports: 140, Input: 93, Output: 47, Inout: 0
+Module: DW01_add_width46, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_minmax_width4_num_inputs4, Ports: 24, Input: 18, Output: 6, Inout: 0
+Module: DW_minmax_width4_num_inputs4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW_minmax_width4_num_inputs4'
+Module: DW01_MUX, Ports: 4, Input: 3, Output: 1, Inout: 0
+Module: DW01_MUX, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_mmux_width2, Ports: 7, Input: 5, Output: 2, Inout: 0
+Module: DW01_mmux_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_mmux_width3, Ports: 10, Input: 7, Output: 3, Inout: 0
+Module: DW01_mmux_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_mmux_width4, Ports: 13, Input: 9, Output: 4, Inout: 0
+Module: DW01_mmux_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_mmux_width5, Ports: 16, Input: 11, Output: 5, Inout: 0
+Module: DW01_mmux_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_minmax2_width4, Ports: 15, Input: 10, Output: 5, Inout: 0
+Module: DW_minmax2_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW_minmax2_width4'
+Module: DW_PREFIX_ANDOR_width4, Ports: 16, Input: 8, Output: 8, Inout: 0
+Module: DW_PREFIX_ANDOR_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_minmax_width4_num_inputs4, Ports: 24, Input: 18, Output: 6, Inout: 0
+Module: DW_minmax_width4_num_inputs4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW_minmax_width4_num_inputs4'
+Module: DW_minmax4_width4, Ports: 25, Input: 18, Output: 7, Inout: 0
+Module: DW_minmax4_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW_minmax4_width4'
+Module: DW_minmax_width4_num_inputs16, Ports: 74, Input: 66, Output: 8, Inout: 0
+Module: DW_minmax_width4_num_inputs16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW_minmax_width4_num_inputs16'
+Module: DW_minmax_width4_num_inputs16, Ports: 74, Input: 66, Output: 8, Inout: 0
+Module: DW_minmax_width4_num_inputs16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW_minmax_width4_num_inputs16'
+Information: Updating design information... (UID-85)
+Warning: Design 'NV_NVDLA_partition_m' contains 45 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+
+Information: Checking generated_clocks...
+
+Information: Checking loops...
+
+Information: Checking no_input_delay...
+Warning: There are 2372 input ports have no clock_relative delay specified, the command set_input_delay without -clock option will be ignored. (TIM-216)
+
+Information: Checking unconstrained_endpoints...
+
+Warning: There are 6185 end-points which are not constrained for maximum delay.
+
+Information: Checking pulse_clock_cell_type...
+
+Information: Checking no_driving_cell...
+
+Information: Checking partial_input_delay...
+1

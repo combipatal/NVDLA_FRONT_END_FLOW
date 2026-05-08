@@ -1,0 +1,21 @@
+ 
+****************************************
+Report : clocks
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-5
+Date   : Fri May  8 14:12:56 2026
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+nvdla_core_clk
+                 4.00   {0 2}                         {nvdla_core_clk}
+--------------------------------------------------------------------------------
+1

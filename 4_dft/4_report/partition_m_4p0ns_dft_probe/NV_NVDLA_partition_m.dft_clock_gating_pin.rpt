@@ -1,0 +1,34 @@
+ 
+****************************************
+Report : DFT Clock gating pin configuration
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-5
+Date   : Thu May  7 23:27:12 2026
+****************************************
+
+User Identified Clock Gating Cells: 20
+---------------------------------------------------------------------
+Control Signal      : Pin            : Cell
+---------------------------------------------------------------------
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_op_0/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_op_1/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_op_2/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_op_3/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_op_4/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_op_5/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_op_6/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_op_7/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_op_8/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_op_9/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_op_10/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_wg_0/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_wg_1/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_wg_2/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_wg_3/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_wg_4/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_wg_5/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_wg_6/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_wg_7/nvdla_core_clk_slcg_0/p_clkgate
+ScanEnable          : TE             : u_NV_NVDLA_cmac/u_core/u_slcg_wg_8/nvdla_core_clk_slcg_0/p_clkgate
+
+1

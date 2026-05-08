@@ -1,0 +1,197 @@
+ 
+****************************************
+Report : Scan path
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-5
+Date   : Thu May  7 23:08:45 2026
+****************************************
+
+========================================
+TEST MODE: Internal_scan
+VIEW     : Specification
+========================================
+No scan path defined in this mode.
+
+ 
+****************************************
+Report : Scan path
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-5
+Date   : Thu May  7 23:08:45 2026
+****************************************
+
+========================================
+TEST MODE: Internal_scan
+VIEW     : Existing DFT
+========================================
+
+========================================
+AS SPECIFIED BY USER
+========================================
+
+
+========================================
+AS BUILT BY insert_dft
+========================================
+
+Scan_path    Len   ScanDataIn  ScanDataOut ScanEnable  MasterClock SlaveClock
+-----------  ----- ----------- ----------- ----------- ----------- -----------
+I 1          4     scan_in     scan_out    scan_enable nvdla_core_clk -
+I 2          4     test_si2    test_so2    scan_enable nvdla_core_clk -
+I 3          4     test_si3    test_so3    scan_enable nvdla_core_clk -
+I 4          4     test_si4    test_so4    scan_enable nvdla_core_clk -
+I 5          4     test_si5    test_so5    scan_enable nvdla_core_clk -
+I 6          4     test_si6    test_so6    scan_enable nvdla_core_clk -
+I 7          4     test_si7    test_so7    scan_enable nvdla_core_clk -
+I 8          4     test_si8    test_so8    scan_enable nvdla_core_clk -
+I 9          4     test_si9    test_so9    scan_enable nvdla_core_clk -
+I 10         4     test_si10   test_so10   scan_enable nvdla_core_clk -
+I 11         4     test_si11   test_so11   scan_enable nvdla_core_clk -
+I 12         4     test_si12   test_so12   scan_enable nvdla_core_clk -
+I 13         4     test_si13   cmac_a2csb_resp_pd[12] scan_enable nvdla_core_clk -
+I 14         3     test_si14   cmac_a2csb_resp_pd[17] scan_enable nvdla_core_clk -
+I 15         3     test_si15   cmac_a2csb_resp_valid scan_enable nvdla_core_clk -
+I 16         3     test_si16   test_so16   scan_enable nvdla_core_clk -
+I 17         3     test_si17   test_so17   scan_enable nvdla_core_clk -
+I 18         3     test_si18   test_so18   scan_enable nvdla_core_clk -
+I 19         3     test_si19   test_so19   scan_enable nvdla_core_clk -
+I 20         3     test_si20   test_so20   scan_enable nvdla_core_clk -
+I 21         3     test_si21   test_so21   scan_enable nvdla_core_clk -
+I 22         3     test_si22   test_so22   scan_enable nvdla_core_clk -
+I 23         3     test_si23   test_so23   scan_enable nvdla_core_clk -
+I 24         3     test_si24   test_so24   scan_enable nvdla_core_clk -
+I 25         3     test_si25   test_so25   scan_enable nvdla_core_clk -
+I 26         3     test_si26   test_so26   scan_enable nvdla_core_clk -
+I 27         3     test_si27   test_so27   scan_enable nvdla_core_clk -
+I 28         3     test_si28   test_so28   scan_enable nvdla_core_clk -
+I 29         3     test_si29   test_so29   scan_enable nvdla_core_clk -
+I 30         3     test_si30   test_so30   scan_enable nvdla_core_clk -
+I 31         3     test_si31   test_so31   scan_enable nvdla_core_clk -
+I 32         2     test_si32   test_so32   scan_enable nvdla_core_clk -
+
+========================================
+TEST MODE: Internal_scan
+VIEW     : Existing DFT
+========================================
+
+========================================
+AS SPECIFIED BY USER
+========================================
+
+
+========================================
+AS BUILT BY insert_dft
+========================================
+
+Scan_path     Cell_#    Instance_name            Clocks
+---------     ------    -------------            ------
+I 1           0         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d1_reg_0_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d2_reg_10_
+              2         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d3_reg_10_
+              3         u_NV_NVDLA_cmac/u_core/in_dat_pd_d1_reg_0_
+I 2           0         u_NV_NVDLA_cmac/u_core/in_dat_pvld_d1_reg nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_core/in_dat_pvld_d2_reg
+              2         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d2_reg_0_
+              3         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d3_reg_0_
+I 3           0         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d2_reg_1_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d3_reg_1_
+              2         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d2_reg_2_
+              3         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d3_reg_2_
+I 4           0         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d2_reg_3_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d3_reg_3_
+              2         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d2_reg_4_
+              3         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d3_reg_4_
+I 5           0         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d2_reg_5_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d3_reg_5_
+              2         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d2_reg_6_
+              3         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d3_reg_6_
+I 6           0         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d2_reg_7_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d3_reg_7_
+              2         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d2_reg_8_
+              3         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d3_reg_8_
+I 7           0         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d2_reg_9_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/slcg_op_en_d3_reg_9_
+              2         u_dla_clk_ovr_on_sync/sync_0/NV_GENERIC_CELL/d1_reg
+              3         u_dla_clk_ovr_on_sync/sync_0/NV_GENERIC_CELL/q_reg
+I 8           0         u_global_clk_ovr_on_sync/sync_0/NV_GENERIC_CELL/d1_reg nvdla_core_clk 
+              1         u_global_clk_ovr_on_sync/sync_0/NV_GENERIC_CELL/q_reg
+              2         u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/d0_reg
+              3         u_partition_m_reset/sync_reset_synced_rstn/NV_GENERIC_CELL/q_reg
+I 9           0         u_NV_NVDLA_cmac/u_core/in_dat_pd_d1_reg_1_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_core/in_dat_pd_d1_reg_2_
+              2         u_NV_NVDLA_cmac/u_core/in_dat_pd_d1_reg_3_
+              3         u_NV_NVDLA_cmac/u_core/in_dat_pd_d1_reg_4_
+I 10          0         u_NV_NVDLA_cmac/u_core/in_dat_pd_d1_reg_5_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_core/in_dat_pd_d1_reg_6_
+              2         u_NV_NVDLA_cmac/u_core/in_dat_pd_d1_reg_7_
+              3         u_NV_NVDLA_cmac/u_core/in_dat_pd_d1_reg_8_
+I 11          0         u_NV_NVDLA_cmac/u_core/in_dat_pd_d2_reg_0_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_core/in_dat_pd_d2_reg_1_
+              2         u_NV_NVDLA_cmac/u_core/in_dat_pd_d2_reg_2_
+              3         u_NV_NVDLA_cmac/u_core/in_dat_pd_d2_reg_3_
+I 12          0         u_NV_NVDLA_cmac/u_core/in_dat_pd_d2_reg_4_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_core/in_dat_pd_d2_reg_5_
+              2         u_NV_NVDLA_cmac/u_core/in_dat_pd_d2_reg_6_
+              3         u_NV_NVDLA_cmac/u_core/in_dat_pd_d2_reg_7_
+I 13          0         u_NV_NVDLA_cmac/u_core/in_dat_pd_d2_reg_8_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/cmac_a2csb_resp_pd_reg_0_
+              2         u_NV_NVDLA_cmac/u_reg/cmac_a2csb_resp_pd_reg_1_
+              3         u_NV_NVDLA_cmac/u_reg/cmac_a2csb_resp_pd_reg_12_
+I 14          0         u_NV_NVDLA_cmac/u_reg/cmac_a2csb_resp_pd_reg_13_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/cmac_a2csb_resp_pd_reg_16_
+              2         u_NV_NVDLA_cmac/u_reg/cmac_a2csb_resp_pd_reg_17_
+I 15          0         u_NV_NVDLA_cmac/u_reg/cmac_a2csb_resp_pd_reg_33_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/dp2reg_consumer_reg
+              2         u_NV_NVDLA_cmac/u_reg/cmac_a2csb_resp_valid_reg
+I 16          0         u_NV_NVDLA_cmac/u_reg/reg2dp_d0_op_en_reg nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/reg2dp_d1_op_en_reg
+              2         u_NV_NVDLA_cmac/u_reg/reg2dp_op_en_reg_reg_0_
+I 17          0         u_NV_NVDLA_cmac/u_reg/reg2dp_op_en_reg_reg_1_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/reg2dp_op_en_reg_reg_2_
+              2         u_NV_NVDLA_cmac/u_reg/req_pd_reg_0_
+I 18          0         u_NV_NVDLA_cmac/u_reg/req_pd_reg_1_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/req_pd_reg_2_
+              2         u_NV_NVDLA_cmac/u_reg/req_pd_reg_3_
+I 19          0         u_NV_NVDLA_cmac/u_reg/req_pd_reg_4_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/req_pd_reg_5_
+              2         u_NV_NVDLA_cmac/u_reg/req_pd_reg_6_
+I 20          0         u_NV_NVDLA_cmac/u_reg/req_pd_reg_7_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/req_pd_reg_8_
+              2         u_NV_NVDLA_cmac/u_reg/req_pd_reg_9_
+I 21          0         u_NV_NVDLA_cmac/u_reg/req_pd_reg_22_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/req_pd_reg_34_
+              2         u_NV_NVDLA_cmac/u_reg/req_pd_reg_35_
+I 22          0         u_NV_NVDLA_cmac/u_reg/req_pd_reg_54_ nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/req_pd_reg_55_
+              2         u_NV_NVDLA_cmac/u_reg/req_pvld_reg
+I 23          0         u_NV_NVDLA_cmac/u_reg/u_dual_reg_d0/conv_mode_reg nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/u_dual_reg_d0/proc_precision_reg_0_
+              2         u_NV_NVDLA_cmac/u_reg/u_dual_reg_d0/proc_precision_reg_1_
+I 24          0         u_NV_NVDLA_cmac/u_reg/u_dual_reg_d1/conv_mode_reg nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_reg/u_dual_reg_d1/proc_precision_reg_0_
+              2         u_NV_NVDLA_cmac/u_reg/u_dual_reg_d1/proc_precision_reg_1_
+I 25          0         u_NV_NVDLA_cmac/u_reg/u_single_reg/producer_reg nvdla_core_clk 
+              1         u_dla_clk_ovr_on_sync/sync_0/NV_GENERIC_CELL/d0_reg
+              2         u_global_clk_ovr_on_sync/sync_0/NV_GENERIC_CELL/d0_reg
+I 26          0         u_NV_NVDLA_cmac/u_core/u_slcg_op_0/nvdla_core_clk_slcg_0/p_clkgate/qd_reg nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_core/u_slcg_op_1/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+              2         u_NV_NVDLA_cmac/u_core/u_slcg_op_2/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+I 27          0         u_NV_NVDLA_cmac/u_core/u_slcg_op_3/nvdla_core_clk_slcg_0/p_clkgate/qd_reg nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_core/u_slcg_op_4/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+              2         u_NV_NVDLA_cmac/u_core/u_slcg_op_5/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+I 28          0         u_NV_NVDLA_cmac/u_core/u_slcg_op_6/nvdla_core_clk_slcg_0/p_clkgate/qd_reg nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_core/u_slcg_op_7/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+              2         u_NV_NVDLA_cmac/u_core/u_slcg_op_8/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+I 29          0         u_NV_NVDLA_cmac/u_core/u_slcg_op_9/nvdla_core_clk_slcg_0/p_clkgate/qd_reg nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_core/u_slcg_op_10/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+              2         u_NV_NVDLA_cmac/u_core/u_slcg_wg_0/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+I 30          0         u_NV_NVDLA_cmac/u_core/u_slcg_wg_1/nvdla_core_clk_slcg_0/p_clkgate/qd_reg nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_core/u_slcg_wg_2/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+              2         u_NV_NVDLA_cmac/u_core/u_slcg_wg_3/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+I 31          0         u_NV_NVDLA_cmac/u_core/u_slcg_wg_4/nvdla_core_clk_slcg_0/p_clkgate/qd_reg nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_core/u_slcg_wg_5/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+              2         u_NV_NVDLA_cmac/u_core/u_slcg_wg_6/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+I 32          0         u_NV_NVDLA_cmac/u_core/u_slcg_wg_7/nvdla_core_clk_slcg_0/p_clkgate/qd_reg nvdla_core_clk 
+              1         u_NV_NVDLA_cmac/u_core/u_slcg_wg_8/nvdla_core_clk_slcg_0/p_clkgate/qd_reg
+
+1

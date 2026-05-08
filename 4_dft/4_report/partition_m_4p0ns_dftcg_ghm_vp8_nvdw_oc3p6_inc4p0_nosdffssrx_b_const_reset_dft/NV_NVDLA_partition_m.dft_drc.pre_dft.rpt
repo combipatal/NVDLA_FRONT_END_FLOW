@@ -1,0 +1,46 @@
+In mode: all_dft...
+  Pre-DFT DRC enabled
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+  ...basic checks...
+  ...basic sequential cell checks...
+  	...checking for scan equivalents...
+  ...checking vector rules...
+  ...checking pre-dft rules...
+
+-----------------------------------------------------------------
+Begin Topology violations...
+
+Warning: Input pin dla_clk_ovr_on_sync of cell u_NV_NVDLA_cmac (NV_NVDLA_cmac) is unconnected. It is assumed 'X' for the purpose of test. (TEST-332)
+Information: There are 793 other pins with the same violation. (TEST-170)
+
+Topology violations completed...
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+  DRC Report
+
+  Total violations: 794
+
+-----------------------------------------------------------------
+
+794 TOPOLOGY VIOLATIONS
+   794 Unconnected input pin violations (TEST-332)
+
+
+Warning: Violations occurred during test design rule checking. (TEST-124)
+
+-----------------------------------------------------------------
+  Sequential Cell Report
+
+  0 out of 66831 sequential cells have violations
+
+-----------------------------------------------------------------
+
+SEQUENTIAL CELLS WITHOUT VIOLATIONS
+      *66782 cells are valid scan cells
+      *  49 cells are non-scan shift-register cells
+
+Information: Test design rule checking completed. (TEST-123)
+1

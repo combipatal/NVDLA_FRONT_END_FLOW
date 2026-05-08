@@ -1,0 +1,3 @@
+Error: invalid character "\"
+in expression "...IFICATION_PRIORITY) : \"\""
+	Use error_info for more info. (CMD-013)

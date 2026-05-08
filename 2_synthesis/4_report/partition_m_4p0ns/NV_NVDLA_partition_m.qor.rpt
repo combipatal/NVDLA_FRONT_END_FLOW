@@ -1,0 +1,86 @@
+ 
+****************************************
+Report : qor
+Design : NV_NVDLA_partition_m
+Version: W-2024.09-SP5-5
+Date   : Thu May  7 22:23:23 2026
+****************************************
+
+
+  Timing Path Group 'nvdla_core_clk'
+  -----------------------------------
+  Levels of Logic:            50.0000
+  Critical Path Length:        3.8776
+  Critical Path Slack:         0.0117
+  Critical Path Clk Period:    4.0000
+  Total Negative Slack:        0.0000
+  No. of Violating Paths:      0.0000
+  Worst Hold Violation:        0.0000
+  Total Hold Violation:        0.0000
+  No. of Hold Violations:      0.0000
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:       4716
+  Hierarchical Port Count:     388301
+  Leaf Cell Count:             962084
+  Buf/Inv Cell Count:          156627
+  Buf Cell Count:               46113
+  Inv Cell Count:              110514
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:    894841
+  Sequential Cell Count:        67243
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    2415202.8611
+  Noncombinational Area:  592634.3244
+  Buf/Inv Area:           339838.5675
+  Total Buffer Area:      189720.0268
+  Total Inverter Area:    150118.5407
+  Macro/Black Box Area:        0.0000
+  Net Area:                    0.0000
+  Net XLength        :  21000220.0000
+  Net YLength        :  19495676.0000
+  -----------------------------------
+  Cell Area:             3007837.1855
+  Design Area:           3007837.1855
+  Net Length        :   40495896.0000
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:       1077574
+  Nets With Violations:          2655
+  Max Trans Violations:           911
+  Max Cap Violations:            2044
+  -----------------------------------
+
+
+  Hostname: SGP3
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                 23.4558
+  Logic Optimization:              315.6158
+  Mapping Optimization:            1646.1343
+  -----------------------------------------
+  Overall Compile Time:            3696.5576
+  Overall Compile Wall Clock Time: 2126.7139
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.0000  TNS: 0.0000  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.0000  TNS: 0.0000  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
