@@ -18,6 +18,10 @@ proc safe_report {file script} {
 set_app_var search_path [list . $::env(PROJECT_ROOT) $::env(NVDLA_ROOT)/vmod]
 set_app_var hdlin_ignore_parallel_case true
 set_app_var verification_set_undriven_signals synthesis
+if {[info exists ::env(FM_DWROOT)] && $::env(FM_DWROOT) ne ""} {
+    set_app_var hdlin_dwroot $::env(FM_DWROOT)
+    set_app_var hdlin_use_svf_dwroot true
+}
 
 if {[info exists ::env(TARGET_LIB)] && $::env(TARGET_LIB) ne ""} {
     read_db $::env(TARGET_LIB)
@@ -26,7 +30,9 @@ if {[info exists ::env(TARGET_LIB)] && $::env(TARGET_LIB) ne ""} {
 set_svf $SVF_FILE
 
 foreach dw_file [split $DW_VERILOG_FILES] {
-    read_verilog -r $dw_file
+    if {$dw_file ne ""} {
+        read_verilog -r $dw_file
+    }
 }
 read_verilog -r -vcs "-f $REF_FILELIST"
 

@@ -16,9 +16,15 @@ source 2_synthesis/scripts/library_setup.tcl
 set_host_options -max_cores $::env(DC_NUM_CORES)
 set_svf $FV_DIR/${MODULE}.svf
 
+# Emit guide_hier_map guidance into the SVF for Formality R2N.
+# This must be enabled before reading RTL, and set_verification_top must run
+# after elaboration before commands that can modify the design.
+set_app_var hdlin_enable_hier_map true
+
 analyze -format sverilog -vcs "-f $FILELIST" -work WORK
 elaborate $MODULE
 current_design $MODULE
+set_verification_top
 
 if {![link]} {
     puts "Error: link failed for $MODULE"

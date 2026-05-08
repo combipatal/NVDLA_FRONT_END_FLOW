@@ -6,6 +6,7 @@
 - Active design: `NV_NVDLA_partition_m`
 - Active functional synthesis run: `partition_m_4p0ns`
 - Active DFT synthesis run: `partition_m_4p0ns_dftcg`
+- Active Formality R2N debug synthesis run: `partition_m_4p0ns_dftcg_ghm`
 - Active DFT insertion run: `partition_m_4p0ns_dftcg_const_reset_dft`
 - Active clock period: `4.0 ns`
 - Repository layout follows numbered stages: `1_vcs`, `2_synthesis`, `3_sta`, `4_dft`, `5_formality`, `6_sweep`.
@@ -30,13 +31,20 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
 - `dla_reset_rstn` is held inactive as `Constant 1` during scan because the same reset port also feeds the reset synchronizer data path.
 - Full DFT insertion from `partition_m_4p0ns_dftcg_const_reset_dft` completes with 32 scan chains and post-DFT DRC total violations `0`.
 - Scan-netlist STA setup is clean; async hold/removal is backend-deferred.
-- Formality R2N is currently failing because the RTL reference setup has unresolved/unmatched black-box guidance issues. The scripts now include DesignWare models and correct DDC read ordering, but R2N still needs DC/Formality guidance improvement.
+- Formality R2N is still failing, but the root cause is narrower than before:
+  - DC now emits `guide_hier_map` guidance through `hdlin_enable_hier_map` and `set_verification_top`.
+  - GHM R2N accepts `32` `hier_map` guidance commands.
+  - The default fallback R2N reference filelist uses `SYNTHESIS` and `DESIGNWARE_NOEXIST` to use NVDLA DW fallback RTL and suppress simulation-only sync randomizer code.
+  - The fallback setup reduced reference black-boxes from `2154` to `2` and unmatched compare points from `282416` to `32`.
+  - R2N still fails on `20` matched CMAC MAC5 carry-save tree DFF compare points, so it is not signoff-clean.
+  - Direct Synopsys DWROOT mode is available with `FM_USE_DWROOT=1`, but the first run was deferred after a long verification-model build and `FM-424` DW02 tree warnings.
 - Formality N2N passes from pre-scan DDC to post-DFT scan DDC in functional mode.
 - TetraMAX stuck-at ATPG completes with DRC clean and test coverage `99.91%`.
 
 ## Open Items
 
-- Improve Formality R2N setup, likely with better reference black-box modeling plus DC `guide_hier_map`/verification-top guidance.
+- Finish Formality R2N setup. Current focus is deterministic `DW02_tree`/carry-save modeling while keeping GHM guidance active.
+- Decide whether the remaining `first_stage_of_sync` placeholder black-boxes should be modeled explicitly or treated as benign placeholders.
 - Backend must fix or re-characterize max transition/capacitance violations.
 - Define a separate reset-test strategy if `dla_reset_rstn` assertion coverage is required.
 - Decide whether current TetraMAX `ND` faults need more ATPG effort, constraints, or classification.

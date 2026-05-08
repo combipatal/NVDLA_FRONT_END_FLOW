@@ -361,3 +361,159 @@
   - Max transition/capacitance cleanup remains backend-deferred.
 - Next action:
   - Commit scripts and tracking updates.
+
+## 2026-05-08 - DC topographical synthesis with Formality hierarchy guidance
+
+- Command: `env DC_FILELIST=2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.f DC_CLK_PERIOD=4.0 DC_RUN_NAME=partition_m_4p0ns_dftcg_ghm 2_synthesis/scripts/run_one_dc.sh NV_NVDLA_partition_m`
+- Stage: Synthesis
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.f`
+  - `2_synthesis/scripts/run_dc.tcl`
+  - `2_synthesis/1_input/constraints/NV_NVDLA_partition_m.sdc`
+- Output artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/net/NV_NVDLA_partition_m.vg`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf`
+- Key reports:
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm/NV_NVDLA_partition_m.qor.rpt`
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm/NV_NVDLA_partition_m.constraint.rpt`
+  - `2_synthesis/3_log/partition_m_4p0ns_dftcg_ghm/NV_NVDLA_partition_m.dc.log`
+- Pass/fail evidence:
+  - DC exited with code `0`.
+  - SVF generated: `2.7M`.
+  - DDC generated: `146M`.
+  - Netlist generated: `90M`.
+  - QoR: setup WNS `0.0000 ns`, TNS `0.0000`, violating paths `0`.
+  - QoR: hold WNS `0.0000 ns`, TNS `0.0000`, violating paths `0`.
+- Warnings or violations:
+  - Remaining `max_transition` and `max_capacitance` violations in `constraint.rpt`.
+  - `TIM-134`: 31 high-fanout nets use fanout `1000` for delay calculation.
+  - `VO-4`: Verilog `assign` or `tran` statements written out.
+  - `OPT-1209`: scan-cell test_cell definition warnings from the SAED32 library.
+- Waiver/defer reason:
+  - Max transition/capacitance and high-fanout cleanup remain backend-deferred to physical optimization.
+  - The run was created to regenerate an SVF with `guide_hier_map` guidance for R2N, not to replace backend closure.
+- Next action:
+  - Re-run Formality R2N with the new GHM SVF and DDC.
+
+## 2026-05-08 - Formality R2N with GHM SVF
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_r2n IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N
+- Result: `FAIL`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.f`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf`
+  - DesignWare sim models `DW_minmax.v` and `DW02_tree.v`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_r2n/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n/NV_NVDLA_partition_m.fm.match.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - `hier_map` guidance accepted: `32`.
+  - Verification `FAILED`.
+  - Passing compare points: `1587`.
+  - Failing compare points: `282276`.
+  - Unverified compare points: `67046`.
+- Warnings or violations:
+  - Previous missing `guide_hier_map` condition was fixed.
+  - Reference-side black-box/unmatched problem remained: `2154` reference black-boxes, `282416` unmatched reference compare points.
+  - `FM-622`: Formality design files and synthesis guide file information inconsistent for manually read DW sim files.
+- Waiver/defer reason:
+  - Not waived. R2N remains failing and is not signoff-clean.
+- Next action:
+  - Replace DW sim-file reference setup with a better reference modeling strategy.
+
+## 2026-05-08 - Formality R2N with NVDLA DW fallback models
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_r2n_nvdw IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N
+- Result: `FAIL`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.formality_r2n.f` with temporary `DESIGNWARE_NOEXIST`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_r2n_nvdw/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw/NV_NVDLA_partition_m.fm.match.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - Reference black-boxes improved from `2154` to `2`.
+  - Unmatched reference compare points improved from `282416` to `32`.
+  - Verification still `FAILED`.
+  - Passing compare points: `1594`.
+  - Failing compare points: `20`.
+  - Unverified compare points: `67039`, all because the failing-point limit was reached.
+- Warnings or violations:
+  - Remaining black-boxes are `first_stage_of_sync` placeholder instances in `p_SSYNC3DO` and `p_SSYNC3DO_S_PPP`.
+  - Remaining failing points are matched DFFs under `u_NV_NVDLA_cmac/u_core/u_mac_5/pp_out_l0n02_*`.
+  - Root cause narrowed to DesignWare carry-save tree reference modeling mismatch when using NVDLA fallback DW RTL.
+- Waiver/defer reason:
+  - Not waived. R2N remains failing, but the failure is now narrow and actionable.
+- Next action:
+  - Prefer Synopsys DWROOT-based Formality setup with `SYNTHESIS` reference define instead of NVDLA fallback DW models.
+
+## 2026-05-08 - Formality R2N DWROOT experiment
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_r2n_dwroot IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N
+- Result: `DEFERRED`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.formality_r2n_dwroot.f`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf`
+- Output artifacts:
+  - Partial log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_r2n_dwroot/NV_NVDLA_partition_m.r2n.fm.log`
+  - Work log `5_formality/2_output/partition_m_4p0ns_dftcg_ghm_r2n_dwroot/FM_WORK/formality.log`
+- Key reports:
+  - No complete match or verify report was produced before termination.
+- Pass/fail evidence:
+  - Run did not reach final match/verify result.
+  - Reference elaborated DWROOT designs such as `DW02_tree_num_inputs5_input_width24_verif_en1`.
+  - Process stayed in verification model build for more than 20 minutes with CPU near 100%.
+  - Log ended at `FM-424`: `DW02_multp component does not fan out to adders`.
+- Warnings or violations:
+  - `FM-424` appeared on DW02 tree instances under `NV_NVDLA_CMAC_CORE_MAC_mul`.
+  - `FM-182` still reported `2` reference black-box references for `first_stage_of_sync`.
+- Waiver/defer reason:
+  - DWROOT setup is not abandoned, but this direct setup is deferred because it was too expensive and did not produce a usable compare result in the current interactive run.
+- Next action:
+  - Keep DWROOT as explicit opt-in with `FM_USE_DWROOT=1`.
+  - Use the faster NVDLA DW fallback R2N as the current debug baseline while investigating a deterministic DW02_tree/Formality strategy.
+
+## 2026-05-08 - Formality R2N default fallback validation
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_r2n_nvdw_synth IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N
+- Result: `FAIL`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.formality_r2n.f`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_synth`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_synth/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_synth/NV_NVDLA_partition_m.fm.match.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_synth/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - `hier_map` guidance accepted: `32`.
+  - Verification `FAILED`.
+  - Reference black-boxes: `2`.
+  - Unmatched reference compare points: `32`.
+  - Passing compare points: `1594`.
+  - Failing compare points: `20`.
+  - Unverified compare points: `67039`, all because the failing-point limit was reached.
+- Warnings or violations:
+  - Remaining black-boxes are `first_stage_of_sync` placeholders in `p_SSYNC3DO` and `p_SSYNC3DO_S_PPP`.
+  - Failing points are the same CMAC MAC5 carry-save tree DFFs as the prior NVDLA DW fallback experiment.
+- Waiver/defer reason:
+  - Not waived. This is the current fast R2N debug baseline, not a passing signoff result.
+- Next action:
+  - Investigate deterministic DesignWare/Formality modeling for `DW02_tree` and decide whether `first_stage_of_sync` placeholder black-boxes should be explicitly modeled or ignored.
