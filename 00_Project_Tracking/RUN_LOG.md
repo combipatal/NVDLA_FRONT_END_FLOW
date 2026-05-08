@@ -513,6 +513,7 @@
 - Warnings or violations:
   - Remaining black-boxes are `first_stage_of_sync` placeholders in `p_SSYNC3DO` and `p_SSYNC3DO_S_PPP`.
   - Failing points are the same CMAC MAC5 carry-save tree DFFs as the prior NVDLA DW fallback experiment.
+  - `DW02_tree` is the DesignWare carry-save compression module used by the CMAC MAC partial-product tree; the remaining R2N failure is treated as a `DW02_tree`/carry-save reference-modeling issue.
 - Waiver/defer reason:
   - Not waived. This is the current fast R2N debug baseline, not a passing signoff result.
 - Next action:

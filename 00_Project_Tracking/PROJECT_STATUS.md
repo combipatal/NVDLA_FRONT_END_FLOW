@@ -38,6 +38,7 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
   - The fallback setup reduced reference black-boxes from `2154` to `2` and unmatched compare points from `282416` to `32`.
   - R2N still fails on `20` matched CMAC MAC5 carry-save tree DFF compare points, so it is not signoff-clean.
   - Direct Synopsys DWROOT mode is available with `FM_USE_DWROOT=1`, but the first run was deferred after a long verification-model build and `FM-424` DW02 tree warnings.
+- `DW02_tree` is a Synopsys DesignWare module used in the CMAC MAC datapath to compress multiple partial-product vectors into two carry-save outputs. The current R2N failure is interpreted as a reference-modeling mismatch around this carry-save representation, not as a DFT or timing failure.
 - Formality N2N passes from pre-scan DDC to post-DFT scan DDC in functional mode.
 - TetraMAX stuck-at ATPG completes with DRC clean and test coverage `99.91%`.
 
