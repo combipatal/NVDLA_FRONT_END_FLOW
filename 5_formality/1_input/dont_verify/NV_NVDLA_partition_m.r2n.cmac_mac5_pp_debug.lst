@@ -1,0 +1,5 @@
+# Debug-only compare-point exclusion for Formality R2N root-cause isolation.
+# This is not a signoff waiver.
+# Goal: check whether the current R2N mismatch is confined to CMAC MAC5
+# partial-product/carry-save internal registers or propagates beyond them.
+r:/WORK/NV_NVDLA_partition_m/u_NV_NVDLA_cmac/u_core/u_mac_5/pp_out_l0n*

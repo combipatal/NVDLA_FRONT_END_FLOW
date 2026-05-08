@@ -19,6 +19,9 @@
 | Formality R2N NVDW | `partition_m_4p0ns_dftcg_ghm_r2n_nvdw` | `FAIL` | Reference black-boxes reduced to `2`, unmatched compare points reduced to `32`, failing compare points reduced to `20` | Remaining mismatch is CMAC DW carry-save tree modeling |
 | Formality R2N DWROOT | `partition_m_4p0ns_dftcg_ghm_r2n_dwroot` | `DEFERRED` | DWROOT elaborated `DW02_tree_*_verif_en1` but stayed in verification model build and was terminated | `FM-424` on DW02_multp fanout; too expensive for current run |
 | Formality R2N default fallback | `partition_m_4p0ns_dftcg_ghm_r2n_nvdw_synth` | `FAIL` | `hier_map` accepted `32`; 2 black-boxes, 32 unmatched, 20 failing, 67039 unverified due failing-point limit | Current fast debug baseline; not signoff |
+| Formality R2N failing-point limit debug | `partition_m_4p0ns_dftcg_ghm_r2n_nvdw_limit200` | `FAIL` | Limit raised to `200`; 5218 passing, 200 failing, 63235 unverified; first 200 failures all under `u_NV_NVDLA_cmac/u_core/u_mac_5` | Confirms the issue is a MAC5 partial-product/carry-save mismatch cluster, not only the default 20-point cap |
+| Formality R2N MAC5 dont-verify debug | `partition_m_4p0ns_dftcg_ghm_r2n_nvdw_mac5_pp_dv` | `FAIL` | MAC5 `pp_out_l0n*` excluded as 1152 dont-verify DFFs; first 200 failures moved to `u_mac_4` | Mismatch repeats across CMAC MAC array; dont-verify is debug-only, not a waiver |
+| Formality R2N analyze_points debug | `partition_m_4p0ns_dftcg_ghm_r2n_nvdw_analyze20` | `FAIL` | `analyze_points` found 11 unmatched cone inputs, 1 rejected guidance command, and 94 required inputs | Rejected `reg_constant` guidance is now the strongest Formality-reported root-cause clue |
 | Formality N2N | `partition_m_4p0ns_dftcg_const_reset_n2n` | `PASS_WITH_NOTE` | Verification `SUCCEEDED`, 68653 passing, 0 failing | Scan-only implementation ports are expected unmatched ports |
 | TetraMAX ATPG | `partition_m_4p0ns_dftcg_const_reset_atpg` | `PASS_WITH_NOTE` | DRC clean, stuck-at coverage `99.91%`, 14836 patterns | ND faults and reset assertion coverage remain outside current milestone |
 
@@ -32,7 +35,7 @@
 - During scan, `dla_reset_rstn` is held inactive as `Constant 1` because it also feeds the reset synchronizer data path; reset assertion testing is not claimed by this scan protocol.
 - Max transition/capacitance violations are backend-deferred and must be handled during physical implementation.
 - Post-DFT functional equivalence for this milestone is covered by N2N, not R2N.
-- R2N GHM generation is now fixed, and DW reference black-boxing was reduced from 2154 black-boxes to 2 using an NVDLA DW fallback setup. R2N still fails on 20 CMAC DW carry-save tree compare points. Direct DWROOT setup is available as opt-in but was deferred after a long verification-model build.
+- R2N GHM generation is now fixed, and DW reference black-boxing was reduced from 2154 black-boxes to 2 using an NVDLA DW fallback setup. Raising the failing-point limit from 20 to 200 shows the first 200 failures are all clustered under `u_NV_NVDLA_cmac/u_core/u_mac_5` partial-product/carry-save compare points. Excluding MAC5 `pp_out_l0n*` points moves the next first 200 failures to `u_mac_4`, so the issue repeats across the CMAC MAC array. `analyze_points` identifies rejected `reg_constant` guidance as a likely contributor. Direct DWROOT setup is available as opt-in but was deferred after a long verification-model build.
 
 ## Not Signoff-Clean Yet
 

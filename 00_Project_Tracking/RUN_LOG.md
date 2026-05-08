@@ -518,3 +518,101 @@
   - Not waived. This is the current fast R2N debug baseline, not a passing signoff result.
 - Next action:
   - Investigate deterministic DesignWare/Formality modeling for `DW02_tree` and decide whether `first_stage_of_sync` placeholder black-boxes should be explicitly modeled or ignored.
+
+## 2026-05-08 - Formality R2N failing-point limit debug
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_r2n_nvdw_limit200 FM_FAILING_POINT_LIMIT=200 IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N debug
+- Result: `FAIL`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.formality_r2n.f`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf`
+  - Environment option `FM_FAILING_POINT_LIMIT=200`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_limit200`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_limit200/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_limit200/NV_NVDLA_partition_m.fm.match.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_limit200/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - Verification `FAILED`.
+  - Passing compare points: `5218`.
+  - Failing compare points: `200`.
+  - Aborted compare points: `0`.
+  - Unverified compare points: `63235`, all because the failing-point limit was reached.
+  - Unmatched reference compare points: `32`.
+  - Reference black-boxes: `2`.
+  - The first `200` failing points are all under `u_NV_NVDLA_cmac/u_core/u_mac_5`.
+- Warnings or violations:
+  - Remaining black-boxes are still the `first_stage_of_sync` placeholders.
+  - The failure is not only the previous default 20-point cap; raising the cap exposes more failing CMAC MAC5 partial-product/carry-save compare points.
+- Waiver/defer reason:
+  - Not waived. This is a debug run to quantify the failure cluster.
+- Next action:
+  - Add a controlled `set_dont_verify_points` debug hook and run a scoped experiment on `u_mac_5/pp_out_l0n*` points to determine whether the mismatch is limited to internal carry-save registers or propagates to architecturally relevant outputs.
+
+## 2026-05-08 - Formality R2N MAC5 dont-verify debug
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_r2n_nvdw_mac5_pp_dv FM_FAILING_POINT_LIMIT=200 FM_DONT_VERIFY_FILE=5_formality/1_input/dont_verify/NV_NVDLA_partition_m.r2n.cmac_mac5_pp_debug.lst IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N debug
+- Result: `FAIL`
+- Input artifacts:
+  - `5_formality/1_input/dont_verify/NV_NVDLA_partition_m.r2n.cmac_mac5_pp_debug.lst`
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.formality_r2n.f`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_mac5_pp_dv`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_mac5_pp_dv/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_mac5_pp_dv/NV_NVDLA_partition_m.fm.match.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_mac5_pp_dv/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - `set_dont_verify_points` expanded the MAC5 `pp_out_l0n*` pattern to `1152` DFF compare points.
+  - Verification `FAILED`.
+  - Passing compare points: `5742`.
+  - Failing compare points: `200`.
+  - Aborted compare points: `0`.
+  - Unverified compare points: `61559`, all because the failing-point limit was reached.
+  - The first `200` failing points moved from `u_mac_5` to `u_NV_NVDLA_cmac/u_core/u_mac_4`.
+- Warnings or violations:
+  - `FM-622` still reports missing guide file info for NVDLA fallback DW files.
+  - `FM-182` still reports `2` reference black-boxes.
+  - This experiment shows the mismatch is not isolated to one MAC instance; it is a repeated CMAC MAC partial-product/carry-save modeling issue.
+- Waiver/defer reason:
+  - Not waived. The dont-verify file is debug-only and is not a signoff waiver.
+- Next action:
+  - Stop treating MAC5 as a unique defect. Investigate DC/SVF guidance for the CMAC MAC array, especially rejected `reg_constant` guidance and DesignWare carry-save mapping.
+
+## 2026-05-08 - Formality R2N analyze_points debug
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_r2n_nvdw_analyze20 FM_ANALYZE_POINTS=failing FM_ANALYZE_LIMIT=20 IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N debug
+- Result: `FAIL`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.formality_r2n.f`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf`
+  - Environment options `FM_ANALYZE_POINTS=failing`, `FM_ANALYZE_LIMIT=20`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_analyze20`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_analyze20/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_analyze20/NV_NVDLA_partition_m.fm.analysis.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_analyze20/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - Verification `FAILED`.
+  - Passing compare points: `1594`.
+  - Failing compare points: `20`.
+  - Aborted compare points: `0`.
+  - Unverified compare points: `67039`, all because the failing-point limit was reached.
+  - The first `20` failing points are under `u_NV_NVDLA_cmac/u_core/u_mac_5`.
+  - `analyze_points` found `11` unmatched cone inputs, `1` rejected guidance command, and `94` required inputs.
+- Warnings or violations:
+  - `analyze_points` identifies rejected `reg_constant` guidance as a likely contributor.
+  - Analysis reports several implementation DFFs that exist in the implementation cone but not the reference cone for the failing `pp_out_l0n02_*` compare points.
+- Waiver/defer reason:
+  - Not waived. This run only adds root-cause analysis evidence.
+- Next action:
+  - Use the rejected `reg_constant` evidence to improve DC/Formality guidance around CMAC MAC datapath constants before considering any final R2N waiver strategy.
