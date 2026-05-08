@@ -76,6 +76,8 @@ Exception recorded on 2026-05-08: generated scripts and reports are tracked in g
 - TetraMAX stuck-at ATPG completes with DRC clean. The earlier const-reset path has test coverage `99.91%`; the VP8b path has test coverage `99.81%`.
 - Frontend final report has been created at `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`.
 - Generated reports are now included in git tracking by explicit user request; long generated logs remain ignored.
+- Report-only git tracking has been pushed in commit `7594062`; `415` generated `4_report` files are tracked, while generated `3_log` directories track only `.gitkeep` placeholders.
+- GitHub accepted the push but warned that two Formality match reports are `55.82 MB`, above the recommended `50 MB` file-size limit.
 
 ## Open Items
 

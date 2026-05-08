@@ -1196,3 +1196,31 @@
   - Generated report tracking is intentional by explicit user request.
 - Next action:
   - Force-add scripts/reports, commit, and push.
+
+## 2026-05-08 - Report-only git tracking verification
+
+- Command:
+  - `git status --short --branch`
+  - `git ls-files '*/3_log/*'`
+  - `git ls-files '*/4_report/*' | wc -l`
+- Stage: Repository tracking verification
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - Git index and `origin/master`
+  - Stage report directories under `*/4_report/*`
+  - Stage log directories under `*/3_log/*`
+- Output artifacts:
+  - Commit `7594062` (`docs: add frontend reports`) pushed to `origin/master`
+- Key reports:
+  - `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`
+- Pass/fail evidence:
+  - `git status --short --branch` reported `## master...origin/master` with no modified/untracked files listed before this tracking-note update.
+  - `git ls-files '*/3_log/*'` listed only `.gitkeep` placeholders, confirming generated logs were not tracked.
+  - `git ls-files '*/4_report/*' | wc -l` returned `415`, confirming generated reports are tracked.
+  - Push of commit `7594062` to `origin/master` succeeded.
+- Warnings or violations:
+  - GitHub warned that two Formality match reports are `55.82 MB`, above GitHub's recommended `50 MB` file-size limit. Push was accepted.
+- Waiver/defer reason:
+  - Long generated logs are excluded per user clarification: if logs are too long, omit logs and track reports only.
+- Next action:
+  - Keep generated implementation outputs ignored unless explicitly requested.
