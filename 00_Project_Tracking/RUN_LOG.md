@@ -616,3 +616,135 @@
   - Not waived. This run only adds root-cause analysis evidence.
 - Next action:
   - Use the rejected `reg_constant` evidence to improve DC/Formality guidance around CMAC MAC datapath constants before considering any final R2N waiver strategy.
+
+## 2026-05-08 - Formality R2N SVF rejected-guidance detail
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_r2n_nvdw_svfdetail IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N debug
+- Result: `FAIL`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.formality_r2n.f`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm/fv/NV_NVDLA_partition_m.svf`
+  - Updated `5_formality/scripts/run_fm_r2n.tcl` with `report_svf_operation -status rejected`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_svfdetail`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_svfdetail/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_svfdetail/NV_NVDLA_partition_m.fm.svf_rejected.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_svfdetail/NV_NVDLA_partition_m.fm.verify.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_r2n_nvdw_svfdetail/NV_NVDLA_partition_m.fm.match.rpt`
+- Pass/fail evidence:
+  - Verification `FAILED`.
+  - Passing compare points: `1594`.
+  - Failing compare points: `20`.
+  - Aborted compare points: `0`.
+  - Unverified compare points: `67039`, all because the failing-point limit was reached.
+  - Guidance summary: `hier_map` accepted `32`; `reg_constant` accepted `155`, rejected `32`; `multiplier` accepted `0`, rejected `174`.
+- Warnings or violations:
+  - The rejected `reg_constant` operations are constant-zero register guidance on CMAC MAC `pp_out_l2n[4..7]_1_d2_reg[40]` points, rejected with `FM-348` because register pre-verification failed.
+  - The rejected `multiplier` operations are `guide_multiplier` commands for `NV_NVDLA_CMAC_CORE_mac_*_DW02_tree_*` cells such as `u_tree_l4n*`, `u_tree_l3n*`, and `u_tree_sign_l*`.
+  - `FM-622` still reports missing guide file information for the NVDLA fallback DW files `NV_DW02_tree.v` and `NV_DW_minmax.v`.
+  - The first script version also attempted `report_svf_operation -summary`; Formality rejected that report syntax. The script was corrected to emit only command-specific rejected reports.
+- Waiver/defer reason:
+  - Not waived. This run was used to identify exactly which SVF guidance classes are being rejected.
+- Next action:
+  - Re-synthesize with Formality-friendly DC verification priority around the CMAC MAC datapath.
+
+## 2026-05-08 - DC verification-priority synthesis attempt
+
+- Command: `env DC_FILELIST=2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.f DC_CLK_PERIOD=4.0 DC_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp DC_HDLIN_VERIFICATION_PRIORITY=1 DC_CMAC_VERIFICATION_PRIORITY=1 DC_VERIFICATION_PRIORITY_LEVEL=high 2_synthesis/scripts/run_one_dc.sh NV_NVDLA_partition_m`
+- Stage: Synthesis debug
+- Result: `INVALID`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.f`
+  - `2_synthesis/scripts/run_dc.tcl`
+  - `2_synthesis/1_input/constraints/NV_NVDLA_partition_m.sdc`
+- Output artifacts:
+  - Partial log `2_synthesis/3_log/partition_m_4p0ns_dftcg_ghm_vp/NV_NVDLA_partition_m.dc.log`
+  - Partial report `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp/NV_NVDLA_partition_m.verification_priority.precompile.rpt`
+- Key reports:
+  - `2_synthesis/3_log/partition_m_4p0ns_dftcg_ghm_vp/NV_NVDLA_partition_m.dc.log`
+- Pass/fail evidence:
+  - Run was manually terminated before producing a usable DDC/SVF.
+  - The first priority target patterns found no objects for `cmac_mac_cells` and `cmac_mac_designs`.
+  - The precompile report failed with Tcl error `invalid character "\"` (`CMD-013`).
+- Warnings or violations:
+  - This was a script bug in the new debug reporting/target selection, not a design result.
+- Waiver/defer reason:
+  - Invalid run; no design result is accepted from this attempt.
+- Next action:
+  - Fix the target patterns and the Tcl report expression, then rerun synthesis.
+
+## 2026-05-08 - DC topographical synthesis with CMAC Formality verification priority
+
+- Command: `env DC_FILELIST=2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.f DC_CLK_PERIOD=4.0 DC_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp2 DC_HDLIN_VERIFICATION_PRIORITY=1 DC_CMAC_VERIFICATION_PRIORITY=1 DC_VERIFICATION_PRIORITY_LEVEL=high 2_synthesis/scripts/run_one_dc.sh NV_NVDLA_partition_m`
+- Stage: Synthesis
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.f`
+  - `2_synthesis/scripts/run_dc.tcl`
+  - `2_synthesis/1_input/constraints/NV_NVDLA_partition_m.sdc`
+- Output artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp2/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp2/net/NV_NVDLA_partition_m.vg`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp2/fv/NV_NVDLA_partition_m.svf`
+- Key reports:
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp2/NV_NVDLA_partition_m.verification_priority.precompile.rpt`
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp2/NV_NVDLA_partition_m.qor.rpt`
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp2/NV_NVDLA_partition_m.constraint.rpt`
+  - `2_synthesis/3_log/partition_m_4p0ns_dftcg_ghm_vp2/NV_NVDLA_partition_m.dc.log`
+- Pass/fail evidence:
+  - DC exited with code `0`.
+  - DDC generated: about `182M`.
+  - Netlist generated: about `94M`.
+  - SVF generated: about `3.7M`.
+  - `hdlin_verification_priority` was enabled.
+  - Verification priority was applied to design `NV_NVDLA_CMAC_CORE_mac` and `NV_NVDLA_CMAC_CORE_MAC_mul`.
+  - DC log shows `OPT-1604` verification-priority attributes on CMAC `u_mac_*`/`u_mul_*` logic and `OPT-774` preserving multiplier instances because of the attribute.
+  - QoR critical path slack `0.0300 ns`.
+  - QoR design WNS `0.0000 ns`, TNS `0.0000`, violating paths `0`.
+  - QoR hold WNS `0.0000 ns`, TNS `0.0000`, violating paths `0`.
+- Warnings or violations:
+  - Max transition/capacitance violations remain in `constraint.rpt`; first max-transition example slack is about `-0.0642 ns`.
+- Waiver/defer reason:
+  - Max transition/capacitance cleanup remains backend-deferred.
+  - This run is a Formality-debug synthesis build and does not replace backend physical closure.
+- Next action:
+  - Run Formality R2N against the VP2 DDC/SVF and compare rejected guidance against the baseline SVF detail run.
+
+## 2026-05-08 - Formality R2N with CMAC verification-priority synthesis
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp2_r2n_nvdw IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp2/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp2/fv/NV_NVDLA_partition_m.svf 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N debug
+- Result: `FAIL`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.formality_r2n.f`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp2/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp2/fv/NV_NVDLA_partition_m.svf`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp2_r2n_nvdw`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_vp2_r2n_nvdw/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp2_r2n_nvdw/NV_NVDLA_partition_m.fm.svf_rejected.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp2_r2n_nvdw/NV_NVDLA_partition_m.fm.match.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp2_r2n_nvdw/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - Verification `FAILED`.
+  - Passing compare points: `1588`.
+  - Failing compare points: `20`.
+  - Aborted compare points: `0`.
+  - Unverified compare points: `67205`.
+  - Matched compare points by name: `68813`.
+  - Unmatched reference/implementation compare points: `0(0)`.
+  - Reference black-boxes: `2`.
+  - Guidance summary: `hier_map` accepted `32`; `reg_constant` accepted `27`, rejected `0`; `multiplier` accepted `0`, rejected `270`; `uniquify` accepted `146`, rejected `19`.
+- Warnings or violations:
+  - VP2 fixed the previous `32` unmatched reference compare points and removed the `32` rejected `reg_constant` guidance commands.
+  - R2N still fails at the default 20 failing-point limit.
+  - The first failing points are now under `u_NV_NVDLA_cmac/u_core/u_mac_3/pp_out_l0n03_0_d1_reg_*`.
+  - Rejected `multiplier` guidance increased from `174` to `270`, and still points at CMAC `DW02_tree`/carry-save cells such as `u_tree_l4n*`, `u_tree_l3n*`, and `u_tree_sign_l*`.
+- Waiver/defer reason:
+  - Not waived. R2N remains failing and is not signoff-clean.
+- Next action:
+  - Keep the VP2 synthesis change because it improves matching/reg-constant guidance, but investigate why `guide_multiplier` is still rejected. The next debug target is a DC/Formality option that preserves or maps the CMAC `DW02_tree` multiplier/carry-save guidance more directly, or a focused Formality setup for `guide_multiplier` acceptance.

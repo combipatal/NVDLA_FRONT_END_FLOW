@@ -20,6 +20,9 @@ set_svf $FV_DIR/${MODULE}.svf
 # This must be enabled before reading RTL, and set_verification_top must run
 # after elaboration before commands that can modify the design.
 set_app_var hdlin_enable_hier_map true
+if {[info exists ::env(DC_HDLIN_VERIFICATION_PRIORITY)] && $::env(DC_HDLIN_VERIFICATION_PRIORITY) eq "1"} {
+    set_app_var hdlin_verification_priority true
+}
 
 analyze -format sverilog -vcs "-f $FILELIST" -work WORK
 elaborate $MODULE
@@ -57,6 +60,90 @@ if {[info exists ::env(DC_CLK_PERIOD)] && $::env(DC_CLK_PERIOD) ne ""} {
     puts "Info: Overrode nvdla_core_clk period to ${clk_period} ns."
 }
 set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
+
+proc apply_verification_priority {label objects level} {
+    set count 0
+    if {[catch {sizeof_collection $objects} count] || $count == 0} {
+        puts "Info: No objects found for verification priority target '$label'."
+        return 0
+    }
+
+    if {$level eq "high"} {
+        set_verification_priority -high $objects
+    } elseif {$level eq "low"} {
+        set_verification_priority -low $objects
+    } else {
+        set_verification_priority $objects
+    }
+    puts "Info: Applied ${level} verification priority to $count object(s) for '$label'."
+    return $count
+}
+
+set cmac_priority_cells [get_cells -quiet -hierarchical "*/u_mac_*"]
+set cmac_priority_designs [get_designs -quiet "NV_NVDLA_CMAC_CORE_mac"]
+set cmac_priority_references [get_references -quiet "NV_NVDLA_CMAC_CORE_mac"]
+set cmac_mul_priority_designs [get_designs -quiet "NV_NVDLA_CMAC_CORE_MAC_mul"]
+set cmac_mul_priority_references [get_references -quiet "NV_NVDLA_CMAC_CORE_MAC_mul"]
+set dc_verification_priority_level "high"
+if {[info exists ::env(DC_VERIFICATION_PRIORITY_LEVEL)] && $::env(DC_VERIFICATION_PRIORITY_LEVEL) ne ""} {
+    set dc_verification_priority_level $::env(DC_VERIFICATION_PRIORITY_LEVEL)
+}
+if {[info exists ::env(DC_CMAC_VERIFICATION_PRIORITY)] && $::env(DC_CMAC_VERIFICATION_PRIORITY) eq "1"} {
+    set cmac_priority_cell_count [apply_verification_priority "cmac_mac_cells" $cmac_priority_cells $dc_verification_priority_level]
+    set cmac_priority_design_count [apply_verification_priority "cmac_mac_designs" $cmac_priority_designs $dc_verification_priority_level]
+    set cmac_priority_reference_count [apply_verification_priority "cmac_mac_references" $cmac_priority_references $dc_verification_priority_level]
+    set cmac_mul_priority_design_count [apply_verification_priority "cmac_mul_designs" $cmac_mul_priority_designs $dc_verification_priority_level]
+    set cmac_mul_priority_reference_count [apply_verification_priority "cmac_mul_references" $cmac_mul_priority_references $dc_verification_priority_level]
+} else {
+    set cmac_priority_cell_count 0
+    set cmac_priority_design_count 0
+    set cmac_priority_reference_count 0
+    set cmac_mul_priority_design_count 0
+    set cmac_mul_priority_reference_count 0
+}
+set dc_hdlin_verification_priority ""
+if {[info exists ::env(DC_HDLIN_VERIFICATION_PRIORITY)]} {
+    set dc_hdlin_verification_priority $::env(DC_HDLIN_VERIFICATION_PRIORITY)
+}
+set dc_cmac_verification_priority ""
+if {[info exists ::env(DC_CMAC_VERIFICATION_PRIORITY)]} {
+    set dc_cmac_verification_priority $::env(DC_CMAC_VERIFICATION_PRIORITY)
+}
+redirect -file $REPORT_DIR/${MODULE}.verification_priority.precompile.rpt {
+    puts "DC_HDLIN_VERIFICATION_PRIORITY=$dc_hdlin_verification_priority"
+    puts "DC_CMAC_VERIFICATION_PRIORITY=$dc_cmac_verification_priority"
+    puts "DC_VERIFICATION_PRIORITY_LEVEL=$dc_verification_priority_level"
+    puts "CMAC priority cell count: $cmac_priority_cell_count"
+    puts "CMAC priority design count: $cmac_priority_design_count"
+    puts "CMAC priority reference count: $cmac_priority_reference_count"
+    puts "CMAC MUL priority design count: $cmac_mul_priority_design_count"
+    puts "CMAC MUL priority reference count: $cmac_mul_priority_reference_count"
+    puts ""
+    puts "CMAC priority cells:"
+    foreach_in_collection cell $cmac_priority_cells {
+        puts [get_object_name $cell]
+    }
+    puts ""
+    puts "CMAC priority designs:"
+    foreach_in_collection design $cmac_priority_designs {
+        puts [get_object_name $design]
+    }
+    puts ""
+    puts "CMAC priority references:"
+    foreach_in_collection reference $cmac_priority_references {
+        puts [get_object_name $reference]
+    }
+    puts ""
+    puts "CMAC MUL priority designs:"
+    foreach_in_collection design $cmac_mul_priority_designs {
+        puts [get_object_name $design]
+    }
+    puts ""
+    puts "CMAC MUL priority references:"
+    foreach_in_collection reference $cmac_mul_priority_references {
+        puts [get_object_name $reference]
+    }
+}
 
 redirect -file $REPORT_DIR/${MODULE}.check_design.precompile.rpt { check_design }
 redirect -file $REPORT_DIR/${MODULE}.check_timing.precompile.rpt { check_timing }

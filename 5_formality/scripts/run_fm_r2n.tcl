@@ -76,6 +76,11 @@ safe_report $REPORT_DIR/${MODULE}.fm.setup.rpt {
 
 match
 
+safe_report $REPORT_DIR/${MODULE}.fm.svf_rejected.rpt {
+    report_svf_operation -status rejected -command reg_constant
+    report_svf_operation -status rejected -command multiplier
+}
+
 safe_report $REPORT_DIR/${MODULE}.fm.match.rpt {
     report_matched_points
     report_unmatched_points

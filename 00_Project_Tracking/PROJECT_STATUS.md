@@ -6,7 +6,7 @@
 - Active design: `NV_NVDLA_partition_m`
 - Active functional synthesis run: `partition_m_4p0ns`
 - Active DFT synthesis run: `partition_m_4p0ns_dftcg`
-- Active Formality R2N debug synthesis run: `partition_m_4p0ns_dftcg_ghm`
+- Active Formality R2N debug synthesis run: `partition_m_4p0ns_dftcg_ghm_vp2`
 - Active DFT insertion run: `partition_m_4p0ns_dftcg_const_reset_dft`
 - Active clock period: `4.0 ns`
 - Repository layout follows numbered stages: `1_vcs`, `2_synthesis`, `3_sta`, `4_dft`, `5_formality`, `6_sweep`.
@@ -36,7 +36,12 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
   - GHM R2N accepts `32` `hier_map` guidance commands.
   - The default fallback R2N reference filelist uses `SYNTHESIS` and `DESIGNWARE_NOEXIST` to use NVDLA DW fallback RTL and suppress simulation-only sync randomizer code.
   - The fallback setup reduced reference black-boxes from `2154` to `2` and unmatched compare points from `282416` to `32`.
-  - R2N still fails on matched CMAC MAC5 carry-save tree DFF compare points, so it is not signoff-clean.
+  - The SVF rejected-guidance report showed `32` rejected `reg_constant` operations and `174` rejected `multiplier` operations on the `partition_m_4p0ns_dftcg_ghm` baseline.
+  - Re-synthesis with `DC_HDLIN_VERIFICATION_PRIORITY=1` and CMAC high verification priority produced `partition_m_4p0ns_dftcg_ghm_vp2`.
+  - The VP2 R2N run fixed the previous unmatched compare points: `0(0)` unmatched reference/implementation compare points.
+  - The VP2 R2N run also fixed the rejected `reg_constant` issue: `reg_constant` accepted `27`, rejected `0`.
+  - R2N still fails on matched CMAC carry-save tree DFF compare points, now first reported under `u_NV_NVDLA_cmac/u_core/u_mac_3/pp_out_l0n03_0_d1_reg_*`, so it is not signoff-clean.
+  - The remaining strongest clue is rejected `multiplier` guidance: VP2 reports `multiplier` accepted `0`, rejected `270`, mostly for CMAC `DW02_tree`/carry-save cells such as `u_tree_l4n*`, `u_tree_l3n*`, and `u_tree_sign_l*`.
   - A debug run with `FM_FAILING_POINT_LIMIT=200` reached `200` failing points; the first `200` failures are all under `u_NV_NVDLA_cmac/u_core/u_mac_5`.
   - A debug run with `FM_DONT_VERIFY_FILE=5_formality/1_input/dont_verify/NV_NVDLA_partition_m.r2n.cmac_mac5_pp_debug.lst` excluded `1152` MAC5 `pp_out_l0n*` DFF compare points, but the first `200` failures moved to `u_NV_NVDLA_cmac/u_core/u_mac_4`.
   - `analyze_points` on the baseline failing points found `11` unmatched cone inputs, `1` rejected guidance command, and `94` required inputs. The rejected guidance command is `reg_constant`.
@@ -49,7 +54,7 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
 ## Open Items
 
 - Finish Formality R2N setup. Current focus is deterministic `DW02_tree`/carry-save modeling while keeping GHM guidance active.
-- Improve DC/Formality guidance around CMAC MAC datapath constants. The next target is rejected `reg_constant` guidance, because Formality `analyze_points` reports it as a likely contributor to the failing partial-product compare points.
+- Improve DC/Formality guidance around CMAC MAC `DW02_tree`/carry-save multiplier mapping. The rejected `reg_constant` issue has improved to `0` rejected commands in VP2, but `guide_multiplier` is still rejected and blocks R2N.
 - Decide whether the remaining `first_stage_of_sync` placeholder black-boxes should be modeled explicitly or treated as benign placeholders.
 - Backend must fix or re-characterize max transition/capacitance violations.
 - Define a separate reset-test strategy if `dla_reset_rstn` assertion coverage is required.
