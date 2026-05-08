@@ -7,7 +7,7 @@
 - Active functional synthesis run: `partition_m_4p0ns`
 - Active DFT synthesis run: `partition_m_4p0ns_dftcg`
 - Active Formality R2N/timing synthesis candidate: `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b`
-- Active DFT insertion run: `partition_m_4p0ns_dftcg_const_reset_dft`
+- Active DFT insertion run: `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft`
 - Active clock period: `4.0 ns`
 - Repository layout follows numbered stages: `1_vcs`, `2_synthesis`, `3_sta`, `4_dft`, `5_formality`, `6_sweep`.
 
@@ -30,6 +30,7 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
 - DFT-specific synthesis using `VLIB_BYPASS_POWER_CG` removes the DFT D9 clock-port-not-active issue in pre-check.
 - `dla_reset_rstn` is held inactive as `Constant 1` during scan because the same reset port also feeds the reset synchronizer data path.
 - Full DFT insertion from `partition_m_4p0ns_dftcg_const_reset_dft` completes with 32 scan chains and post-DFT DRC total violations `0`.
+- VP8b-based full DFT insertion from `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft` also completes with 32 scan chains and post-DFT DRC total violations `0`.
 - Scan-netlist STA setup is clean; async hold/removal is backend-deferred.
 - Formality R2N root cause has been isolated and fixed in a debug build:
   - DC now emits `guide_hier_map` guidance through `hdlin_enable_hier_map` and `set_verification_top`.
@@ -56,6 +57,11 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
   - VP8b `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b` is the current best synthesis candidate: final `nvdla_core_clk` is `4.00 ns`, setup slack is `+0.0008 ns`, TNS `0`, violating paths `0`, and hold is clean.
   - VP8b netlist search found no `SDFFSSRX` usage and `mac_out_data_reg_85_` instances are plain `SDFFX1_RVT`/`SDFFX2_RVT`.
   - VP8b R2N `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_r2n` passed: `Verification SUCCEEDED`, `68301` passing compare points, `0` failing/aborted/unverified, total SVF guidance accepted `10885`, rejected `0`.
+  - VP8b DFT insertion `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft` passed post-DFT DRC with total violations `0`, 32 scan chains, chain lengths `2088-2089`, and post-DFT setup slack `+0.0008 ns`.
+  - VP8b scan-netlist STA `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_scan_sta` passed setup: `nvdla_core_clk` setup WNS `+0.0128 ns`, TNS `0`, setup violations `0`.
+  - VP8b scan-netlist STA still has async removal violations: WNS `-0.0315 ns`, TNS `-71.0320 ns`, `2383` paths. This remains backend-deferred.
+  - VP8b N2N `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_n2n` passed: `Verification SUCCEEDED`, `68301` passing, `0` failing/aborted/unverified. The `64` implementation-only unmatched objects are scan-only ports/points.
+  - VP8b TetraMAX ATPG `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_atpg` completed with ATPG DRC clean, stuck-at coverage `99.81%`, and `20317` basic-scan patterns.
   - `5_formality/scripts/run_fm_r2n.tcl` now reports rejected `uniquify` and `ununiquify` guidance in addition to `reg_constant` and `multiplier`.
   - A debug run with `FM_FAILING_POINT_LIMIT=200` reached `200` failing points; the first `200` failures are all under `u_NV_NVDLA_cmac/u_core/u_mac_5`.
   - A debug run with `FM_DONT_VERIFY_FILE=5_formality/1_input/dont_verify/NV_NVDLA_partition_m.r2n.cmac_mac5_pp_debug.lst` excluded `1152` MAC5 `pp_out_l0n*` DFF compare points, but the first `200` failures moved to `u_NV_NVDLA_cmac/u_core/u_mac_4`.
@@ -63,12 +69,12 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
   - `5_formality/scripts/run_fm_r2n.tcl` now supports `FM_FAILING_POINT_LIMIT` for failure-depth debug, `FM_DONT_VERIFY_FILE` for scoped `set_dont_verify_points` experiments, and `FM_ANALYZE_POINTS`/`FM_ANALYZE_LIMIT` for optional Formality root-cause analysis reports.
   - Direct Synopsys DWROOT mode is available with `FM_USE_DWROOT=1`, but the first run was deferred after a long verification-model build and `FM-424` DW02 tree warnings.
 - `DW02_tree` is a Synopsys DesignWare module used in the CMAC MAC datapath to compress multiple partial-product vectors into two carry-save outputs. The observed R2N failure was a reference-modeling mismatch around this carry-save representation, not a DFT failure.
-- Formality N2N passes from pre-scan DDC to post-DFT scan DDC in functional mode.
-- TetraMAX stuck-at ATPG completes with DRC clean and test coverage `99.91%`.
+- Formality N2N passes from pre-scan DDC to post-DFT scan DDC in functional mode for both the earlier const-reset path and the VP8b path.
+- TetraMAX stuck-at ATPG completes with DRC clean. The earlier const-reset path has test coverage `99.91%`; the VP8b path has test coverage `99.81%`.
 
 ## Open Items
 
-- Decide whether to promote VP8b as the next downstream input for scan-netlist STA/Formality N2N/TetraMAX, with max transition/capacitance and constraint-model warnings documented as backend-deferred.
+- Decide whether the VP8b ATPG coverage delta (`99.81%` vs previous `99.91%`) requires additional ATPG effort, fault classification, or is acceptable for the current milestone.
 - Decide whether the remaining `first_stage_of_sync` placeholder black-boxes should be modeled explicitly or treated as benign placeholders.
 - Backend must fix or re-characterize max transition/capacitance violations.
 - Clean up the SDC/check_timing model: `TIM-216` input delays without `-clock` and 1445 unconstrained max-delay endpoints remain.

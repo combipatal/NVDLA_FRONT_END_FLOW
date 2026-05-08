@@ -1029,3 +1029,135 @@
   - This is still not full signoff-clean because synthesis DRC and constraint-model warnings remain documented.
 - Next action:
   - Treat VP8b as the current best R2N-capable, 4.0 ns timing-clean synthesis candidate and proceed to scan-netlist STA/Formality N2N/TetraMAX using the documented backend-deferred DRC policy.
+
+## 2026-05-08 - VP8b-based full DFT insertion with reset held inactive
+
+- Command: `env DDC_IN=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/db/NV_NVDLA_partition_m.ddc DFT_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft DFT_CLK_PERIOD=4.0 DFT_CHAIN_COUNT=32 DFT_INSERT=1 4_dft/scripts/run_one_dft.sh NV_NVDLA_partition_m`
+- Stage: DFT insertion
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/1_input/constraints/NV_NVDLA_partition_m.sdc`
+  - `4_dft/scripts/run_dft.tcl`
+- Output artifacts:
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/db/NV_NVDLA_partition_m.scan.ddc`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/net/NV_NVDLA_partition_m.scan.vg`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/net/NV_NVDLA_partition_m.scan.sdc`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/net/NV_NVDLA_partition_m.scan.sdf`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/test/NV_NVDLA_partition_m.scan.spf`
+- Key reports:
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/NV_NVDLA_partition_m.dft_drc.post_dft.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/NV_NVDLA_partition_m.scan_path.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/NV_NVDLA_partition_m.qor.post_dft.rpt`
+- Pass/fail evidence:
+  - DFT Compiler exited with code `0`.
+  - Post-DFT DRC total violations: `0`.
+  - Sequential cell violations: `0 out of 66831`.
+  - Valid scan cells: `66782`; non-scan shift-register cells: `49`.
+  - Scan chains: `32`; chain lengths are `2088-2089`.
+  - Post-DFT QoR at `4.0 ns`: setup slack `+0.0008 ns`, TNS `0.0000`, violating paths `0`; hold WNS/TNS/violating paths all `0`.
+- Warnings or violations:
+  - The DFT script did not find cells matching `*p_clkgate*` for `set_dft_clock_gating_pin`; post-DFT DRC still passed.
+  - Max transition violations `1338`; max capacitance violations `2042`.
+- Waiver/defer reason:
+  - Max transition/capacitance cleanup remains backend-deferred.
+  - Reset assertion testing is not claimed; `dla_reset_rstn` is kept inactive as a scan constant because it also feeds reset synchronizer data.
+- Next action:
+  - Run scan-netlist STA on the VP8b post-DFT scan netlist.
+
+## 2026-05-08 - VP8b post-DFT scan-netlist STA
+
+- Command: `env PT_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_scan_sta NETLIST=4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/net/NV_NVDLA_partition_m.scan.vg SDC_FILE=4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/net/NV_NVDLA_partition_m.scan.sdc SDF_FILE=4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/net/NV_NVDLA_partition_m.scan.sdf PT_READ_SDF=0 3_sta/scripts/run_one_pt.sh NV_NVDLA_partition_m`
+- Stage: Scan-netlist STA
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/net/NV_NVDLA_partition_m.scan.vg`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/net/NV_NVDLA_partition_m.scan.sdc`
+  - `3_sta/scripts/run_pt.tcl`
+- Output artifacts:
+  - Reports under `3_sta/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_scan_sta`
+  - PT session under `3_sta/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_scan_sta`
+  - Log `3_sta/3_log/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_scan_sta/NV_NVDLA_partition_m.pt.log`
+- Key reports:
+  - `3_sta/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_scan_sta/NV_NVDLA_partition_m.pt.qor.rpt`
+  - `3_sta/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_scan_sta/NV_NVDLA_partition_m.pt.global_timing.rpt`
+  - `3_sta/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_scan_sta/NV_NVDLA_partition_m.pt.constraint.rpt`
+- Pass/fail evidence:
+  - PrimeTime exited with code `0`.
+  - No setup violations found.
+  - `nvdla_core_clk` setup WNS `+0.0128 ns`, TNS `0.0000`, violating paths `0`.
+  - Async default setup WNS `+3.7329 ns`, TNS `0.0000`, violating paths `0`.
+- Warnings or violations:
+  - Hold/removal violations remain: WNS `-0.0315 ns`, TNS `-71.0320 ns`, violating paths `2383`, all reg-to-reg async removal style paths.
+  - DRC violations remain in PT: max capacitance count `13085`, max transition count `1327`.
+  - `check_timing` reports `2375` ports with no clock-relative input delay.
+- Waiver/defer reason:
+  - Setup is clean for the current frontend milestone.
+  - Hold/removal and max transition/capacitance cleanup are backend-deferred.
+  - Constraint-model cleanup is required before signoff-clean claims.
+- Next action:
+  - Run Formality N2N between VP8b pre-DFT DDC and VP8b post-DFT scan DDC.
+
+## 2026-05-08 - VP8b pre-DFT to post-DFT Formality N2N
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_n2n REF_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/db/NV_NVDLA_partition_m.ddc IMPL_DDC=4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/db/NV_NVDLA_partition_m.scan.ddc 5_formality/scripts/run_one_fm.sh n2n NV_NVDLA_partition_m`
+- Stage: Formality N2N
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/db/NV_NVDLA_partition_m.ddc`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/db/NV_NVDLA_partition_m.scan.ddc`
+  - `5_formality/scripts/run_fm_n2n.tcl`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_n2n`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_n2n/NV_NVDLA_partition_m.n2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_n2n/NV_NVDLA_partition_m.fm.match.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_n2n/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - Verification `SUCCEEDED`.
+  - Passing compare points: `68301`.
+  - Failing compare points: `0`.
+  - Aborted compare points: `0`.
+  - Unverified compare points: `0`.
+  - Matched compare points by name: `68301`.
+- Warnings or violations:
+  - Unmatched points are implementation-only scan additions: `0(31)` unmatched compare points and `0(33)` unmatched primary inputs/black-box outputs.
+- Waiver/defer reason:
+  - Scan-only implementation ports/points are expected for this N2N setup and do not block functional equivalence.
+- Next action:
+  - Run TetraMAX ATPG on the VP8b post-DFT scan netlist/SPF.
+
+## 2026-05-08 - VP8b TetraMAX stuck-at ATPG
+
+- Command: `env ATPG_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_atpg 4_dft/scripts/run_one_tmax.sh NV_NVDLA_partition_m partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft`
+- Stage: TetraMAX ATPG
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/net/NV_NVDLA_partition_m.scan.vg`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/test/NV_NVDLA_partition_m.scan.spf`
+  - TetraMAX cell library from `4_dft/scripts/run_one_tmax.sh`
+- Output artifacts:
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_atpg/NV_NVDLA_partition_m.stuck.faults`
+  - `4_dft/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_atpg/NV_NVDLA_partition_m.stuck.stil`
+- Key reports:
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_atpg/NV_NVDLA_partition_m.tmax.summary.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_atpg/NV_NVDLA_partition_m.tmax.fault_summary.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_atpg/NV_NVDLA_partition_m.tmax.pattern_summary.rpt`
+- Pass/fail evidence:
+  - TetraMAX exited with code `0`.
+  - DRC process summary: no violations occurred during DRC process.
+  - Total stuck faults: `8580396`.
+  - Detected faults: `8490609`.
+  - Undetectable faults: `73318`.
+  - ATPG untestable faults: `11`.
+  - Not detected faults: `16458`.
+  - Test coverage: `99.81%`.
+  - Patterns: `20317` basic-scan patterns.
+- Warnings or violations:
+  - Netlist read emitted structural warnings before DRC: B7/B8/B9/B10 and N20. TetraMAX later reported no violations during DRC process.
+  - Coverage is slightly lower and pattern count higher than the earlier const-reset ATPG run (`99.91%`, `14836` patterns).
+- Waiver/defer reason:
+  - ND faults and reset assertion coverage remain outside the current milestone.
+  - Structural read warnings are recorded; ATPG DRC itself is clean.
+- Next action:
+  - Decide whether VP8b coverage delta needs additional ATPG effort, fault classification, or is acceptable for the current frontend milestone.
