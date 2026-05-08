@@ -6,7 +6,7 @@
 - Active design: `NV_NVDLA_partition_m`
 - Active functional synthesis run: `partition_m_4p0ns`
 - Active DFT synthesis run: `partition_m_4p0ns_dftcg`
-- Active Formality R2N debug synthesis run: `partition_m_4p0ns_dftcg_ghm_vp3_nvdw`
+- Active Formality R2N/timing synthesis candidate: `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b`
 - Active DFT insertion run: `partition_m_4p0ns_dftcg_const_reset_dft`
 - Active clock period: `4.0 ns`
 - Repository layout follows numbered stages: `1_vcs`, `2_synthesis`, `3_sta`, `4_dft`, `5_formality`, `6_sweep`.
@@ -46,6 +46,16 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
   - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f` was added to force the same `DESIGNWARE_NOEXIST` fallback model into DC for debug.
   - VP3 synthesis `partition_m_4p0ns_dftcg_ghm_vp3_nvdw` completed and generated DDC/netlist/SVF, but is timing-failing at 4.0 ns with critical path slack `-0.2117 ns`.
   - VP3 R2N `partition_m_4p0ns_dftcg_ghm_vp3_nvdw_r2n` passed: `Verification SUCCEEDED`, `68301` passing compare points, `0` failing/aborted/unverified, total SVF guidance accepted `10872`, rejected `0`.
+  - VP4/VP5/VP6 swept compile-clock overconstraint while restoring final reporting to `4.0 ns`; VP5 was closest but still failed setup with WNS `-0.0264 ns`, TNS `-5.7297 ns`, and `538` violating paths.
+  - `2_synthesis/scripts/run_dc.tcl` now supports `DC_COMPILE_CLK_PERIOD` separately from `DC_CLK_PERIOD`, plus optional `DC_FINAL_INCREMENTAL_COMPILE=1`.
+  - VP7 used compile period `3.6 ns`, restored `4.0 ns` for reporting/writeout, and ran final incremental compile. It reached setup slack `+0.0016 ns`, TNS `0`, and hold clean at `4.0 ns`.
+  - VP7 R2N failed one compare point, `u_NV_NVDLA_cmac/u_core/u_mac_1/mac_out_data_reg_85_`, even though SVF guidance was fully accepted.
+  - VP7 `analyze_points` showed an implementation-only cone input from a set/reset scan flop mapping. The VP7 netlist mapped that bit to `SDFFSSRX1_RVT`; the RTL reference did not have the equivalent set/reset cone.
+  - `2_synthesis/scripts/run_dc.tcl` now supports `DC_DONT_USE_FM_RISKY_SCAN_FLOPS=1`, which marks `SDFFSSRX*_RVT` library cells `dont_use`.
+  - The first VP8 attempt was invalid because `set_dont_use $risky_scan_flops true` is not valid DC syntax; it was fixed to `set_dont_use $risky_scan_flops`.
+  - VP8b `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b` is the current best synthesis candidate: final `nvdla_core_clk` is `4.00 ns`, setup slack is `+0.0008 ns`, TNS `0`, violating paths `0`, and hold is clean.
+  - VP8b netlist search found no `SDFFSSRX` usage and `mac_out_data_reg_85_` instances are plain `SDFFX1_RVT`/`SDFFX2_RVT`.
+  - VP8b R2N `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_r2n` passed: `Verification SUCCEEDED`, `68301` passing compare points, `0` failing/aborted/unverified, total SVF guidance accepted `10885`, rejected `0`.
   - `5_formality/scripts/run_fm_r2n.tcl` now reports rejected `uniquify` and `ununiquify` guidance in addition to `reg_constant` and `multiplier`.
   - A debug run with `FM_FAILING_POINT_LIMIT=200` reached `200` failing points; the first `200` failures are all under `u_NV_NVDLA_cmac/u_core/u_mac_5`.
   - A debug run with `FM_DONT_VERIFY_FILE=5_formality/1_input/dont_verify/NV_NVDLA_partition_m.r2n.cmac_mac5_pp_debug.lst` excluded `1152` MAC5 `pp_out_l0n*` DFF compare points, but the first `200` failures moved to `u_NV_NVDLA_cmac/u_core/u_mac_4`.
@@ -58,9 +68,10 @@ Generated tool outputs, logs, reports, and work directories stay ignored by git.
 
 ## Open Items
 
-- Re-close synthesis timing for the R2N-passing NVDLA fallback DW model, or document a deliberate milestone strategy that uses the timing-clean VP2/DFT/N2N/ATPG path while treating VP3 as R2N root-cause proof only.
+- Decide whether to promote VP8b as the next downstream input for scan-netlist STA/Formality N2N/TetraMAX, with max transition/capacitance and constraint-model warnings documented as backend-deferred.
 - Decide whether the remaining `first_stage_of_sync` placeholder black-boxes should be modeled explicitly or treated as benign placeholders.
 - Backend must fix or re-characterize max transition/capacitance violations.
+- Clean up the SDC/check_timing model: `TIM-216` input delays without `-clock` and 1445 unconstrained max-delay endpoints remain.
 - Define a separate reset-test strategy if `dla_reset_rstn` assertion coverage is required.
 - Decide whether current TetraMAX `ND` faults need more ATPG effort, constraints, or classification.
 - Reuse the flow for additional partitions after `partition_m` stabilizes.

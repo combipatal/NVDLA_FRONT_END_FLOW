@@ -35,13 +35,12 @@ if {![link]} {
 }
 
 read_sdc $SDC_FILE
-if {[info exists ::env(DC_CLK_PERIOD)] && $::env(DC_CLK_PERIOD) ne ""} {
-    set clk_period $::env(DC_CLK_PERIOD)
-    set clk_transition 0.05
-    if {[info exists ::env(DC_CLK_TRANSITION)] && $::env(DC_CLK_TRANSITION) ne ""} {
-        set clk_transition $::env(DC_CLK_TRANSITION)
-    }
+set clk_transition 0.05
+if {[info exists ::env(DC_CLK_TRANSITION)] && $::env(DC_CLK_TRANSITION) ne ""} {
+    set clk_transition $::env(DC_CLK_TRANSITION)
+}
 
+proc override_core_clock {clk_period clk_transition reason} {
     if {[catch {set existing_clocks [get_clocks nvdla_core_clk]} err]} {
         set existing_clocks [list]
     }
@@ -57,7 +56,19 @@ if {[info exists ::env(DC_CLK_PERIOD)] && $::env(DC_CLK_PERIOD) ne ""} {
     set_clock_transition -max -fall $clk_transition [get_clocks nvdla_core_clk]
     set_clock_transition -min -rise $clk_transition [get_clocks nvdla_core_clk]
     set_clock_transition -min -fall $clk_transition [get_clocks nvdla_core_clk]
-    puts "Info: Overrode nvdla_core_clk period to ${clk_period} ns."
+    puts "Info: Overrode nvdla_core_clk period to ${clk_period} ns for ${reason}."
+}
+
+set report_clk_period ""
+if {[info exists ::env(DC_CLK_PERIOD)] && $::env(DC_CLK_PERIOD) ne ""} {
+    set report_clk_period $::env(DC_CLK_PERIOD)
+}
+set compile_clk_period $report_clk_period
+if {[info exists ::env(DC_COMPILE_CLK_PERIOD)] && $::env(DC_COMPILE_CLK_PERIOD) ne ""} {
+    set compile_clk_period $::env(DC_COMPILE_CLK_PERIOD)
+}
+if {$compile_clk_period ne ""} {
+    override_core_clock $compile_clk_period $clk_transition "compile optimization"
 }
 set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 
@@ -100,6 +111,15 @@ if {[info exists ::env(DC_CMAC_VERIFICATION_PRIORITY)] && $::env(DC_CMAC_VERIFIC
     set cmac_priority_reference_count 0
     set cmac_mul_priority_design_count 0
     set cmac_mul_priority_reference_count 0
+}
+
+if {[info exists ::env(DC_DONT_USE_FM_RISKY_SCAN_FLOPS)] && $::env(DC_DONT_USE_FM_RISKY_SCAN_FLOPS) eq "1"} {
+    set risky_scan_flops [get_lib_cells -quiet "*/SDFFSSRX*_RVT"]
+    set risky_scan_flop_count 0
+    if {![catch {sizeof_collection $risky_scan_flops} risky_scan_flop_count] && $risky_scan_flop_count > 0} {
+        set_dont_use $risky_scan_flops
+    }
+    puts "Info: Applied dont_use to $risky_scan_flop_count FM-risky scan flop lib cell(s)."
 }
 set dc_hdlin_verification_priority ""
 if {[info exists ::env(DC_HDLIN_VERIFICATION_PRIORITY)]} {
@@ -152,6 +172,15 @@ redirect -file $REPORT_DIR/${MODULE}.constraint.precompile.rpt { report_constrai
 redirect -file $REPORT_DIR/${MODULE}.area.precompile.rpt { report_area -hierarchy }
 
 compile_ultra -no_seq_output_inversion -no_autoungroup -scan
+
+if {$report_clk_period ne "" && $report_clk_period ne $compile_clk_period} {
+    override_core_clock $report_clk_period $clk_transition "reporting and writeout"
+}
+
+if {[info exists ::env(DC_FINAL_INCREMENTAL_COMPILE)] && $::env(DC_FINAL_INCREMENTAL_COMPILE) eq "1"} {
+    puts "Info: Running final incremental compile at report clock period."
+    compile_ultra -incremental -no_seq_output_inversion -no_autoungroup -scan
+}
 
 change_names -rules verilog -hierarchy
 

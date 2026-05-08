@@ -826,3 +826,206 @@
 - Next action:
   - Preserve the DC/Formality model-alignment fix: DC must use the same `DESIGNWARE_NOEXIST`/NVDLA DW fallback reference family as Formality for this R2N path.
   - Re-close synthesis timing with the NVDLA fallback DW model, or explicitly decide whether the timing-clean VP2 build plus N2N/ATPG evidence is sufficient for the current milestone.
+
+## 2026-05-08 - DC fallback-DW timing closure sweep VP4/VP5/VP6
+
+- Command:
+  - `env DC_FILELIST=2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f DC_COMPILE_CLK_PERIOD=3.8 DC_CLK_PERIOD=4.0 DC_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp4_nvdw_oc3p8 DC_HDLIN_VERIFICATION_PRIORITY=1 DC_CMAC_VERIFICATION_PRIORITY=1 DC_VERIFICATION_PRIORITY_LEVEL=high 2_synthesis/scripts/run_one_dc.sh NV_NVDLA_partition_m`
+  - `env DC_FILELIST=2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f DC_COMPILE_CLK_PERIOD=3.6 DC_CLK_PERIOD=4.0 DC_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp5_nvdw_oc3p6 DC_HDLIN_VERIFICATION_PRIORITY=1 DC_CMAC_VERIFICATION_PRIORITY=1 DC_VERIFICATION_PRIORITY_LEVEL=high 2_synthesis/scripts/run_one_dc.sh NV_NVDLA_partition_m`
+  - `env DC_FILELIST=2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f DC_COMPILE_CLK_PERIOD=3.5 DC_CLK_PERIOD=4.0 DC_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp6_nvdw_oc3p5 DC_HDLIN_VERIFICATION_PRIORITY=1 DC_CMAC_VERIFICATION_PRIORITY=1 DC_VERIFICATION_PRIORITY_LEVEL=high 2_synthesis/scripts/run_one_dc.sh NV_NVDLA_partition_m`
+- Stage: Synthesis timing debug
+- Result: `FAIL`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f`
+  - `2_synthesis/scripts/run_dc.tcl`
+  - `2_synthesis/1_input/constraints/NV_NVDLA_partition_m.sdc`
+- Output artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp4_nvdw_oc3p8`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp5_nvdw_oc3p6`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp6_nvdw_oc3p5`
+- Key reports:
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp4_nvdw_oc3p8/NV_NVDLA_partition_m.qor.rpt`
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp5_nvdw_oc3p6/NV_NVDLA_partition_m.qor.rpt`
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp6_nvdw_oc3p5/NV_NVDLA_partition_m.qor.rpt`
+- Pass/fail evidence:
+  - VP4 final report clock stayed `4.0 ns`; setup WNS `-0.0898 ns`, TNS `-87.2146 ns`, violating paths `1965`; hold clean.
+  - VP5 final report clock stayed `4.0 ns`; setup WNS `-0.0264 ns`, TNS `-5.7297 ns`, violating paths `538`; hold clean.
+  - VP6 final report clock stayed `4.0 ns`; setup WNS `-2.4712 ns`, TNS `-5015.5825 ns`, violating paths `2642`; hold clean.
+- Warnings or violations:
+  - Max transition/capacitance violations remain in all runs and are not fixed by this sweep.
+  - Existing `check_timing` warnings remain: input delays without `-clock` and unconstrained endpoints.
+- Waiver/defer reason:
+  - No setup waiver is taken. VP4/VP5/VP6 are debug data only.
+  - Max transition/capacitance cleanup remains backend-deferred.
+- Next action:
+  - Use VP5 as the best compile overconstraint point and add a final 4.0 ns incremental compile step instead of tightening the target further.
+
+## 2026-05-08 - DC fallback-DW VP7 with final 4.0 ns incremental compile
+
+- Command: `env DC_FILELIST=2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f DC_COMPILE_CLK_PERIOD=3.6 DC_CLK_PERIOD=4.0 DC_FINAL_INCREMENTAL_COMPILE=1 DC_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0 DC_HDLIN_VERIFICATION_PRIORITY=1 DC_CMAC_VERIFICATION_PRIORITY=1 DC_VERIFICATION_PRIORITY_LEVEL=high 2_synthesis/scripts/run_one_dc.sh NV_NVDLA_partition_m`
+- Stage: Synthesis timing debug
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f`
+  - `2_synthesis/scripts/run_dc.tcl`
+  - `2_synthesis/1_input/constraints/NV_NVDLA_partition_m.sdc`
+- Output artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0/net/NV_NVDLA_partition_m.vg`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0/fv/NV_NVDLA_partition_m.svf`
+- Key reports:
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0/NV_NVDLA_partition_m.qor.rpt`
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0/NV_NVDLA_partition_m.clock.rpt`
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0/NV_NVDLA_partition_m.check_timing.rpt`
+- Pass/fail evidence:
+  - Final reported clock is `nvdla_core_clk` period `4.00 ns`.
+  - Setup critical slack `+0.0016 ns`; TNS `0.0000`; violating paths `0`.
+  - Hold WNS/TNS/violating paths are all `0`.
+- Warnings or violations:
+  - Max transition violations `987`; max capacitance violations `2013`.
+  - `check_timing` still reports `TIM-216` for 2340 input ports and 1445 unconstrained max-delay endpoints.
+- Waiver/defer reason:
+  - Timing is acceptable for this debug synthesis candidate, but not signoff-clean because design-rule and constraint warnings remain.
+  - Max transition/capacitance cleanup remains backend-deferred.
+- Next action:
+  - Run Formality R2N on the VP7 DDC/SVF before accepting it as the R2N-capable synthesis candidate.
+
+## 2026-05-08 - Formality R2N on VP7 timing-clean fallback-DW synthesis
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0_r2n IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0/fv/NV_NVDLA_partition_m.svf 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N debug
+- Result: `FAIL`
+- Input artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0/fv/NV_NVDLA_partition_m.svf`
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.formality_r2n.f`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0_r2n`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0_r2n/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0_r2n/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - Verification `FAILED`.
+  - Guidance summary: total accepted `10923`, rejected `0`.
+  - Match results: `68301` compare points matched by name; unmatched reference/implementation compare points `0(0)`.
+  - Compare points: `68300` passing, `1` failing, `0` aborted, `0` unverified.
+  - Failing point: `u_NV_NVDLA_cmac/u_core/u_mac_1/mac_out_data_reg_85_`.
+- Warnings or violations:
+  - This is not a DW02_tree/SVF-guidance issue; SVF guidance is fully accepted.
+  - VP7 introduced a set/reset scan flop implementation for one CMAC output bit, which created an implementation-only cone input in Formality.
+- Waiver/defer reason:
+  - Not waived. A single failing compare point blocks R2N acceptance.
+- Next action:
+  - Analyze the failing cone and prevent the FM-risky set/reset scan flop mapping in the DC script.
+
+## 2026-05-08 - Formality analyze_points on VP7 R2N fail
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0_r2n_analyze IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0/fv/NV_NVDLA_partition_m.svf FM_ANALYZE_POINTS=failing FM_ANALYZE_LIMIT=10 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality root-cause analysis
+- Result: `FAIL`
+- Input artifacts:
+  - VP7 DDC/SVF artifacts listed above.
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0_r2n_analyze`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0_r2n_analyze/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp7_nvdw_oc3p6_inc4p0_r2n_analyze/NV_NVDLA_partition_m.fm.analysis.rpt`
+- Pass/fail evidence:
+  - `analyze_points` reports `1` unmatched cone input for the failing compare point.
+  - The implementation cone contains `mac_out_data_reg_85_/*dff.00*` that does not exist in the RTL reference cone.
+  - VP7 netlist maps `u_mac_1/mac_out_data_reg_85_` to `SDFFSSRX1_RVT`; other same-named bits remain plain scan DFFs.
+- Warnings or violations:
+  - This confirms the VP7 R2N failure moved from DW guidance to a specific sequential cell mapping artifact.
+- Waiver/defer reason:
+  - Debug only; no waiver taken.
+- Next action:
+  - Add an optional DC script guard to mark `SDFFSSRX*_RVT` cells `dont_use`, then re-run synthesis and R2N.
+
+## 2026-05-08 - Invalid VP8 DC run with incorrect dont_use syntax
+
+- Command: `env DC_FILELIST=2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f DC_COMPILE_CLK_PERIOD=3.6 DC_CLK_PERIOD=4.0 DC_FINAL_INCREMENTAL_COMPILE=1 DC_DONT_USE_FM_RISKY_SCAN_FLOPS=1 DC_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx ... 2_synthesis/scripts/run_one_dc.sh NV_NVDLA_partition_m`
+- Stage: Synthesis script validation
+- Result: `INVALID`
+- Input artifacts:
+  - `2_synthesis/scripts/run_dc.tcl`
+- Output artifacts:
+  - Partial log under `2_synthesis/3_log/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx`
+- Key reports:
+  - Partial DC log only; no valid final QoR is used.
+- Pass/fail evidence:
+  - Fatal syntax issue: `set_dont_use $risky_scan_flops true` produced `Error: extra positional option 'true' (CMD-012)`.
+  - The run was killed and is not a valid synthesis result.
+- Warnings or violations:
+  - None accepted from this run.
+- Waiver/defer reason:
+  - Invalid run due script syntax, not a design result.
+- Next action:
+  - Fix the Tcl command to `set_dont_use $risky_scan_flops` and rerun as VP8b.
+
+## 2026-05-08 - DC fallback-DW VP8b with FM-risky scan flop guard
+
+- Command: `env DC_FILELIST=2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f DC_COMPILE_CLK_PERIOD=3.6 DC_CLK_PERIOD=4.0 DC_FINAL_INCREMENTAL_COMPILE=1 DC_DONT_USE_FM_RISKY_SCAN_FLOPS=1 DC_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b DC_HDLIN_VERIFICATION_PRIORITY=1 DC_CMAC_VERIFICATION_PRIORITY=1 DC_VERIFICATION_PRIORITY_LEVEL=high 2_synthesis/scripts/run_one_dc.sh NV_NVDLA_partition_m`
+- Stage: Synthesis timing and R2N-prep debug
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.dft.nvdw.f`
+  - `2_synthesis/scripts/run_dc.tcl`
+  - `2_synthesis/1_input/constraints/NV_NVDLA_partition_m.sdc`
+- Output artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/net/NV_NVDLA_partition_m.vg`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/fv/NV_NVDLA_partition_m.svf`
+- Key reports:
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/NV_NVDLA_partition_m.qor.rpt`
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/NV_NVDLA_partition_m.clock.rpt`
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/NV_NVDLA_partition_m.check_timing.rpt`
+- Pass/fail evidence:
+  - DC exited with code `0`.
+  - Log confirms compile clock override `3.6 ns`, final report/writeout clock override `4.0 ns`, and final incremental compile at report clock.
+  - Log confirms `Applied dont_use to 2 FM-risky scan flop lib cell(s)`.
+  - Clock report: `nvdla_core_clk` period `4.00 ns`, waveform `{0 2}`.
+  - QoR: setup critical slack `+0.0008 ns`, TNS `0.0000`, violating paths `0`; hold WNS/TNS/violating paths all `0`.
+  - Netlist search shows `mac_out_data_reg_85_` instances are `SDFFX1_RVT`/`SDFFX2_RVT`; no `SDFFSSRX` match was found in the generated netlist.
+- Warnings or violations:
+  - Max transition violations `1336`; max capacitance violations `2021`.
+  - `check_timing` still reports `TIM-216` for 2340 input ports and 1445 unconstrained max-delay endpoints.
+  - These are not claimed clean in this milestone.
+- Waiver/defer reason:
+  - Max transition/capacitance cleanup remains backend-deferred.
+  - Existing constraint-model warnings are recorded and require later cleanup; they do not invalidate this R2N/timing debug milestone but prevent signoff-clean wording.
+- Next action:
+  - Run Formality R2N on VP8b DDC/SVF to verify that the `dont_use` guard did not merely move the equivalence failure.
+
+## 2026-05-08 - Formality R2N on VP8b timing-clean guarded synthesis
+
+- Command: `env FM_RUN_NAME=partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_r2n IMPL_DDC=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/db/NV_NVDLA_partition_m.ddc SVF_FILE=2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/fv/NV_NVDLA_partition_m.svf 5_formality/scripts/run_one_fm.sh r2n NV_NVDLA_partition_m`
+- Stage: Formality R2N debug
+- Result: `PASS`
+- Input artifacts:
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/db/NV_NVDLA_partition_m.ddc`
+  - `2_synthesis/2_output/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/fv/NV_NVDLA_partition_m.svf`
+  - `2_synthesis/1_input/filelists/NV_NVDLA_partition_m.formality_r2n.f`
+- Output artifacts:
+  - Reports under `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_r2n`
+  - Log `5_formality/3_log/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_r2n/NV_NVDLA_partition_m.r2n.fm.log`
+- Key reports:
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_r2n/NV_NVDLA_partition_m.fm.match.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_r2n/NV_NVDLA_partition_m.fm.verify.rpt`
+- Pass/fail evidence:
+  - Verification `SUCCEEDED`.
+  - Passing compare points: `68301`.
+  - Failing compare points: `0`.
+  - Aborted compare points: `0`.
+  - Unverified compare points: `0`.
+  - Matched compare points by name: `68301`.
+  - Unmatched reference/implementation compare points: `0(0)`.
+  - Reference black-boxes: `2`.
+  - Guidance summary: total accepted `10885`, rejected `0`.
+- Warnings or violations:
+  - `fm.setup.rpt` contains a non-blocking report command warning from the rejected-SVF reporting helper, but the main verify result is clean.
+  - The 2 reference black-box placeholders remain consistent with the prior fallback setup.
+- Waiver/defer reason:
+  - No R2N waiver needed.
+  - This is still not full signoff-clean because synthesis DRC and constraint-model warnings remain documented.
+- Next action:
+  - Treat VP8b as the current best R2N-capable, 4.0 ns timing-clean synthesis candidate and proceed to scan-netlist STA/Formality N2N/TetraMAX using the documented backend-deferred DRC policy.
