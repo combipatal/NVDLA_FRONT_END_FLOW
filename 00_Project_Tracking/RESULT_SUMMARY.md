@@ -1,9 +1,20 @@
 # Result Summary
 
+## Frontend Closure Summary
+
+- Status: `CLOSED_AS_FRONTEND_MILESTONE`
+- Closure date: 2026-05-11 KST
+- Scope: `NV_NVDLA_partition_m` frontend flow only
+- Final frontend candidate: `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b`
+- Closure declaration: `00_Project_Tracking/PROJECT_CLOSURE.md`
+- Meaning: synthesis/R2N/DFT/scan STA setup/N2N/ATPG frontend milestone complete.
+- Claim boundary: not backend physical signoff, not signoff-clean, not tapeout-ready.
+
 ## Current Best Results
 
 | Stage | Run | Result | Evidence | Blocking Items |
 | --- | --- | --- | --- | --- |
+| Frontend milestone closure | `PROJECT_CLOSURE.md` | `RECORDED` | Status `CLOSED_AS_FRONTEND_MILESTONE`; VP8b frontend flow declared closed for `NV_NVDLA_partition_m` | Backend physical signoff and signoff-clean claims remain out of scope |
 | Synthesis | `partition_m_4p0ns` | `PASS_WITH_NOTE` | WNS `+0.0117 ns`, TNS `0`, violating paths `0` | Max transition/cap violations deferred to backend |
 | STA setup | `partition_m_4p0ns` | `PASS_WITH_NOTE` | PT setup WNS `+0.0304 ns`, TNS `0` | Hold/removal deferred to backend |
 | DFT initial | `partition_m_4p0ns_dft` | `FAIL` | D9 `67135`, S19 `67135`, scan chains too small | Clock-gating prevented shift clock activation |
@@ -38,6 +49,7 @@
 | VP8b TetraMAX ATPG | `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_atpg` | `PASS_WITH_NOTE` | ATPG DRC clean; stuck-at coverage `99.81%`; 20317 basic-scan patterns | Coverage lower and pattern count higher than previous const-reset ATPG; ND `16458` faults remain |
 | Frontend final report | `FRONTEND_FINAL_REPORT.md` | `RECORDED` | Captures VP8b frontend closure: synthesis, R2N, DFT, scan STA, N2N, ATPG | Not backend signoff-clean; generated reports tracked by explicit request; long logs excluded |
 | Git report tracking | `7594062` | `PASS_WITH_NOTE` | Pushed frontend final report and `415` generated `4_report` files to `origin/master`; generated `3_log` tracking contains only `.gitkeep` placeholders | GitHub warned two Formality match reports are `55.82 MB`, above the recommended `50 MB`; push succeeded |
+| Project memory refresh | `/DATA/home/edu135/.codex/memories/nvdla-front-end-flow.md` | `RECORDED` | 2026-05-11 context scan reviewed docs, scripts, git state, and representative VP8b reports; no EDA rerun | Status unchanged; remaining open items and non-signoff-clean caveats still apply |
 | Formality N2N | `partition_m_4p0ns_dftcg_const_reset_n2n` | `PASS_WITH_NOTE` | Verification `SUCCEEDED`, 68653 passing, 0 failing | Scan-only implementation ports are expected unmatched ports |
 | TetraMAX ATPG | `partition_m_4p0ns_dftcg_const_reset_atpg` | `PASS_WITH_NOTE` | DRC clean, stuck-at coverage `99.91%`, 14836 patterns | ND faults and reset assertion coverage remain outside current milestone |
 

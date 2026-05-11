@@ -2,15 +2,21 @@
 
 ## Snapshot
 
-- Date: 2026-05-08 KST
+- Date: 2026-05-11 KST
+- Status: `CLOSED_AS_FRONTEND_MILESTONE`
+- Closure date: 2026-05-11 KST
 - Active design: `NV_NVDLA_partition_m`
 - Active functional synthesis run: `partition_m_4p0ns`
 - Active DFT synthesis run: `partition_m_4p0ns_dftcg`
+- Active final candidate: `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b`
 - Active Formality R2N/timing synthesis candidate: `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b`
 - Active DFT insertion run: `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft`
 - Active clock period: `4.0 ns`
+- Meaning: synthesis/R2N/DFT/scan STA setup/N2N/ATPG frontend milestone complete.
+- Claim boundary: not backend physical signoff; not signoff-clean; not tapeout-ready.
 - Repository layout follows numbered stages: `1_vcs`, `2_synthesis`, `3_sta`, `4_dft`, `5_formality`, `6_sweep`.
 - Frontend final report: `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`
+- Frontend closure declaration: `00_Project_Tracking/PROJECT_CLOSURE.md`
 
 ## AGENTS.md Operating Rule
 
@@ -78,6 +84,8 @@ Exception recorded on 2026-05-08: generated scripts and reports are tracked in g
 - Generated reports are now included in git tracking by explicit user request; long generated logs remain ignored.
 - Report-only git tracking has been pushed in commit `7594062`; `415` generated `4_report` files are tracked, while generated `3_log` directories track only `.gitkeep` placeholders.
 - GitHub accepted the push but warned that two Formality match reports are `55.82 MB`, above the recommended `50 MB` file-size limit.
+- Project context/memory refresh completed on 2026-05-11. No EDA tool rerun was performed; the refresh reviewed tracked docs, scripts, git state, and representative VP8b reports, then wrote `/DATA/home/edu135/.codex/memories/nvdla-front-end-flow.md`.
+- Project closure declaration completed on 2026-05-11 as `CLOSED_AS_FRONTEND_MILESTONE`; closure scope is strictly `NV_NVDLA_partition_m` frontend milestone, not backend physical signoff.
 
 ## Open Items
 

@@ -1,5 +1,103 @@
 # Run Log
 
+## 2026-05-11 - NVDLA frontend milestone closure declaration
+
+- Command:
+  - `git status --short --branch`
+  - `git fetch origin`
+  - `git rev-list --left-right --count HEAD...@{upstream}`
+  - Reviewed `00_Project_Tracking/PROJECT_STATUS.md`, `00_Project_Tracking/RESULT_SUMMARY.md`, `00_Project_Tracking/RUN_LOG.md`, and `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`
+  - Confirmed `00_Project_Tracking/DECISION_LOG.md` is absent, so no decision log file was created
+  - Created `00_Project_Tracking/PROJECT_CLOSURE.md`
+- Stage: Frontend milestone closure documentation
+- Result: `RECORDED`
+- Input artifacts:
+  - `00_Project_Tracking/PROJECT_STATUS.md`
+  - `00_Project_Tracking/RESULT_SUMMARY.md`
+  - `00_Project_Tracking/RUN_LOG.md`
+  - `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`
+  - Representative VP8b tracked reports
+- Output artifacts:
+  - `00_Project_Tracking/PROJECT_CLOSURE.md`
+  - Updated `00_Project_Tracking/PROJECT_STATUS.md`
+  - Updated `00_Project_Tracking/RESULT_SUMMARY.md`
+  - Updated `00_Project_Tracking/RUN_LOG.md`
+- Key reports:
+  - `00_Project_Tracking/PROJECT_CLOSURE.md`
+  - `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`
+- Pass/fail evidence:
+  - Closure status set to `CLOSED_AS_FRONTEND_MILESTONE`.
+  - Final pre-DFT synthesis/R2N candidate: `partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b`.
+  - Formality R2N passed with `Verification SUCCEEDED`, `68301` passing compare points, `0` failing/aborted/unverified, and SVF guidance `10885` accepted / `0` rejected.
+  - DFT insertion passed with post-DFT DRC total `0`, 32 scan chains, and chain lengths `2088-2089`.
+  - Scan-netlist STA setup is clean with `nvdla_core_clk` setup WNS `+0.0128 ns`, TNS `0`, and setup violations `0`.
+  - Formality N2N passed with `Verification SUCCEEDED`, `68301` passing compare points, and `0` failing/aborted/unverified.
+  - TetraMAX ATPG is `PASS_WITH_NOTE` with ATPG DRC clean, stuck-at coverage `99.81%`, `20317` basic-scan patterns, `16458` not-detected faults, and `11` ATPG-untestable faults.
+- Warnings or violations:
+  - Max transition/capacitance violations remain in synthesis, DFT, and PT reports.
+  - Scan-netlist STA async removal violations remain: WNS `-0.0315 ns`, TNS `-71.0320 ns`, violating paths `2383`.
+  - PT `check_timing` still reports ports with no clock-relative input delay.
+  - Reset assertion coverage is not claimed.
+- Waiver/defer reason:
+  - Closure is limited to the frontend milestone; backend physical implementation/signoff is explicitly excluded.
+  - No route/GDS/tapeout-ready/foundry signoff-clean/IR/EM/LVS/antenna/metal-fill claim is made.
+- Next action:
+  - Review diff, stage only related tracking/closure files, commit as `docs: declare NVDLA frontend milestone closure`, push, and verify `HEAD...@{upstream}` returns `0 0`.
+
+## 2026-05-11 - Project context and memory refresh
+
+- Command:
+  - `git status --short --branch`
+  - `git log --oneline -5`
+  - `git ls-files`
+  - `sed`/`tail` review of `README.md`, `docs/*`, `00_Project_Tracking/*`, and stage scripts
+  - `rg` checks on representative VP8b synthesis, Formality, DFT, STA, and ATPG reports
+  - Post-edit `git status --short`, `git diff -- 00_Project_Tracking/...`, and memory-file readback
+- Stage: Project documentation and memory refresh
+- Result: `RECORDED`
+- Input artifacts:
+  - `README.md`
+  - `docs/00_current_execution_plan.md`
+  - `docs/01_nvdla_partition_analysis.md`
+  - `00_Project_Tracking/PROJECT_STATUS.md`
+  - `00_Project_Tracking/RESULT_SUMMARY.md`
+  - `00_Project_Tracking/RUN_LOG.md`
+  - `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`
+  - `2_synthesis/scripts/run_dc.tcl`
+  - `3_sta/scripts/run_pt.tcl`
+  - `4_dft/scripts/run_dft.tcl`
+  - `4_dft/scripts/run_tmax_atpg.tcl`
+  - `5_formality/scripts/run_fm_r2n.tcl`
+  - Representative VP8b reports under tracked `*/4_report/*` directories
+- Output artifacts:
+  - `/DATA/home/edu135/.codex/memories/nvdla-front-end-flow.md`
+  - Updated `00_Project_Tracking/PROJECT_STATUS.md`
+  - Updated `00_Project_Tracking/RESULT_SUMMARY.md`
+  - Updated `00_Project_Tracking/RUN_LOG.md`
+- Key reports:
+  - `00_Project_Tracking/FRONTEND_FINAL_REPORT.md`
+  - `2_synthesis/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b/NV_NVDLA_partition_m.qor.rpt`
+  - `5_formality/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_r2n/NV_NVDLA_partition_m.fm.verify.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_dft/NV_NVDLA_partition_m.dft_drc.post_dft.rpt`
+  - `3_sta/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_scan_sta/NV_NVDLA_partition_m.pt.global_timing.rpt`
+  - `4_dft/4_report/partition_m_4p0ns_dftcg_ghm_vp8_nvdw_oc3p6_inc4p0_nosdffssrx_b_const_reset_atpg/NV_NVDLA_partition_m.tmax.summary.rpt`
+- Pass/fail evidence:
+  - Git worktree was clean before the refresh.
+  - Confirmed current best candidate remains VP8b.
+  - DC QoR report shows setup slack `+0.0008 ns`, TNS `0.0000`, violating paths `0`, and hold clean.
+  - DFT post-DFT DRC report shows total violations `0`.
+  - Scan-netlist STA report shows setup clean while async removal remains negative.
+  - ATPG report shows stuck-at test coverage `99.81%` and `20317` basic-scan patterns.
+  - Post-edit review showed only the three project tracking files modified inside the repo, plus the external memory file update.
+- Warnings or violations:
+  - No new EDA tool run was performed in this refresh.
+  - Existing non-signoff-clean items remain: max transition/capacitance violations, async removal violations, constraint-model warnings, reset assertion coverage gap, and ATPG coverage/fault-classification decisions.
+- Waiver/defer reason:
+  - This was a documentation/memory refresh only; no technical waiver was added.
+  - Existing backend-deferred DRC and async timing items remain documented, not newly waived.
+- Next action:
+  - If continuing implementation, decide the next owner/action for ATPG coverage delta, constraint cleanup, and backend physical DRC/removal cleanup before making signoff-clean claims.
+
 ## 2026-05-07 - DC topo synthesis, functional 4.0 ns
 
 - Command: `env DC_CLK_PERIOD=4.0 DC_RUN_NAME=partition_m_4p0ns 2_synthesis/scripts/run_one_dc.sh NV_NVDLA_partition_m`
