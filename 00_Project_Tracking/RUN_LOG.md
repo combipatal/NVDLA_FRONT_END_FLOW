@@ -1322,3 +1322,47 @@
   - Long generated logs are excluded per user clarification: if logs are too long, omit logs and track reports only.
 - Next action:
   - Keep generated implementation outputs ignored unless explicitly requested.
+
+## 2026-05-12 - Repository README update
+
+- Command:
+  - `sed -n '1,220p' README.md`
+  - `sed -n '1,220p' 00_Project_Tracking/PROJECT_STATUS.md`
+  - `sed -n '1,220p' 00_Project_Tracking/RESULT_SUMMARY.md`
+  - `sed -n '1,180p' docs/00_current_execution_plan.md`
+  - `sed -n '1,220p' 2_synthesis/scripts/run_one_dc.sh`
+  - `sed -n '1,220p' 3_sta/scripts/run_one_pt.sh`
+  - `sed -n '1,200p' 5_formality/scripts/run_one_fm.sh`
+  - `sed -n '1,180p' 4_dft/scripts/run_one_dft.sh`
+  - `sed -n '1,220p' 4_dft/scripts/run_one_tmax.sh`
+  - Updated `README.md`
+  - `git diff -- README.md`
+  - `git status --short --branch`
+- Stage: Repository documentation
+- Result: `RECORDED`
+- Input artifacts:
+  - Existing `README.md`
+  - `00_Project_Tracking/PROJECT_STATUS.md`
+  - `00_Project_Tracking/RESULT_SUMMARY.md`
+  - `00_Project_Tracking/PROJECT_CLOSURE.md`
+  - Stage wrapper scripts under `2_synthesis/scripts`, `3_sta/scripts`, `4_dft/scripts`, and `5_formality/scripts`
+- Output artifacts:
+  - Updated `README.md`
+  - Updated `00_Project_Tracking/RUN_LOG.md`
+  - Updated `00_Project_Tracking/RESULT_SUMMARY.md`
+  - Updated `00_Project_Tracking/PROJECT_STATUS.md`
+- Key reports:
+  - `README.md`
+  - `00_Project_Tracking/RESULT_SUMMARY.md`
+  - `00_Project_Tracking/PROJECT_STATUS.md`
+- Pass/fail evidence:
+  - README now records the active frontend milestone status, VP8b final candidate, major stage results, flow layout, common commands, tracking discipline, and signoff boundary.
+  - `git diff -- README.md` showed only README documentation changes before tracking-document updates.
+  - No EDA implementation, STA, Formality, DFT, or ATPG tool rerun was performed.
+- Warnings or violations:
+  - This run documents the repository and does not alter technical signoff status.
+  - Existing backend-deferred warnings and open items remain unchanged.
+- Waiver/defer reason:
+  - Not applicable; no new technical warning was accepted.
+- Next action:
+  - Commit the README and tracking-document updates, then push to `origin/master` if allowed.

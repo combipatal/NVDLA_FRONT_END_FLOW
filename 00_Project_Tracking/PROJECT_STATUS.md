@@ -86,6 +86,7 @@ Exception recorded on 2026-05-08: generated scripts and reports are tracked in g
 - GitHub accepted the push but warned that two Formality match reports are `55.82 MB`, above the recommended `50 MB` file-size limit.
 - Project context/memory refresh completed on 2026-05-11. No EDA tool rerun was performed; the refresh reviewed tracked docs, scripts, git state, and representative VP8b reports, then wrote `/DATA/home/edu135/.codex/memories/nvdla-front-end-flow.md`.
 - Project closure declaration completed on 2026-05-11 as `CLOSED_AS_FRONTEND_MILESTONE`; closure scope is strictly `NV_NVDLA_partition_m` frontend milestone, not backend physical signoff.
+- Repository README was expanded on 2026-05-12 KST to summarize the closed frontend milestone, flow layout, major VP8b results, common commands, tracking discipline, and signoff boundary. No EDA tool rerun was performed and technical status remains unchanged.
 
 ## Open Items
 
