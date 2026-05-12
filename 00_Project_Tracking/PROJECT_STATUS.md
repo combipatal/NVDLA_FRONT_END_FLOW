@@ -87,6 +87,7 @@ Exception recorded on 2026-05-08: generated scripts and reports are tracked in g
 - Project context/memory refresh completed on 2026-05-11. No EDA tool rerun was performed; the refresh reviewed tracked docs, scripts, git state, and representative VP8b reports, then wrote `/DATA/home/edu135/.codex/memories/nvdla-front-end-flow.md`.
 - Project closure declaration completed on 2026-05-11 as `CLOSED_AS_FRONTEND_MILESTONE`; closure scope is strictly `NV_NVDLA_partition_m` frontend milestone, not backend physical signoff.
 - Repository README was expanded on 2026-05-12 KST to summarize the closed frontend milestone, flow layout, major VP8b results, common commands, tracking discipline, and signoff boundary. The update was pushed to `origin/master` in commit `d68c6be`. No EDA tool rerun was performed and technical status remains unchanged.
+- Local planning/agent context files `AGENTS.md`, `nvdla_frontend_implementation_plan.md`, `progress.md`, `task_plan.md`, and `findings.md` were moved to local-only gitignored status on 2026-05-12 KST. They remain in the workspace but are no longer intended as tracked project artifacts.
 
 ## Open Items
 

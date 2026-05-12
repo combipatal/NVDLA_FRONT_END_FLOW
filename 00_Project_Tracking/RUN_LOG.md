@@ -1404,3 +1404,41 @@
   - Existing backend-deferred technical warnings remain unchanged.
 - Next action:
   - None for the README request. Continue using project tracking discipline for future tool runs.
+
+## 2026-05-12 - Local planning files ignored
+
+- Command:
+  - `git ls-files progress.md task_plan.md findings.md AGENTS.md nvdla_frontend_implementation_plan.md .gitignore`
+  - Updated `.gitignore`
+  - `git rm --cached AGENTS.md nvdla_frontend_implementation_plan.md progress.md task_plan.md findings.md`
+  - `ls -l AGENTS.md nvdla_frontend_implementation_plan.md progress.md task_plan.md findings.md`
+  - `git check-ignore -v AGENTS.md nvdla_frontend_implementation_plan.md progress.md task_plan.md findings.md`
+  - `git status --short --branch`
+- Stage: Repository tracking cleanup
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - `.gitignore`
+  - `AGENTS.md`
+  - `nvdla_frontend_implementation_plan.md`
+  - `progress.md`
+  - `task_plan.md`
+  - `findings.md`
+- Output artifacts:
+  - Updated `.gitignore`
+  - Git index changes to stop tracking the five local planning/agent files
+- Key reports:
+  - `.gitignore`
+  - `00_Project_Tracking/RUN_LOG.md`
+  - `00_Project_Tracking/RESULT_SUMMARY.md`
+  - `00_Project_Tracking/PROJECT_STATUS.md`
+- Pass/fail evidence:
+  - `git check-ignore -v` matched all five files to `.gitignore` lines.
+  - `ls -l` confirmed all five files remain present in the workspace after `git rm --cached`.
+  - `git status --short --branch` showed `.gitignore` modified and the five files staged as deleted from git tracking.
+- Warnings or violations:
+  - `AGENTS.md` is now local-only after this cleanup, but its run-log discipline was followed for this task.
+  - This is a repository tracking change only; no EDA tool rerun and no technical status change.
+- Waiver/defer reason:
+  - The files are local planning/agent context files and are superseded for public project status by `README.md`, `docs/`, and `00_Project_Tracking/`.
+- Next action:
+  - Commit and push the tracking cleanup to `origin/master`.

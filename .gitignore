@@ -1,5 +1,10 @@
 # Local agent/session state
 .omx/
+AGENTS.md
+nvdla_frontend_implementation_plan.md
+progress.md
+task_plan.md
+findings.md
 
 # Synopsys and simulation scratch data
 alib-52/
