@@ -1366,3 +1366,41 @@
   - Not applicable; no new technical warning was accepted.
 - Next action:
   - Commit the README and tracking-document updates, then push to `origin/master` if allowed.
+
+## 2026-05-12 - Repository README git publish
+
+- Command:
+  - `git diff --check`
+  - `git diff --stat`
+  - `git status --short --branch`
+  - `git add README.md 00_Project_Tracking/RUN_LOG.md 00_Project_Tracking/RESULT_SUMMARY.md 00_Project_Tracking/PROJECT_STATUS.md`
+  - `git commit -m "docs: expand project README"`
+  - `git push origin master`
+- Stage: Repository documentation publish
+- Result: `PASS_WITH_NOTE`
+- Input artifacts:
+  - Updated `README.md`
+  - Updated `00_Project_Tracking/RUN_LOG.md`
+  - Updated `00_Project_Tracking/RESULT_SUMMARY.md`
+  - Updated `00_Project_Tracking/PROJECT_STATUS.md`
+  - Git remote `origin` at `ssh://git@ssh.github.com:443/combipatal/NVDLA_FRONT_END_FLOW.git`
+- Output artifacts:
+  - Commit `d68c6be` (`docs: expand project README`)
+  - Updated `origin/master`
+- Key reports:
+  - `README.md`
+  - `00_Project_Tracking/RUN_LOG.md`
+  - `00_Project_Tracking/RESULT_SUMMARY.md`
+  - `00_Project_Tracking/PROJECT_STATUS.md`
+- Pass/fail evidence:
+  - `git diff --check` completed with no whitespace errors.
+  - Commit `d68c6be` was created with `4 files changed, 175 insertions(+), 17 deletions(-)`.
+  - `git push origin master` updated `origin/master` from `b18199f` to `d68c6be`.
+- Warnings or violations:
+  - Initial sandboxed `git commit` failed because `.git/index.lock` could not be created in the sandboxed read-only `.git` path; command was rerun with approved escalation.
+  - Initial sandboxed `git push` failed due SSH config permission handling; command was rerun with approved escalation and passed.
+  - Documentation-only update; no EDA tool rerun and no technical status change.
+- Waiver/defer reason:
+  - Existing backend-deferred technical warnings remain unchanged.
+- Next action:
+  - None for the README request. Continue using project tracking discipline for future tool runs.
